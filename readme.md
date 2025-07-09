@@ -5,7 +5,7 @@ Obsidian, VSCode, Git
 
 ### 폴더 트리 구조
 
-PARA 방법론 기반
+PARA method 기반
 - **Projects**: 현재 진행 중인 작업 영역
 - **Areas**: 지속적인 책임 영역
 - **Resources**: 참고 자료
