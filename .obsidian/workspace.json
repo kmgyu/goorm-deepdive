@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "2fc1e5ac76b685b2",
+        "id": "91a5cfa38c08fec2",
         "type": "tabs",
         "children": [
           {
-            "id": "f718dee5a2c08e80",
+            "id": "8adcd131fbbc3dc6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Projects/week1_report_Software-development-process.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "week1_report_Software-development-process"
+              "title": "New tab"
             }
           }
         ]
@@ -168,18 +164,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f718dee5a2c08e80",
+  "active": "c5b54908b380f0a2",
   "lastOpenFiles": [
-    "Projects/week1_report_list.md",
+    "Resources/week1_250709.md",
+    "Resources/Week1_Coffee chat.md",
+    "Pasted image 20250709113412.png",
     "Areas/week1_todo.md",
+    "Projects/week1_report_list.md",
+    "Projects/week1_report_Software-development-process.md",
     "Archives/week1_report_vscode-tips.md",
     "Archives/week1_report_vscode-hotkeys.md",
-    "Resources/Week1_Coffee chat.md",
     "Resources/week1_Coffee chat.md",
     "Week1_Coffee Chat.md",
-    "Projects/week1_report_Software-development-process.md",
     "readme.md",
-    "Resources/week1_250709.md",
     "Areas/week1_git.md",
     "Resources/week1_report_Software-development-process.md",
     "Archives/week1_report_Software-development-process.md",
@@ -194,7 +191,6 @@
     "week1/vscode_hotkeys.md",
     "week1/250709.md",
     "week1/vscode_tips.md",
-    "Pasted image 20250709113412.png",
     "Windows에서 Linux 사용하기 (with WSL2).md"
   ]
 }
