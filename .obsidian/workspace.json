@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "week1/vscode_hotkeys.md",
+                "file": "Projects/week1_report_Software-development-process.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vscode_hotkeys"
+              "title": "week1_report_Software-development-process"
             }
           }
         ]
@@ -170,11 +170,31 @@
   },
   "active": "f718dee5a2c08e80",
   "lastOpenFiles": [
+    "Projects/week1_report_list.md",
+    "Areas/week1_todo.md",
+    "Archives/week1_report_vscode-tips.md",
+    "Archives/week1_report_vscode-hotkeys.md",
+    "Resources/Week1_Coffee chat.md",
+    "Resources/week1_Coffee chat.md",
+    "Week1_Coffee Chat.md",
+    "Projects/week1_report_Software-development-process.md",
+    "readme.md",
+    "Resources/week1_250709.md",
+    "Areas/week1_git.md",
+    "Resources/week1_report_Software-development-process.md",
+    "Archives/week1_report_Software-development-process.md",
+    "Resources/week1_report_vscode-hotkeys.md",
+    "Archives/week1_250709.md",
+    "Areas/week1_report_list.md",
+    "Areas/report_list.md",
+    "Resources/week1_report_vscode-tips.md",
+    "Resources/week1_vscode-tips.md",
+    "Resources/week1_vscode-hotkeys.md",
+    "Resources/week1_Software-development-process.md",
     "week1/vscode_hotkeys.md",
     "week1/250709.md",
     "week1/vscode_tips.md",
     "Pasted image 20250709113412.png",
-    "Windows에서 Linux 사용하기 (with WSL2).md",
-    "week1/what is obsidian.md"
+    "Windows에서 Linux 사용하기 (with WSL2).md"
   ]
 }
