@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "0bd4156f8b40b2c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "2fc1e5ac76b685b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f718dee5a2c08e80",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "week1/vscode_hotkeys.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "vscode_hotkeys"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "01e261a601424635",
+    "type": "split",
+    "children": [
+      {
+        "id": "63e8427373eb8cf0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5b54908b380f0a2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d04922cf5ba99487",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b78b3567261a9111",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c8a03d5a0fb0a617",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea2950accec189cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b880ba72832965c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "week1/vscode_hotkeys.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for vscode_hotkeys"
+            }
+          },
+          {
+            "id": "11436ef7709b1e3b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "week1/vscode_hotkeys.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from vscode_hotkeys"
+            }
+          },
+          {
+            "id": "17976f588dc8abde",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a18f60ab6cc7edda",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "week1/vscode_hotkeys.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of vscode_hotkeys"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "c5b54908b380f0a2",
+  "lastOpenFiles": [
+    "week1/vscode_tips.md",
+    "Pasted image 20250709113412.png",
+    "week1/vscode_hotkeys.md",
+    "Windows에서 Linux 사용하기 (with WSL2).md",
+    "week1/what is obsidian.md"
+  ]
+}
