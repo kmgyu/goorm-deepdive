@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Archives/week1_report_markdown.md",
+                "file": "Archives/week1_report_Software-development-process.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week1_report_markdown"
+              "title": "week1_report_Software-development-process"
             }
           }
         ],
@@ -185,18 +185,18 @@
   },
   "active": "b480cb7ab6479da8",
   "lastOpenFiles": [
-    "Archives/week1_report_Software-development-process.md",
-    "Archives/week1_commit-id-uniqueness.md",
-    "readme.md",
     "Areas/week1_todo.md",
+    "Resources/week1_250709.md",
+    "readme.md",
     "Projects/week1_report_list.md",
     "Areas/week1_github-skills.md",
-    "Resources/week1_250709-Coffee-chat.md",
+    "Archives/week1_commit-id-uniqueness.md",
     "Archives/week1_report_markdown.md",
+    "Archives/week1_report_Software-development-process.md",
+    "Resources/week1_250709-Coffee-chat.md",
     "Planner/week1_report_list.md",
     "Planner/week1_todo.md",
     "Planner",
-    "Resources/week1_250709.md",
     "Resources/Week1_Coffee chat.md",
     "Pasted image 20250709113412.png",
     "Archives/week1_report_vscode-tips.md",
