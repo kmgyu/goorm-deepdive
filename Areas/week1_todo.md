@@ -13,7 +13,8 @@
 - http request와 http response 관련 네트워크 지식, OSI 7계층과 연관지어서
   (250710. . .)
 - WAS 엔진에 대해. php 엔진, tomcat, apache...
-  (250710. . .)
+  현재 WAS에 대해 작성중
+  (250710. 250710. .)
 - MDN 등 자료 수집 가능한 웹 페이지 정리
   개인 공부? 강의 내용 확장? (250710. . .)
 - CSSOM, render tree가 무엇인지

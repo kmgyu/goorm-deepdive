@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/lecture-note/week1_250710.md",
+                "file": "Resources/week1_WAS(writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week1_250710"
+              "title": "week1_WAS(writing)"
             }
           }
         ]
@@ -171,15 +171,17 @@
   },
   "active": "c5b54908b380f0a2",
   "lastOpenFiles": [
+    "Resources/week1_git-tags.md",
+    "Areas/week1_todo.md",
+    "Resources/lecture-note/week1_250710.md",
+    "Resources/week1_WAS(writing).md",
     "Projects/week1_report_list.md",
     "Resources/lecture-note",
     "Projects/week1_mokjoon-project.md",
     "Archives/week1_report_Software-development-process.md",
-    "Areas/week1_todo.md",
     "Areas/week1_Issue-tracking-system.md",
     "Areas/week1_github-skills.md",
     "Resources/week1_git-rebase.md",
-    "Resources/week1_git-tags.md",
     "Archives/week1_report_vscode-tips.md",
     "Resources/Images/week1_report_Software-development-process/how-to-login.png",
     "Resources/Images/week1_report_Software-development-process",
@@ -202,7 +204,6 @@
     "Images/week1_report_Software-development-process",
     "Images",
     "Images/week1_git-rebase",
-    "Resources/lecture-note/week1_250710.md",
     "Resources/lecture-note/week1_250709-Coffee-chat.md",
     "Planner/week1_report_list.md",
     "Planner/week1_todo.md",
