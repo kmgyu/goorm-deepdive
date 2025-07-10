@@ -56,7 +56,7 @@ GitHub Pull Requests and Issues 확장프로그램을 사용하기 위해서는 
 GitHub Pull Requests and Issues 확장프로그램을 이용해 GitHub에 로그인하자.
 왼쪽 사이드바 탭을 유심히 살펴본다면, 전에 없던 아이콘이 생긴 것을 볼 수 있다!
 로그인 버튼을 클릭하면 로그인할 수 있다.
-![[Pasted image 20250709113412.png]]
+![[how-to-login.png]]
 
 
 referenced by
