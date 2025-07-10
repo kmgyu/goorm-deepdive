@@ -8,7 +8,7 @@ Obsidian, VSCode, Git
 PARA method 기반
 - **Projects**: 현재 진행 중인 작업 영역
 - **Areas**: 지속적인 책임 영역
-- **Resources**: 참고 자료
+- **Resources**: 참고 자료 및 문서에 사용된 이미지
 - **Archives**: 완료되거나 보류된 항목
 
 ### 파일명 규칙
