@@ -11,12 +11,14 @@
             "id": "d494a2c8a77e6cff",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Resources/Images/week1_git-rebase/rebase-case05.png"
+                "file": "Resources/week1_git-rebase.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "rebase-case05"
+              "icon": "lucide-file",
+              "title": "week1_git-rebase"
             }
           }
         ]
@@ -163,30 +165,37 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
     }
   },
-  "active": "c5b54908b380f0a2",
+  "active": "d494a2c8a77e6cff",
   "lastOpenFiles": [
-    "Resources/week1_git-rebase.md",
+    "Resources/week1_git-tags.md",
+    "Archives/week1_report_vscode-tips.md",
+    "Resources/Images/week1_report_Software-development-process/how-to-login.png",
+    "Resources/Images/week1_report_Software-development-process",
     "Resources/Images/week1_git-rebase/rebase-case14.png",
     "Resources/Images/week1_git-rebase/rebase-case13.png",
     "Resources/Images/week1_git-rebase/rebase-case12.png",
     "Resources/Images/week1_git-rebase/rebase-case11.png",
     "Resources/Images/week1_git-rebase/rebase-case10.png",
-    "Resources/Images/week1_git-rebase/rebase-case09.png",
     "Resources/Images/week1_git-rebase/rebase-case08.png",
+    "Resources/Images/week1_git-rebase/rebase-case09.png",
     "Resources/Images/week1_git-rebase/rebase-case07.png",
     "Resources/Images/week1_git-rebase/rebase-case06.png",
-    "Resources/Images/week1_git-rebase/rebase-case05.png",
+    "Resources/Images/week1_git-rebase",
+    "Resources/Images",
+    "Archives/week1_report_vscode-hotkeys.md",
+    "Archives/week1_report_markdown.md",
+    "Resources/week1_git-rebase.md",
     "Resources/week1_commit-id-uniqueness.md",
     "Resources/week1_250709.md",
-    "Resources/week1_git-tags.md",
     "readme.md",
-    "Resources/Images/week1_report_Software-development-process",
+    "Images/week1_report_Software-development-process",
     "Archives/week1_report_Software-development-process.md",
-    "Resources/Images",
-    "Resources/Images/week1_git-rebase",
+    "Images",
+    "Images/week1_git-rebase",
     "Areas/week1_todo.md",
     "Resources/week1_250710.md",
     "Areas/week1_Issue-tracking-system.md",
@@ -194,13 +203,10 @@
     "Projects/week1_report_list.md",
     "Projects/week1_mokjoon-project.md",
     "Resources/week1_250709-Coffee-chat.md",
-    "Archives/week1_report_markdown.md",
     "Planner/week1_report_list.md",
     "Planner/week1_todo.md",
     "Planner",
     "Resources/Week1_Coffee chat.md",
-    "Archives/week1_report_vscode-tips.md",
-    "Archives/week1_report_vscode-hotkeys.md",
     "Resources/week1_Coffee chat.md",
     "Week1_Coffee Chat.md",
     "Areas/week1_git.md",

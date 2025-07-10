@@ -6,14 +6,14 @@ Rebase가 무엇인지, 어떻게 사용하는지, 좋은 점은 뭐고, 어떤 
 ## rebase 기초
 
 
-![[rebase-case01.png]]
+![Images/week1_git-rebase/rebase-case02.png](Images/week1_git-rebase/rebase-case01.png)
 *두 개의 브랜치로 나누어진 커밋 히스토리*
 
 이 두 브랜치를 합치는 가장 쉬운 방법은 merge를 사용하는 것이다.
 두 브랜치의 마지막 커밋 두 개 ``C3``, ``C4``와 공통조상 ``C2``를 사용하는 3-way Merge로 새로운 커밋을 만들어 낸다.
 ***화살표 방향에 주의하자! C0가 루트 커밋이고, 각 커밋간 엣지는 child to parent를 나타낸다.***
 
-![[rebase-case02.png]]
+![Images/week1_git-rebase/rebase-case02.png](Images/week1_git-rebase/rebase-case02.png)
 
 *나뉜 브랜치를 Merge 하기*
 
@@ -34,7 +34,7 @@ Applying: added staged command
 
 실제로 일어나는 일을 설명하자면 일단 두 브랜치가 나뉘기 전인 공통 커밋으로 이동하고 나서 그 커밋부터 지금 Checkout 한 브랜치가 가리키는 커밋까지 diff를 차례로 만들어 어딘가에 임시로 저장해 놓는다. Rebase 할 브랜치(experiment)가 합칠 브랜치(master)가 가리키는 커밋을 가리키게 하고 아까 저장해 놓았던 변경사항을 차례대로 적용한다.
 
-![[rebase-case03.png]]
+![Images/week1_git-rebase/rebase-case03.png](Images/week1_git-rebase/rebase-case03.png)
 
 *`C4` 의 변경사항을 `C3` 에 적용하는 Rebase 과정*
 그리고 나서 `master` 브랜치를 Fast-forward 시킨다.
@@ -43,7 +43,7 @@ $ git checkout master
 $ git merge experiment
 ```
 
-![[rebase-case04.png]]
+![Images/week1_git-rebase/rebase-case04.png](Images/week1_git-rebase/rebase-case04.png)
 
 *master 브랜치를 Fast-forward시키기*
 
@@ -58,7 +58,8 @@ Rebase를 하든지, Merge를 하든지 최종 결과물은 같고 커밋 히스
 
 ## rebase 활용
 
-![[rebase-case05.png]]
+![Images/week1_git-rebase/rebase-case05.png](Images/week1_git-rebase/rebase-case05.png)
+
 *다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치*
 
 이제 좀 더 복잡한 케이스로 들어가보자.
@@ -71,7 +72,7 @@ $ git rebase --onto master server client
 
 이 명령은 `master` 브랜치부터 `server` 브랜치와 `client` 브랜치의 공통 조상까지의 커밋을 `client` 브랜치에서 없애고 싶을 때 사용한다. `client` 브랜치에서만 변경된 패치를 만들어 `master` 브랜치에서 `client` 브랜치를 기반으로 새로 만들어 적용한다.
 
-![[rebase-case06.png]]
+![Images/week1_git-rebase/rebase-case06.png](Images/week1_git-rebase/rebase-case06.png)
 
 *다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치를 Rebase 하기*
 
@@ -83,8 +84,7 @@ $ git checkout master
 $ git merge client
 ```
 
-
-![[rebase-case07.png]]
+![Images/week1_git-rebase/rebase-case07.png](Images/week1_git-rebase/rebase-case07.png)
 
 
 *master 브랜치를 client 브랜치 위치로 진행 시키기*
@@ -98,7 +98,7 @@ $ git rebase master server
 
 server 브랜치의 수정사항을 master 브랜치에 적용했다. 그 결과는 아래와 같다.
 
-![[rebase-case08.png]]
+![Images/week1_git-rebase/rebase-case08.png](Images/week1_git-rebase/rebase-case08.png)
 
  *master 브랜치에 server 브랜치의 수정 사항을 적용*
 
@@ -116,7 +116,8 @@ $ git branch -d client
 $ git branch -d server
 ```
 
-![[rebase-case09.png]]
+![Images/week1_git-rebase/rebase-case09.png](Images/week1_git-rebase/rebase-case09.png)
+
 *최종 커밋 히스토리*
 
 ## Rebase 의 위험성
@@ -131,22 +132,26 @@ Rebase는 기존의 커밋을 그대로 사용하는 것이 아니라 **내용�
 
 이미 공개 저장소에 Push 한 커밋을 Rebase 하면 어떤 결과가 초래되는지 예제를 통해 알아보자. 중앙 저장소에서 Clone 하고 일부 수정을 하면 커밋 히스토리는 아래와 같다.
 
-![[rebase-case10.png]]
+![Images/week1_git-rebase/rebase-case10.png](Images/week1_git-rebase/rebase-case10.png)
+
 *저장소를 Clone 하고 일부 수정함*
 
 이제 팀원 중 누군가 커밋, Merge 하고 나서 서버에 Push 한다. 이 리모트 브랜치를 Fetch, Merge 하면 히스토리는 아래와 같이 된다.
 
-![[rebase-case11.png]]###### *Fetch 한 후 Merge 함*
+![Images/week1_git-rebase/rebase-case11.png](Images/week1_git-rebase/rebase-case11.png)
+
+###### *Fetch 한 후 Merge 함*
 
 그런데 Push 했던 팀원은 Merge 한 일을 되돌리고 다시 Rebase 한다. 서버의 히스토리를 새로 덮어씌우려면 `git push --force` 명령을 사용해야 한다. 이후에 저장소에서 Fetch 하고 나면 아래 그림과 같은 상태가 된다.
 
+![Images/week1_git-rebase/rebase-case12.png](Images/week1_git-rebase/rebase-case12.png)
 
-![[rebase-case12.png]]
 ###### *한 팀원이 다른 팀원이 의존하는 커밋을 없애고 Rebase 한 커밋을 다시 Push 함*
 
 자 이렇게 되면 짬뽕이 된다. `git pull` 로 서버의 내용을 가져와서 Merge 하면 같은 내용의 수정사항을 포함한 Merge 커밋이 아래와 같이 만들어진다.
 
-![[rebase-case13.png]]
+![Images/week1_git-rebase/rebase-case13.png](Images/week1_git-rebase/rebase-case13.png)
+
 ###### *같은 Merge를 다시 한다*
 
 `git log` 로 히스토리를 확인해보면 저자, 커밋 날짜, 메시지가 같은 커밋이 두 개 있다(``C4``, ``C4'``). 이렇게 되면 혼란스럽다. 게다가 이 히스토리를 서버에 Push 하면 같은 커밋이 두 개 있기 때문에 다른 사람들도 혼란스러워한다. `C4` 와 `C6` 는 포함되지 말았어야 할 커밋이다. 애초에 서버로 데이터를 보내기 전에 Rebase로 커밋을 정리했어야 했다.
@@ -173,7 +178,8 @@ Rebase는 기존의 커밋을 그대로 사용하는 것이 아니라 **내용�
 결과를 확인해보면 [같은 Merge를 다시 한다](#같은-merge를-다시-한다) 같은 결과 대신 제대로 정리된 [강제로 덮어쓴 브랜치에 Rebase 하기](#강제로-덮어쓴-브랜치에-rebase-하기) 같은 결과를 얻을 수 있다.
 
 
-![[rebase-case14.png]]
+![Images/week1_git-rebase/rebase-case14.png](Images/week1_git-rebase/rebase-case14.png)
+
 ###### *강제로 덮어쓴 브랜치에 Rebase 하기*
 
 동료가 생성했던 C4와 C4' 커밋 내용이 완전히 같을 때만 이렇게 동작된다. 커밋 내용이 아예 다르거나 비슷하다면 커밋이 두 개 생긴다(같은 내용이 두 번 커밋될 수 있기 때문에 깔끔하지 않다).
