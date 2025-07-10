@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "57737ec4ba320b9c",
+        "id": "330afb83778f2382",
         "type": "tabs",
         "children": [
           {
-            "id": "d494a2c8a77e6cff",
+            "id": "6e381093ba6591ac",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Resources/week1_WAS(writing).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "week1_WAS(writing)"
+              "title": "New tab"
             }
           }
         ]
@@ -169,16 +165,24 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "c5b54908b380f0a2",
+  "active": "6e381093ba6591ac",
   "lastOpenFiles": [
+    "Projects/mokjoon-project/week1_memo.md",
+    "week1_requirements&constraints.md",
+    "Archives/week1_report_Software-development-process.md",
+    "Projects/mokjoon-project/week1_process-tracker.md",
+    "Projects/mokjoon-project/week1_user-story.md",
+    "readme.md",
+    "Resources/week1_how-to-eXtremeProgramming.md",
+    "Resources/Images/week1_how-to-eXtremeProgramming",
+    "Resources/Images/week1_how-to-eXtremeProgramming/xp-process.png",
+    "Projects/mokjoon-project",
+    "Resources/week1_WAS(writing).md",
     "Resources/week1_git-tags.md",
     "Areas/week1_todo.md",
     "Resources/lecture-note/week1_250710.md",
-    "Resources/week1_WAS(writing).md",
     "Projects/week1_report_list.md",
     "Resources/lecture-note",
-    "Projects/week1_mokjoon-project.md",
-    "Archives/week1_report_Software-development-process.md",
     "Areas/week1_Issue-tracking-system.md",
     "Areas/week1_github-skills.md",
     "Resources/week1_git-rebase.md",
@@ -193,14 +197,12 @@
     "Resources/Images/week1_git-rebase/rebase-case08.png",
     "Resources/Images/week1_git-rebase/rebase-case09.png",
     "Resources/Images/week1_git-rebase/rebase-case07.png",
-    "Resources/Images/week1_git-rebase/rebase-case06.png",
     "Resources/Images/week1_git-rebase",
     "Resources/Images",
     "Archives/week1_report_vscode-hotkeys.md",
     "Archives/week1_report_markdown.md",
     "Resources/week1_commit-id-uniqueness.md",
     "Resources/lecture-note/week1_250709.md",
-    "readme.md",
     "Images/week1_report_Software-development-process",
     "Images",
     "Images/week1_git-rebase",
@@ -210,10 +212,6 @@
     "Planner",
     "Resources/Week1_Coffee chat.md",
     "Resources/week1_Coffee chat.md",
-    "Week1_Coffee Chat.md",
-    "Areas/week1_git.md",
-    "Resources/week1_report_Software-development-process.md",
-    "Resources/week1_report_vscode-hotkeys.md",
-    "Archives/week1_250709.md"
+    "Week1_Coffee Chat.md"
   ]
 }
