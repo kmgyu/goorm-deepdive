@@ -11,10 +11,14 @@
             "id": "6e381093ba6591ac",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Areas/week1_github-skills.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "week1_github-skills"
             }
           }
         ]
@@ -167,6 +171,8 @@
   },
   "active": "6e381093ba6591ac",
   "lastOpenFiles": [
+    "Areas/week1_todo.md",
+    "Areas/week1_github-skills.md",
     "Projects/mokjoon-project/week1_memo.md",
     "week1_requirements&constraints.md",
     "Archives/week1_report_Software-development-process.md",
@@ -179,12 +185,10 @@
     "Projects/mokjoon-project",
     "Resources/week1_WAS(writing).md",
     "Resources/week1_git-tags.md",
-    "Areas/week1_todo.md",
     "Resources/lecture-note/week1_250710.md",
     "Projects/week1_report_list.md",
     "Resources/lecture-note",
     "Areas/week1_Issue-tracking-system.md",
-    "Areas/week1_github-skills.md",
     "Resources/week1_git-rebase.md",
     "Archives/week1_report_vscode-tips.md",
     "Resources/Images/week1_report_Software-development-process/how-to-login.png",
