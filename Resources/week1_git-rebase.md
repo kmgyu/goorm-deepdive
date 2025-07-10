@@ -7,7 +7,8 @@ Rebase가 무엇인지, 어떻게 사용하는지, 좋은 점은 뭐고, 어떤 
 
 
 ![Images/week1_git-rebase/rebase-case02.png](Images/week1_git-rebase/rebase-case01.png)
-*두 개의 브랜치로 나누어진 커밋 히스토리*
+
+###### *두 개의 브랜치로 나누어진 커밋 히스토리*
 
 이 두 브랜치를 합치는 가장 쉬운 방법은 merge를 사용하는 것이다.
 두 브랜치의 마지막 커밋 두 개 ``C3``, ``C4``와 공통조상 ``C2``를 사용하는 3-way Merge로 새로운 커밋을 만들어 낸다.
@@ -15,7 +16,7 @@ Rebase가 무엇인지, 어떻게 사용하는지, 좋은 점은 뭐고, 어떤 
 
 ![Images/week1_git-rebase/rebase-case02.png](Images/week1_git-rebase/rebase-case02.png)
 
-*나뉜 브랜치를 Merge 하기*
+###### *나뉜 브랜치를 Merge 하기*
 
 > 3-way Merge에 관한 글은 [이 글](https://git-scm.com/book/ko/v2/Git-%eb%b8%8c%eb%9e%9c%ec%b9%98-%eb%b8%8c%eb%9e%9c%ec%b9%98%ec%99%80-Merge-%ec%9d%98-%ea%b8%b0%ec%b4%88)을 참고하자.
 
@@ -36,7 +37,7 @@ Applying: added staged command
 
 ![Images/week1_git-rebase/rebase-case03.png](Images/week1_git-rebase/rebase-case03.png)
 
-*`C4` 의 변경사항을 `C3` 에 적용하는 Rebase 과정*
+######  *`C4` 의 변경사항을 `C3` 에 적용하는 Rebase 과정*
 그리고 나서 `master` 브랜치를 Fast-forward 시킨다.
 ```console
 $ git checkout master
@@ -45,7 +46,7 @@ $ git merge experiment
 
 ![Images/week1_git-rebase/rebase-case04.png](Images/week1_git-rebase/rebase-case04.png)
 
-*master 브랜치를 Fast-forward시키기*
+######  *master 브랜치를 Fast-forward시키기*
 
 `C4'` 로 표시된 커밋에서의 내용은 Merge 예제에서 살펴본 `C5` 커밋에서의 내용과 같을 것이다. Merge 이든 Rebase 든 둘 다 합치는 관점에서는 서로 다를 게 없다. 하지만, Rebase가 **좀 더 깨끗한 히스토리**를 만든다. Rebase 한 브랜치의 Log를 살펴보면 히스토리가 선형이다. 일을 병렬로 동시에 진행해도 Rebase 하고 나면 모든 작업이 차례대로 수행된 것처럼 보인다.
 
@@ -60,7 +61,7 @@ Rebase를 하든지, Merge를 하든지 최종 결과물은 같고 커밋 히스
 
 ![Images/week1_git-rebase/rebase-case05.png](Images/week1_git-rebase/rebase-case05.png)
 
-*다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치*
+######  *다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치*
 
 이제 좀 더 복잡한 케이스로 들어가보자.
 현재 상황은 테스트가 덜 된  server 브랜치는 그대로 두고 client 브랜치만 master 로 합치려고 한다.
@@ -74,7 +75,7 @@ $ git rebase --onto master server client
 
 ![Images/week1_git-rebase/rebase-case06.png](Images/week1_git-rebase/rebase-case06.png)
 
-*다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치를 Rebase 하기*
+######  *다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치를 Rebase 하기*
 
 이제 master 브랜치로 돌아가서 Fast-forward 시킬 수 있다.
 그 결과는 아래 그림과 같다.
@@ -87,7 +88,7 @@ $ git merge client
 ![Images/week1_git-rebase/rebase-case07.png](Images/week1_git-rebase/rebase-case07.png)
 
 
-*master 브랜치를 client 브랜치 위치로 진행 시키기*
+######  *master 브랜치를 client 브랜치 위치로 진행 시키기*
 
 
 `server` 브랜치의 일이 다 끝나면 `git rebase <basebranch> <topicbranch>` 라는 명령으로 Checkout 하지 않고 바로 `server` 브랜치를 `master` 브랜치로 Rebase 할 수 있다. 이 명령은 토픽(server) 브랜치를 Checkout 하고 베이스(master) 브랜치에 Rebase 한다.
@@ -100,7 +101,7 @@ server 브랜치의 수정사항을 master 브랜치에 적용했다. 그 결과
 
 ![Images/week1_git-rebase/rebase-case08.png](Images/week1_git-rebase/rebase-case08.png)
 
- *master 브랜치에 server 브랜치의 수정 사항을 적용*
+######  *master 브랜치에 server 브랜치의 수정 사항을 적용*
 
 그리고 나서 `master` 브랜치를 Fast-forward 시킨다.
 
@@ -118,7 +119,7 @@ $ git branch -d server
 
 ![Images/week1_git-rebase/rebase-case09.png](Images/week1_git-rebase/rebase-case09.png)
 
-*최종 커밋 히스토리*
+######  *최종 커밋 히스토리*
 
 ## Rebase 의 위험성
 
@@ -134,7 +135,7 @@ Rebase는 기존의 커밋을 그대로 사용하는 것이 아니라 **내용�
 
 ![Images/week1_git-rebase/rebase-case10.png](Images/week1_git-rebase/rebase-case10.png)
 
-*저장소를 Clone 하고 일부 수정함*
+######  *저장소를 Clone 하고 일부 수정함*
 
 이제 팀원 중 누군가 커밋, Merge 하고 나서 서버에 Push 한다. 이 리모트 브랜치를 Fetch, Merge 하면 히스토리는 아래와 같이 된다.
 
