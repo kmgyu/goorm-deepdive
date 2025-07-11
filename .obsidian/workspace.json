@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "330afb83778f2382",
+        "id": "cef0737cdf69153d",
         "type": "tabs",
         "children": [
           {
-            "id": "6e381093ba6591ac",
+            "id": "1ccc7488556b1f74",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/week1_github-skills.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "week1_github-skills"
+              "title": "New tab"
             }
           }
         ]
@@ -169,26 +165,32 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "6e381093ba6591ac",
+  "active": "1ccc7488556b1f74",
   "lastOpenFiles": [
-    "Areas/week1_todo.md",
-    "Areas/week1_github-skills.md",
-    "Projects/mokjoon-project/week1_memo.md",
-    "week1_requirements&constraints.md",
-    "Archives/week1_report_Software-development-process.md",
-    "Projects/mokjoon-project/week1_process-tracker.md",
+    "week1_tool-selection.md",
     "Projects/mokjoon-project/week1_user-story.md",
+    "Projects/week1_report_list.md",
+    "Areas/week1_todo.md",
+    "Areas/week1_how-to-agile.md",
+    "Projects/mokjoon-project/week1_requirements&constraints.md",
+    "Projects/mokjoon-project/week1_process-tracker.md",
+    "Projects/mokjoon-project/week1_memo.md",
+    "Resources/week1_seo-optimization.md",
+    "Areas/week1_github-skills.md",
+    "Areas/week1_Issue-tracking-system.md",
+    "Areas/week1_how-to-eXtremeProgramming.md",
+    "Resources/lecture-note/week1_250711.md",
+    "Resources/lecture-note/week1_250709.md",
     "readme.md",
-    "Resources/week1_how-to-eXtremeProgramming.md",
+    "Resources/lecture-note/week1_250709-Coffee-chat.md",
+    "Archives/week1_report_Software-development-process.md",
     "Resources/Images/week1_how-to-eXtremeProgramming",
     "Resources/Images/week1_how-to-eXtremeProgramming/xp-process.png",
     "Projects/mokjoon-project",
     "Resources/week1_WAS(writing).md",
     "Resources/week1_git-tags.md",
     "Resources/lecture-note/week1_250710.md",
-    "Projects/week1_report_list.md",
     "Resources/lecture-note",
-    "Areas/week1_Issue-tracking-system.md",
     "Resources/week1_git-rebase.md",
     "Archives/week1_report_vscode-tips.md",
     "Resources/Images/week1_report_Software-development-process/how-to-login.png",
@@ -206,16 +208,10 @@
     "Archives/week1_report_vscode-hotkeys.md",
     "Archives/week1_report_markdown.md",
     "Resources/week1_commit-id-uniqueness.md",
-    "Resources/lecture-note/week1_250709.md",
     "Images/week1_report_Software-development-process",
     "Images",
     "Images/week1_git-rebase",
-    "Resources/lecture-note/week1_250709-Coffee-chat.md",
     "Planner/week1_report_list.md",
-    "Planner/week1_todo.md",
-    "Planner",
-    "Resources/Week1_Coffee chat.md",
-    "Resources/week1_Coffee chat.md",
-    "Week1_Coffee Chat.md"
+    "Planner"
   ]
 }
