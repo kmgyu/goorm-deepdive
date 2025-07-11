@@ -87,8 +87,114 @@ vscode를 이용해 merge conflict를 확인할 수 있다. 여기도 좋은 도
 
 PR 타이틀이나 description에 대한 내용도 참고할 것이 있다!
 
+## 0711 TIL
+여기부터는 리포지토리를 좀 남겨둘 필요를 느꼈다.
+깃헙 액션 신기행
 ### connect the dots
+_Useful tips when navigating through your repository._
 
-### code with codespaces
+제목부터 점들을 연결하기이다. 진행하면서 의미를 좀 더 알 수 있게 되었는데, 커밋이나 이슈, PR 등의 연결성을 더 강하게 만드는 방법에 대해 소개하는 튜토리얼이라고 보면 될 것이다.
+오픈소스 기여나 프로젝트에서 활용할 수 있을 것이다.
+
+step1
+깃헙 이슈 해결에 대해 배운다.
+해시태그``#[number]`` 를 통해 중복 이슈에 대해 언급할 수 있다.
+깃헙 이슈 볼때마다 관련 이슈 나오는 게 있었는데 이런식으로 넣는 거였다!
+지식이 늘었다.
+
+이슈 형식은 이렇게 썼다. 이슈 기초 가이드로도 쓸 수 있겠다.
+ 
+GIVEN:
+- User opens _sidebar.md file
+
+WHEN:
+- User navigates by clicking on [Documentation references] link
+
+THEN (EXPECTED):
+- [Documentation references] page must be open successfully
+
+OBSERVED:
+- File not found error OR GitHub reports HTTP 404 error (file not found)
+
+
+step2
+git blame을 사용해 깃 히스토리에서 커밋을 찾기?
+이 커밋과 관련된 PR은 무엇인지, 누가 승인했는지, 병합 전 어떻게 테스트했는지 등을 찾기 위해 만들어진 도구로 보인다.
+이름이 참 재밌다. git blame...
+
+git blame에 대해서는 튜토리얼에서 설명하고 있다. 찾아보자.
+Git lens에서 보여주는 것처럼 어떤 코드가 어느 커밋에서 등장했는지 같은.. 정보를 보여주는 것으로 보인다. Git lens가 git blame 기반일 수도 있다.
+
+sha에 대해서도 설명한다. 커밋 id에 사용되기 때문에 부가적으로 설명한다.
+
+커밋 id 앞자리 7글자를 작성하면, 놀랍게도 해당 커밋으로 이동이 된다! 신기해서 전부 입력했더니 결과는 동일하다.
+
+step3
+이제 이슈와 관련된 커밋을 발견했다. 연결이 되었다!
+커밋이 병합된 PR을 찾고, 수정한다.
+수정 후, 댓글에 이슈에 대해 언급 가능하다.
+이렇게 하면 이슈에 대해 수정한 PR을 만들 수 있다.
+
+## code with codespaces
+_Develop code using GitHub Codespaces and Visual Studio Code!_
+
+깃헙 코드스페이스를 통해 개발하는 방법에 대한 실습이다.
+깃헙에서 호스팅하는 클라우드 개발 환경으로 보인다.
+
+https://vscode.dev/?vscode-lang=ko
+이걸 이용해 vsc를 원격으로 접속할 수 있다.
+개쩔어 뭐야 이거
+
+코드스페이스 들여다보기는 가능하고, 클라우드 서비스를 제대로 이용하려면 MS 계정 또는 깃헙 인증을 하고 리소스를 할당받아야 한다. 상당히... 귀찮다...
+근데도 쩐당
+
+dev container라고 해서 가상 환경에서 관리하는 형식이라고 설명함.
+도커를 이용하며, json 파일로 가상환경 세팅도 할 수 있다.
+
+dotfile이라는 것도 있다...
+When using any development environment, customizing the settings and tools to your preferences and workflows is an important step. GitHub Codespaces offers two main ways of personalizing your codespace: `Settings Sync` with VS Code and `dotfiles`.
+
+`Dotfiles` will be the focus of this activity.
+
+**What are `dotfiles`?** Dotfiles are files and folders on Unix-like systems starting with . that control the configuration of applications and shells on your system. You can store and manage your dotfiles in a repository on GitHub.
+
+시스템의 애플리케이션과 셸 구성을 제어하며, 깃헙 리포지토리에서 저장 관리가 가능한 파일이라고 한다.
+
+sl 실행 안되서 수동으로 설치하고 다시 재생시켰다.
+이거 어거지로 하는 건데 맞나...?
+이러면 잘못된 건데 엄
+아무튼 작동은 한다.
+sl 누르면 기차가 칙칙폭폭 나오는게 정상이다.
 
 ### introduction to repository management
+_Learn the basics of several GitHub features that can help support a collaborative, friendly, and healthy project._
+
+리포지토리 관리에 대한 실습이다.
+협업자들이 많아져도 리포지토리 내용을 안전하게 유지하는 내용을 학습할 것으로 보인다.
+
+룰셋 생성하기, 커뮤니케이팅 절차로 협업자들 가이드하기 등...
+
+1. Add a simple rulesets and configuration to restrict repository content.
+2. Communicate procedures to help guide collaborators.
+3. Assign responsibility of parts of the code to particular collaborators.
+4. Learn the difference between collaboration in a personal repository and organization repository.
+5. Establish ground rules to promote a health collaboration environment.
+6. Establish a process for managing security updates.
+
+위 과정을 거친다!
+
+디테일한 설명은 넣지 않았다고 하니 이는 다른 오픈소스들을 예제로 참고하면 될 것 같음.
+
+웬 오징어 선생님이 나와서 이슈 탭에서 설명해주는데 짱신기했다.
+
+컨트리뷰선 가이드 페이지와 코드 오너 페이지를 만든다.
+행동 강령(code of conducts)에 대한 문서도 작성하게 된다.
+
+버그나 기능 요청 같은 것에 대한 템플릿도 작성한다.
+md 형식인데, 추가하는 형식이 독특했다.
+settings의 general 탭, features 섹션의 issuses 로 들어가서 직접 수정해야 한다! 너무 외진 곳에 있는 것 같다.
+
+코드 보안에 대한 처리도 해본다.
+dependabot, 코드 스캔, security policy 등의 세팅들...
+
+PR이나 이슈 같은 쪽은 조금 허술한 면이 있었는데 이번에 한번 보면서 개선할 수 있게 되었다.
