@@ -11,13 +11,32 @@
             "id": "1ccc7488556b1f74",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Resources/week1_WAS.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "week1_WAS"
+            }
+          },
+          {
+            "id": "d95a29dae8b28a24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/Spring-framework/week1_what-is-spring.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "week1_what-is-spring"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,29 +184,33 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "1ccc7488556b1f74",
+  "active": "c5b54908b380f0a2",
   "lastOpenFiles": [
-    "week1_tool-selection.md",
-    "Projects/mokjoon-project/week1_user-story.md",
-    "Projects/week1_report_list.md",
-    "Areas/week1_todo.md",
-    "Areas/week1_how-to-agile.md",
-    "Projects/mokjoon-project/week1_requirements&constraints.md",
-    "Projects/mokjoon-project/week1_process-tracker.md",
-    "Projects/mokjoon-project/week1_memo.md",
-    "Resources/week1_seo-optimization.md",
-    "Areas/week1_github-skills.md",
-    "Areas/week1_Issue-tracking-system.md",
-    "Areas/week1_how-to-eXtremeProgramming.md",
+    "Resources/week1_WAS.md",
+    "Areas/Spring-framework/week1_what-is-spring.md",
     "Resources/lecture-note/week1_250711.md",
+    "Areas/week1_todo.md",
+    "Projects/mokjoon-project/week1_tool-selection.md",
+    "Areas/week1_how-to-eXtremeProgramming.md",
+    "Areas/week1_how-to-agile.md",
+    "Areas/Spring-framework/week1_history.md",
+    "Areas/week1_github-skills.md",
+    "Projects/mokjoon-project/week1_memo.md",
+    "Projects/mokjoon-project/week1_requirements&constraints.md",
+    "Archives/week1_report_Software-development-process.md",
+    "Archives/week1_report_markdown.md",
+    "Projects/week1_report_list.md",
+    "Projects/mokjoon-project/week1_process-tracker.md",
+    "Areas/week1_Issue-tracking-system.md",
+    "Areas/Spring-framework",
+    "Projects/mokjoon-project/week1_user-story.md",
+    "Resources/week1_seo-optimization.md",
     "Resources/lecture-note/week1_250709.md",
     "readme.md",
     "Resources/lecture-note/week1_250709-Coffee-chat.md",
-    "Archives/week1_report_Software-development-process.md",
     "Resources/Images/week1_how-to-eXtremeProgramming",
     "Resources/Images/week1_how-to-eXtremeProgramming/xp-process.png",
     "Projects/mokjoon-project",
-    "Resources/week1_WAS(writing).md",
     "Resources/week1_git-tags.md",
     "Resources/lecture-note/week1_250710.md",
     "Resources/lecture-note",
@@ -206,12 +229,8 @@
     "Resources/Images/week1_git-rebase",
     "Resources/Images",
     "Archives/week1_report_vscode-hotkeys.md",
-    "Archives/week1_report_markdown.md",
-    "Resources/week1_commit-id-uniqueness.md",
     "Images/week1_report_Software-development-process",
     "Images",
-    "Images/week1_git-rebase",
-    "Planner/week1_report_list.md",
-    "Planner"
+    "Images/week1_git-rebase"
   ]
 }
