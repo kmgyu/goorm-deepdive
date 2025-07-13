@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "cef0737cdf69153d",
+        "id": "1c7602c497882b17",
         "type": "tabs",
         "children": [
           {
-            "id": "1ccc7488556b1f74",
+            "id": "9f49f69fcc2c9e60",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/week1_WAS.md",
+                "file": "Areas/week1_todo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week1_WAS"
-            }
-          },
-          {
-            "id": "d95a29dae8b28a24",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Spring-framework/week1_what-is-spring.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "week1_what-is-spring"
+              "title": "week1_todo"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,12 +169,15 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "c5b54908b380f0a2",
+  "active": "9f49f69fcc2c9e60",
   "lastOpenFiles": [
-    "Resources/week1_WAS.md",
-    "Areas/Spring-framework/week1_what-is-spring.md",
-    "Resources/lecture-note/week1_250711.md",
+    "Resources/week2_getter-setter(writing).md",
+    "Areas/Spring-framework/week2_SOLID(writing).md",
+    "Areas/Spring-framework/week2_good-oop.md",
     "Areas/week1_todo.md",
+    "Areas/Spring-framework/week1_what-is-spring.md",
+    "Resources/week1_WAS.md",
+    "Resources/lecture-note/week1_250711.md",
     "Projects/mokjoon-project/week1_tool-selection.md",
     "Areas/week1_how-to-eXtremeProgramming.md",
     "Areas/week1_how-to-agile.md",
@@ -214,8 +202,6 @@
     "Resources/week1_git-tags.md",
     "Resources/lecture-note/week1_250710.md",
     "Resources/lecture-note",
-    "Resources/week1_git-rebase.md",
-    "Archives/week1_report_vscode-tips.md",
     "Resources/Images/week1_report_Software-development-process/how-to-login.png",
     "Resources/Images/week1_report_Software-development-process",
     "Resources/Images/week1_git-rebase/rebase-case14.png",
@@ -228,7 +214,6 @@
     "Resources/Images/week1_git-rebase/rebase-case07.png",
     "Resources/Images/week1_git-rebase",
     "Resources/Images",
-    "Archives/week1_report_vscode-hotkeys.md",
     "Images/week1_report_Software-development-process",
     "Images",
     "Images/week1_git-rebase"
