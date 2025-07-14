@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "week2_what-is-framework(writing).md",
+                "file": "Areas/week2_what-is-framework(writing).md",
                 "mode": "source",
                 "source": false
               },
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/week2_rubber-duck-debugging.md",
+                "file": "Areas/Spring-framework/week2_spring-todo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week2_rubber-duck-debugging"
+              "title": "week2_spring-todo"
             }
           }
         ],
@@ -198,27 +198,28 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "c5b54908b380f0a2",
+  "active": "61fc3ae9d8868e05",
   "lastOpenFiles": [
-    "week2_what-is-framework(writing).md",
+    "Areas/week2_what-is-framework(writing).md",
+    "Areas/software-develop-process/week1_how-to-agile(writing).md",
+    "Areas/Spring-framework/week2_spring-todo.md",
+    "Areas/Spring-framework/week1_what-is-spring.md",
+    "Areas/github-skills.md",
     "Resources/week2_rubber-duck-debugging.md",
     "Areas/week1_todo.md",
     "Areas/Spring-framework/week2_SOLID.md",
     "Areas/software-develop-process",
-    "Areas/software-develop-process/week1_how-to-agile(writing).md",
     "Areas/week1_Issue-tracking-system.md",
     "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
     "Areas/week2_pair-programming.md",
     "Resources/lecture-note/week2_250714.md",
     "Areas/Spring-framework/week2_oop&spring.md",
     "Resources/lecture-note/week2_250714-coffee-chat.md",
-    "Areas/week1_github-skills.md",
     "Resources/jwt_warning.png",
     "Resources/week1_commit-id-uniqueness.md",
     "Resources/week1_git-rebase.md",
     "Resources/lecture-note/week1_250710.md",
     "Resources/week2_getter-setter(writing).md",
-    "Areas/Spring-framework/week1_what-is-spring.md",
     "Areas/Spring-framework/week2_good-oop.md",
     "Resources/lecture-note/week1_250711.md",
     "Resources/lecture-note/week1_250709.md",
@@ -227,7 +228,6 @@
     "Projects/mokjoon-project/week1_tool-selection.md",
     "Areas/Spring-framework/week1_history.md",
     "Projects/mokjoon-project/week1_memo.md",
-    "Projects/mokjoon-project/week1_requirements&constraints.md",
     "Areas/Spring-framework",
     "Resources/Images/week1_how-to-eXtremeProgramming",
     "Resources/Images/week1_how-to-eXtremeProgramming/xp-process.png",
