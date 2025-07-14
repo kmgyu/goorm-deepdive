@@ -37,9 +37,9 @@
   (250709. 250709. .)~~
 - GitHub Skills 공부 및 정리
   ~~0709 - first day on github~~
-  0710-0711 - first week on github
-  0712-0714 - automate workflows with github actions
-  0715-0717 - code security and analysis
+  ~~0710-0711 - first week on github~~
+  0714-0717 - automate workflows with github actions (아맞다..)
+  0717-0719 - code security and analysis
   (250709. 250709. .)
 - 진행했던 프로젝트 회고 및 진행 기록 정리
   (250709. . .)
