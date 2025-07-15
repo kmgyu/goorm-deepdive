@@ -4,53 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "832292b1cc7ca70d",
+        "id": "41a23832d726f7e7",
         "type": "tabs",
         "children": [
           {
-            "id": "a67c81fdcc3664c7",
+            "id": "b0429165156f8606",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/week1_todo.md",
+                "file": "Projects/week1_report_list.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week1_todo"
+              "title": "week1_report_list"
             }
           },
           {
-            "id": "92ee567bd660c235",
+            "id": "743b803a235a7d0a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/week2_what-is-framework(writing).md",
+                "file": "week2_report_list.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week2_what-is-framework(writing)"
-            }
-          },
-          {
-            "id": "61fc3ae9d8868e05",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Spring-framework/week2_spring-todo.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "week2_spring-todo"
+              "title": "week2_report_list"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -198,23 +184,26 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "61fc3ae9d8868e05",
+  "active": "743b803a235a7d0a",
   "lastOpenFiles": [
+    "Projects/week1_report_list.md",
+    "week2_report_list.md",
+    "Resources/lecture-note/week2_250715.md",
+    "Resources/lecture-note/week2_250714-coffee-chat.md",
+    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
     "Areas/week2_what-is-framework(writing).md",
+    "Areas/week1_todo.md",
     "Areas/software-develop-process/week1_how-to-agile(writing).md",
     "Areas/Spring-framework/week2_spring-todo.md",
     "Areas/Spring-framework/week1_what-is-spring.md",
     "Areas/github-skills.md",
     "Resources/week2_rubber-duck-debugging.md",
-    "Areas/week1_todo.md",
     "Areas/Spring-framework/week2_SOLID.md",
     "Areas/software-develop-process",
     "Areas/week1_Issue-tracking-system.md",
-    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
     "Areas/week2_pair-programming.md",
     "Resources/lecture-note/week2_250714.md",
     "Areas/Spring-framework/week2_oop&spring.md",
-    "Resources/lecture-note/week2_250714-coffee-chat.md",
     "Resources/jwt_warning.png",
     "Resources/week1_commit-id-uniqueness.md",
     "Resources/week1_git-rebase.md",
@@ -225,9 +214,6 @@
     "Resources/lecture-note/week1_250709.md",
     "Resources/lecture-note/week1_250709-Coffee-chat.md",
     "Resources/week1_WAS.md",
-    "Projects/mokjoon-project/week1_tool-selection.md",
-    "Areas/Spring-framework/week1_history.md",
-    "Projects/mokjoon-project/week1_memo.md",
     "Areas/Spring-framework",
     "Resources/Images/week1_how-to-eXtremeProgramming",
     "Resources/Images/week1_how-to-eXtremeProgramming/xp-process.png",
