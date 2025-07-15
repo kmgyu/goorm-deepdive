@@ -43,3 +43,11 @@ report_list
 프로젝트
 프로젝트 명의 폴더에만 생성
 프로젝트 종료시 Archives로 이전
+
+### 커밋 규칙
+add : 문서 추가
+update : 문서 수정의 작은 변화
+change : 폴더 트리 구조 변경 등의 변화
+
+커밋 단위 기준으로 주제를 설정해 커밋
+ex) add TIL, update sw develop process docs...
