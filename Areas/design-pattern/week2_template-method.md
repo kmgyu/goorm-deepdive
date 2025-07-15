@@ -35,7 +35,7 @@
 
 전체적으로 만드는 방법이 비슷하기 때문에, 공통된 부분은 추상화한다.
 
-![caffeine beverage](template-method-caffeinebeverage.png)
+![caffeine beverage](../../Resources/Images/design-pattern/template-method-caffeinebeverage.png)
 아까 언급되었듯이, 커피와 홍차 제조법의 알고리즘은 똑같다.  
 그렇기 때문에 _prepareRecipe()_ 메소드를 추상화할 수 있을 것이다.
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/week2_pair-programming.md",
+                "file": "Areas/design-pattern/week2_template-method.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week2_pair-programming"
+              "title": "week2_template-method"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "c8a03d5a0fb0a617",
@@ -171,30 +172,30 @@
   },
   "active": "b0429165156f8606",
   "lastOpenFiles": [
+    "Areas/software-develop-process/week2_how-to-waterfall.md",
+    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
+    "Areas/software-develop-process/week1_how-to-agile.md",
+    "Areas/week2_spring-with-triangle(writing).md",
+    "Areas/week2_pair-programming.md",
     "Resources/Images/design-pattern/template-method-caffeinebeverage.png",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf",
     "Areas/design-pattern/week2_template-method.md",
     "Areas/week2_what-is-framework.md",
     "Resources/week1_git-rebase.md",
-    "Areas/week2_pair-programming.md",
     "Projects/week2_report_list.md",
     "Resources/Images/design-pattern",
     "Pasted image 20250715210014.png",
-    "Areas/software-develop-process/week1_how-to-agile.md",
-    "Areas/week2_spring-with-triangle(writing).md",
     "Areas/design-pattern",
     "Areas/Spring-framework/week2_spring-todo.md",
     "Areas/Spring-framework/week1_what-is-spring.md",
     "Areas/Spring-framework/week2_oop&spring.md",
-    "Areas/software-develop-process/week2_how-to-waterfall.md",
     "readme.md",
     "Resources/week1_WAS.md",
     "Areas/week1_todo.md",
     "Projects/week1_report_list.md",
     "Resources/lecture-note/week2_250715.md",
     "Resources/lecture-note/week2_250714-coffee-chat.md",
-    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
     "Areas/github-skills.md",
     "Resources/week2_rubber-duck-debugging.md",
     "Areas/Spring-framework/week2_SOLID.md",
