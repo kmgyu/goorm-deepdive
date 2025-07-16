@@ -1,3 +1,6 @@
+
+> 가상 프록시, 보호 프록시 쪽은 이해가 더 필요함.
+> 
 # 프록시 패턴
 
 > **프록시 패턴**은 특정 객체로의 접근을 제어하는 대리인(객체의 대변인)을 제공한다.
@@ -355,7 +358,7 @@ class ImageProxy implements Icon {
 
 [![가상 프록시](https://user-images.githubusercontent.com/86337233/212689081-3c2fc3fd-2f44-4182-be79-547568408c1e.png)](https://user-images.githubusercontent.com/86337233/212689081-3c2fc3fd-2f44-4182-be79-547568408c1e.png)  
 
-### 데코레이터 패턴 vs. 가상 프록시
+#### 데코레이터 패턴 vs. 가상 프록시
 
 - `데코레이터 패턴` : 클래스에 새로운 행동을 추가하는 용도로 사용
 - `프록시` : 어떤 클래스로의 접근을 제어하는 용도로 사용
@@ -374,11 +377,11 @@ class ImageProxy implements Icon {
   
   
 
-# 보호 프록시
+## 보호 프록시
 
 > 💡 **접근 권한을 바탕으로** 객체로의 접근을 제어하는 프록시
 
-## 보호 프록시 구현 예시
+### 구현 예제 - 보호 프록시
 
 데이팅 서비스를 구현해본다고 하자.
 
@@ -424,7 +427,6 @@ public interface Person {
   
 
 [![동적 프록시](https://user-images.githubusercontent.com/86337233/212689085-cd285023-fb6d-4650-88f7-c56207a5bd91.png)](https://user-images.githubusercontent.com/86337233/212689085-cd285023-fb6d-4650-88f7-c56207a5bd91.png)  
-  
 
 1. 2개의 `InvocationHandler` 생성
 2. 동적 프록시 생성 코드 만들기
@@ -435,7 +437,7 @@ public interface Person {
     [![Person 객체 - 프록시](https://user-images.githubusercontent.com/86337233/212689087-1575a91e-0325-47e8-83b3-ac9f59633e77.png)](https://user-images.githubusercontent.com/86337233/212689087-1575a91e-0325-47e8-83b3-ac9f59633e77.png)
     
 
-### 1단계 : InvocationHandler 생성
+#### 1단계 : InvocationHandler 생성
 
 프록시의 메서드가 호출되면 프록시는 그 호출을 `InvocationHandler`(호출 핸들러)에게 넘기는데,  
 여기에는 메서드가 `invoke()` 하나밖에 없다.
@@ -450,8 +452,7 @@ return method.invoke(person,args);
 // args : 처음에 받았던 인자들을 전달
 ```
 
-  
-#### 본인용 프록시를 위한 호출 핸들러 : OwnerInvocationHandler
+##### 본인용 프록시를 위한 호출 핸들러 : OwnerInvocationHandler
 
 
 ```java
@@ -490,7 +491,7 @@ public class OwnerInvocationHandler implements InvocationHandler {
 }
 ```
 
-#### 타인용 프록시를 위한 호출 핸들러 : NonOwnerInvocationHandler
+##### 타인용 프록시를 위한 호출 핸들러 : NonOwnerInvocationHandler
 
 ```java
 import java.lang.reflect.InvocationHandler;
@@ -528,9 +529,7 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
 }
 ```
 
-  
-
-### 2단계 : 동적 프록시 생성 코드 만들기
+#### 2단계 : 동적 프록시 생성 코드 만들기
 
 ```java
 /**
@@ -555,12 +554,10 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
     }
 ```
 
-  
 
 > `InvocationHandler` 자체는 프록시가 아니라, **메서드 호출을 처리하는 클래스일 뿐**이다.  
 > 실제 프록시는 `Proxy.newProxyInstance()` 정적 메서드에 의해서 실행 중에 동적으로 생성된다.
 
-  
 
 `newProxyInstance()`를 호출할 때의 형식에는 몇가지 제한이 존재한다.
 
@@ -571,13 +568,10 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
 
   
 
-### 3단계 : 적절한 프록시로 Person 객체 감싸기
+#### 3단계 : 적절한 프록시로 Person 객체 감싸기
 
 전체 코드
-
-  
-
-#### 본인용 프록시 생성 후 테스트
+##### 본인용 프록시 생성 후 테스트
 
 ```java
 // 1-1. 인물 정보를 DB로부터 가져옴
@@ -598,10 +592,7 @@ try {
 System.out.println("Rating is " + ownerProxy.getGeekRating());
 ```
 
-  
-
 출력 결과
-
 ```
 Name is Joe Javabean
 Interests set from owner proxy
@@ -609,9 +600,8 @@ Can't set rating from owner proxy
 Rating is 7
 ```
 
-  
 
-#### 타인용 프록시 생성 후 테스트
+##### 타인용 프록시 생성 후 테스트
 
 ```java
 // 2-1. 타인용 프록시 생성
@@ -631,7 +621,7 @@ System.out.println("Rating set from non owner proxy");
 System.out.println("Rating is " + nonOwnerProxy.getGeekRating());
 ```
 
-  
+
 
 출력 결과
 
