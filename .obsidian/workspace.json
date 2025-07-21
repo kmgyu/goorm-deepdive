@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/clone-arknight/memo.md",
+                "file": "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "memo"
-            }
-          },
-          {
-            "id": "0575e4a710f8c791",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Spring-framework/8.component-scan.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "8.component-scan"
+              "title": "week3_JDBC&ORM&JPA"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,9 +169,19 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "0575e4a710f8c791",
+  "active": "36699c98344b30ad",
   "lastOpenFiles": [
     "Projects/clone-arknight/memo.md",
+    "Pasted image 20250721160429.png",
+    "Pasted image 20250716134732.png",
+    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
+    "Pasted image 20250721160435.png",
+    "Pasted image 20250721160433.png",
+    "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
+    "Areas/design-pattern/week2_proxy-pattern(writing).md",
+    "Projects/week3_report_list.md",
+    "Projects/week2_report_list.md",
+    "Resources/lecture-note/250721.md",
     "Areas/Spring-framework/8.component-scan.md",
     "Areas/Spring-framework/6.Spring-container&bean.md",
     "Areas/Spring-framework/5.SOLID.md",
@@ -195,7 +190,6 @@
     "Areas/Spring-framework/99.spring-todo.md",
     "Areas/todo.md",
     "Resources/lecture-note/250718.md",
-    "Pasted image 20250716134732.png",
     "Projects/mokjoon-project/week1_user-story.md",
     "Projects/mokjoon-project/week1_tool-selection.md",
     "Projects/mokjoon-project/week1_requirements&constraints.md",
@@ -207,13 +201,6 @@
     "Resources/lecture-note/250714-coffee-chat.md",
     "Resources/lecture-note/250714.md",
     "Resources/lecture-note/250711.md",
-    "Resources/lecture-note/250709-Coffee-chat.md",
-    "Resources/lecture-note/250709.md",
-    "Areas/Spring-framework/week2_spring-with-triangle(writing).md",
-    "Areas/Spring-framework/4.oop&spring.md",
-    "Areas/Spring-framework/3.good-oop.md",
-    "Areas/Spring-framework/2.what-is-spring.md",
-    "Areas/Spring-framework/1.history.md",
     "Areas/design-pattern/Images",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/jwt_warning.png",
@@ -228,9 +215,6 @@
     "Resources/Images/week1_how-to-eXtremeProgramming/xp-process.png",
     "Projects/mokjoon-project",
     "Resources/Images/week1_report_Software-development-process/how-to-login.png",
-    "Resources/Images/week1_git-rebase/rebase-case14.png",
-    "Resources/Images/week1_git-rebase/rebase-case13.png",
-    "Resources/Images/week1_git-rebase/rebase-case12.png",
-    "Resources/Images/week1_git-rebase/rebase-case11.png"
+    "Resources/Images/week1_git-rebase/rebase-case14.png"
   ]
 }
