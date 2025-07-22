@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
+                "file": "Areas/memo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week3_JDBC&ORM&JPA"
+              "title": "memo"
             }
           }
         ]
@@ -172,13 +172,17 @@
   "active": "36699c98344b30ad",
   "lastOpenFiles": [
     "Projects/clone-arknight/memo.md",
+    "Areas/memo.md",
+    "Projects/clone-arknight/resource system.md",
+    "Areas/Spring-framework/9.auto-di.md",
+    "Areas/design-pattern/week2_proxy-pattern(writing).md",
+    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
+    "Resources/lecture-note/250722.md",
     "Pasted image 20250721160429.png",
     "Pasted image 20250716134732.png",
-    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
     "Pasted image 20250721160435.png",
     "Pasted image 20250721160433.png",
     "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
-    "Areas/design-pattern/week2_proxy-pattern(writing).md",
     "Projects/week3_report_list.md",
     "Projects/week2_report_list.md",
     "Resources/lecture-note/250721.md",
@@ -198,9 +202,6 @@
     "Projects/clone-arknight",
     "Resources/lecture-note/250717.md",
     "Resources/lecture-note/250715.md",
-    "Resources/lecture-note/250714-coffee-chat.md",
-    "Resources/lecture-note/250714.md",
-    "Resources/lecture-note/250711.md",
     "Areas/design-pattern/Images",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/jwt_warning.png",

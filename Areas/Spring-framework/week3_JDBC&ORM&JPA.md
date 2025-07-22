@@ -93,6 +93,47 @@ HikariCP는 미리 정해놓은 크기만큼의 Connection을 Connection Pool에
 3. preparestatement가 sql을 전달하며, resultset을 통해 결과값을 전달한다.
 
 버퍼를 통해서 SQL, 결과값을 날린다.
+드라이버를 설정해야하는 번거로움 등도 존재했다. 따라서 이런 번거로움을 해결시켜주는 여러 프레임워크들이 등장했다.
+
+## [ORM(Object Relational Mapping)이란?](https://hoehen-flug.tistory.com/47#ORM\(Object%20Relational%20Mapping\)%EC%9D%B4%EB%9E%80%3F-1)
+
+데이터들이 프로그램이 종료되어도 사라지지 않고 어떤 곳에 저장되는 개념을 영속성(Persistence)이라고 한다.
+
+Java에서는 데이터의 영속성을 위한 JDBC를 지원해주는데, 이는 매핑 작업을 개발자가 일일히 수행해야 하는 번거로움이 있다.
+
+**SQL Mapper**와 **ORM**은 JDBC 프로그래밍의 복잡함이나 번거로움 없이 간단한 작업만으로 데이터베이스와 연동되는 시스템을 빠르게 개발할 수 있도록 기능을 제공해주는 **Persistence Framework** 종류이다.
+
+## ORM을 사용하는 이유
+
+### 1. DRY: Don't Repeat Yourself
+
+ORM을 사용하면 데이터 모델을 한 곳에 정의하고 이를 통해 데이터베이스와 상호작용합니다. 매번 SQL 쿼리를 작성하는 대신, 모델을 통해 데이터 조회/삽입/삭제 등을 반복적으로 사용할 수 있어 코드 중복이 줄어듭니다.
+
+### 2. 데이터베이스 독립성을 보장한다
+
+특정 DBMS에 의존적인 SQL문법도 추상화되어 DBMS를 바꾸더라도 최소한의 변경사항만으로 프로젝트를 정상적으로 수행할 수 있습니다.
+
+### 3. 테이블 관리가 쉬워진다
+
+ORM은 엔티티 매핑으로 테이블을 자동으로 생성하는 등 변경 사항을 자동으로 반영해주는 도구를 제공해서 데이터베이스 관리가 쉬워집니다.
+
+### 4. MVC 아키텍쳐를 강제한다
+
+데이터 모델을 통해서 데이터베이스를 관리해야 하기 때문에 비즈니스 로직을 처리하는 레이어와 자연스럽게 분리됩니다.
+
+역할의 분리는 곧 유지보수와 테스트 등의 용이성으로 이어집니다.
+
+### 5. 최소한의 보안과 쿼리 최적화가 보장된다.
+
+키워드는 최소한입니다. 당연히 숙련된 개발자가 짜는 코드가 더 성능이 좋을 것이지만, 일정 수준 이상의 보안과 성능을 보장받을 수 있습니다.
+
+### 6. 언어의 객체지향성을 보장하며 데이터베이스와 매핑할 수 있다.
+
+ORM은 객체지향 언어와 관계형 데이터베이스 간의 간극을 해소하여, 데이터베이스 조작을 더 용이하게 해줍니다.
+
+객체로 데이터베이스의 레코드를 다룰 수 있게 해주어 개발자는 객체의 속성 및 메서드에 집중하여 코드를 짤 수 있습니다.
+
+예를 들어 상속과 같이 관계형으로 표현하기 까다로워지는 엔티티 관계도 ORM으로 간단하게 매핑될 수 있습니다.
 
 
 # JPA
@@ -149,6 +190,15 @@ for (Member member : result) {
 
 > Criteria 쿼리, QueryDSL, 네이티브 SQL 등...
 > 또는 JDBC를 직접 사용하거나, MyBatis 같은 SQL 매퍼 프레임워크를 사용할 수도 있다.
+
+## 특징
+- **Repository 인터페이스**
+    - JPA를 추상화 시킨 인터페이스만 정의하면, Spring Data JPA가 구현체를 자동으로 생성해주는 기능을 제공, 이를 통해 CRUD (Create, Read, Update, Delete) 작업을 위한 코드 중복을 줄일 수 있움
+    
+- **쿼리 메소드**
+    - 메소드 이름을 분석하여 SQL 쿼리를 자동으로 생성하는 기능을 제공
+    - 예를 들어, findByName(String name)이라는 메소드를 Repository 인터페이스에 추가하면, Spring Data JPA는 이를 "SELECT u FROM User u WHERE u.name = :name” JPQL로 변환해서 데이터베이스에 전달
+
 
 # 차이점 요약
 
@@ -221,9 +271,6 @@ public class SimpleJpaRepository<T, ID> implements JpaRepositoryImplementation<T
 
 
 
-
-
-
 Referenced
 https://dkswnkk.tistory.com/685
 https://www.youtube.com/watch?v=Ppqc3qN75EE
@@ -231,3 +278,4 @@ https://velog.io/@pppp0722/JDBC-JPA-Hibernate-Spring-Data-JPA-%EC%B0%A8%EC%9D%B4
 https://ittrue.tistory.com/270
 https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/
 https://code-lab1.tistory.com/272
+https://jh2021.tistory.com/23
