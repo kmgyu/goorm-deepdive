@@ -3,7 +3,7 @@
 즉 앱의 현재 상태를 유지하면서 변경사항을 반영하는 것이다.
 그런데 Spring DevTools가 지원하는 기능은 애플리케이션 현재 상태(메모리의 Bean 상태, static 변수, 세션) 등은 유지가 되지 않는다.
 
-그렇다. 사실 스프링이 지원하는 기능은 정확히는 [Automatic Restart](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.restart)라는 기능인 것이다!!
+사실 스프링이 지원하는 기능은 정확히는 [Automatic Restart](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.restart)라는 명칭이 있다. 위의 기능과는 다른 점이 존재하니 혼동하지 않는 것이 좋다.
 
 
 ## 용어 정리
@@ -84,7 +84,7 @@ classLoader를 통해 클래스를 로드한다.
 > RestartClassLoader는 java.net.URLClassLoader를 상속받아 사용한다.
 > [*java SE11 docs*](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URLClassLoader.html)
 > URLClassLoader는 JAR 파일이나 디렉토리 URL을 참조하고 주어진 URL에서 참조되는 다중 릴리즈 JAR 파일의 내용에서 클래스와 리소스 로드를 지원한다. 즉, 클래스 로드를 할 때 주어진 URL(클래스패스)의 자식 디렉토리에 있는 모든 것을 로드한다.
-> *우리는 스프링이 컴포넌트 스캔을 할 때 유사한 방식을 사용하는 것을 본 적이 있다... 그 내부에선 이런 일이 벌어진다!* 
+> *스프링이 컴포넌트 스캔을 할 때 작동하는 방식을 생각해보자. 기본 클래스 패스(혹은 명시된 경로) 하위의 모든 패키지를 탐색하고, 해당 위치에 있는 클래스를 로드한다. 이 동작을 떠올려보면 restart class loader가 하는 일을 추론할 수 있다.*
 
 # 무중단 배포와의 관계
 
