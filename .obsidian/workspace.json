@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Spring-framework/week3_spring-auto-restart.md",
+                "file": "Areas/Spring-framework/10.bean-lifecycle-callback.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week3_spring-auto-restart"
+              "title": "10.bean-lifecycle-callback"
             }
           }
         ]
@@ -171,16 +171,20 @@
   },
   "active": "2b55f421079b89eb",
   "lastOpenFiles": [
+    "Areas/Spring-framework/8.component-scan.md",
+    "Areas/Spring-framework/9.auto-di.md",
+    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
+    "Areas/week3_trend(writing).md",
+    "Projects/mokjoon-project/week3_progress.md",
+    "Projects/mokjoon-project/week1_memo.md",
+    "Areas/Spring-framework/week3_spring-auto-restart.md",
     "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
     "Pasted.md",
-    "Areas/Spring-framework/week3_spring-auto-restart.md",
     "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
     "Areas/Spring-framework/99.spring-todo.md",
     "Areas/Spring-framework/98.practice.md",
     "Areas/Spring-framework/images/Pasted image 20250724163954.png",
     "Areas/Spring-framework/week2_spring-with-triangle(writing).md",
-    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
-    "Areas/Spring-framework/9.auto-di.md",
     "Areas/Spring-framework/images/Pasted image 20250724163535.png",
     "Areas/Spring-framework/images",
     "Pasted image 20250716134732.png",
@@ -197,12 +201,8 @@
     "Areas/week1_Issue-tracking-system.md",
     "Areas/week3_zero-downtime-deployment.md",
     "Resources/lecture-note/250723.md",
-    "Projects/mokjoon-project/week3_progress.md",
-    "Projects/mokjoon-project/week1_memo.md",
     "Areas/design-pattern/week2_proxy-pattern(writing).md",
     "Areas/software-develop-process/week2_how-to-waterfall.md",
-    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
-    "Areas/software-develop-process/week1_how-to-agile.md",
     "Pasted image 20250721160429.png",
     "Pasted image 20250721160435.png",
     "Pasted image 20250721160433.png",
