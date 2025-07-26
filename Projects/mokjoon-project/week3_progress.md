@@ -95,3 +95,36 @@ GPT
 그래서 설계를 미리 하긴 해야 한다.
 근데 기본이면 얼마나 해야되는거임?
 악!!!
+
+---
+0726
+도메인
+백준 + solvedAC 보기 쉽게 만들어주기
+도메인이 뭘까
+
+데이터를 재가공하는 것이 목적이다.
+
+백준 이용자, solvedac 이용자, 문제?
+
+API docs까지 뚫어두는 것으로 만족하자!
+타임리프는 안된다 꾸짖을 갈!!!
+프론트는 나중에 연동해버리기
+
+기술
+FE - ???
+BackEnd - Spring Boot
+RDBMS - MySQL (MariaDB가 라이센스 필요없긴 하지만 내가 쓰는 수준에선 별 차이가 없기 때문에...)
+
+solvedac 비공식 api 참고
+
+발생 가능한 문제들
+백준에 있고 solvedac에 없는 이용자?
+백준에 없고 solvedac에 있는 이용자?
+DB 설계?
+
+파이썬이 쓰고싶어요 파흑흑흑
+
+도구 세팅
+Github, Github Actions
+Notion
+Jenkins
