@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/mokjoon-project/week3_progress.md",
+                "file": "Resources/lecture-note/250726_Coding-test-Review.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week3_progress"
+              "title": "250726_Coding-test-Review"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/clone-arknight/resource system.md",
+                "file": "Areas/Spring-framework/11.bean-scope.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "resource system"
+              "title": "11.bean-scope"
             }
           }
         ]
@@ -185,12 +185,14 @@
   },
   "active": "41a893b25f5421cc",
   "lastOpenFiles": [
+    "Areas/Spring-framework/11.bean-scope.md",
     "Projects/clone-arknight/resource system.md",
-    "Projects/clone-arknight/memo.md",
+    "Resources/lecture-note/250726_Coding-test-Review.md",
+    "Projects/week3_report_list.md",
     "Projects/mokjoon-project/week3_progress.md",
+    "Projects/clone-arknight/memo.md",
     "Resources/lecture-note/250725-study.md",
     "Projects/mokjoon-project/week1_memo.md",
-    "Areas/Spring-framework/11.bean-scope.md",
     "Areas/Spring-framework/10.bean-lifecycle-callback.md",
     "Pasted image 20250725171115.png",
     "Areas/read-a-book/List.md",
@@ -217,8 +219,6 @@
     "Areas/memo.md",
     "Resources/lecture-note/250722-study.md",
     "Areas/github-skills.md",
-    "Areas/todo.md",
-    "Areas/week3_zero-downtime-Deployment(writing).md",
     "Pasted image 20250721160429.png",
     "Pasted image 20250721160435.png",
     "Pasted image 20250721160433.png",
