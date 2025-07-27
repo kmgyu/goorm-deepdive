@@ -128,3 +128,8 @@ DB 설계?
 Github, Github Actions
 Notion
 Jenkins
+
+---
+0727
+
+MySQL 세팅 완료

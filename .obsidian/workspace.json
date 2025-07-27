@@ -13,26 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/lecture-note/250726_Coding-test-Review.md",
+                "file": "Projects/mokjoon-project/week3_progress.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "250726_Coding-test-Review"
+              "title": "week3_progress"
             }
           },
           {
-            "id": "2b4b7f8736b324b2",
+            "id": "2db13d9e0a1d1eb9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Spring-framework/11.bean-scope.md",
+                "file": "Projects/clone-arknight/memo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11.bean-scope"
+              "title": "memo"
             }
           }
         ]
@@ -185,14 +185,18 @@
   },
   "active": "41a893b25f5421cc",
   "lastOpenFiles": [
+    "Projects/mokjoon-project/week1_memo.md",
+    "Projects/clone-arknight/node.md",
+    "Projects/clone-arknight/memo.md",
     "Areas/Spring-framework/11.bean-scope.md",
-    "Projects/clone-arknight/resource system.md",
+    "Areas/Java/Road-map.md",
+    "Areas/JD",
+    "Areas/Java",
     "Resources/lecture-note/250726_Coding-test-Review.md",
+    "Projects/clone-arknight/resource system.md",
     "Projects/week3_report_list.md",
     "Projects/mokjoon-project/week3_progress.md",
-    "Projects/clone-arknight/memo.md",
     "Resources/lecture-note/250725-study.md",
-    "Projects/mokjoon-project/week1_memo.md",
     "Areas/Spring-framework/10.bean-lifecycle-callback.md",
     "Pasted image 20250725171115.png",
     "Areas/read-a-book/List.md",
@@ -217,8 +221,6 @@
     "Areas/Spring-framework/images/Pasted image 20250724170150.png",
     "Areas/Spring-framework/images/Pasted image 20250724164034.png",
     "Areas/memo.md",
-    "Resources/lecture-note/250722-study.md",
-    "Areas/github-skills.md",
     "Pasted image 20250721160429.png",
     "Pasted image 20250721160435.png",
     "Pasted image 20250721160433.png",
@@ -228,8 +230,6 @@
     "Resources/jwt_warning.png",
     "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf",
     "Resources/Images/design-pattern",
-    "Areas/design-pattern",
-    "Areas/software-develop-process",
-    "Areas/Spring-framework"
+    "Areas/design-pattern"
   ]
 }
