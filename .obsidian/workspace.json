@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/github-skills.md",
+                "file": "Projects/mokjoon-project/week4_progress.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "github-skills"
+              "title": "week4_progress"
             }
           }
         ],
@@ -186,11 +186,18 @@
   },
   "active": "2f470030e792792d",
   "lastOpenFiles": [
+    "Projects/mokjoon-project/memo.md",
+    "Projects/mokjoon-project/week3_progress.md",
+    "Projects/mokjoon-project/user-story.md",
+    "Projects/mokjoon-project/tool-selection.md",
+    "Projects/mokjoon-project/requirements&constraints.md",
+    "Projects/mokjoon-project/process-tracker.md",
+    "Projects/mokjoon-project/week4_progress.md",
+    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
+    "Areas/github-skills.md",
     "Areas/Spring-framework/10.bean-lifecycle-callback.md",
     "Areas/Spring-framework/7.single-ton-pattern.md",
     "Areas/Spring-framework/11.bean-scope.md",
-    "Projects/mokjoon-project/week3_progress.md",
-    "Projects/mokjoon-project/week1_memo.md",
     "Projects/clone-arknight/node.md",
     "Projects/clone-arknight/memo.md",
     "Areas/Java/Road-map.md",
@@ -209,17 +216,10 @@
     "Areas/Spring-framework/9.auto-di.md",
     "Areas/week3_trend(writing).md",
     "Areas/Spring-framework/week3_spring-auto-restart.md",
-    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
-    "Pasted.md",
-    "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
-    "Areas/Spring-framework/99.spring-todo.md",
-    "Areas/Spring-framework/98.practice.md",
     "Areas/Spring-framework/images/Pasted image 20250724163954.png",
-    "Areas/Spring-framework/week2_spring-with-triangle(writing).md",
     "Areas/Spring-framework/images/Pasted image 20250724163535.png",
     "Areas/Spring-framework/images",
     "Pasted image 20250716134732.png",
-    "Resources/lecture-note/250724-study.md",
     "Areas/Spring-framework/images/Pasted image 20250724170150.png",
     "Areas/Spring-framework/images/Pasted image 20250724164034.png",
     "Pasted image 20250721160429.png",
