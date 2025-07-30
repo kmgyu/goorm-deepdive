@@ -205,6 +205,7 @@ Hello GitHub Actions
 yml 문법을 알아야 어떻게 할 것 같다. 으아각
 
 ## 0728 TIL
+Test with Actions
 copilot이랑 대충 ai쪽 섹션이 있었는 데 사라졌다. 아니 뭐지;
 CI에 대해서 배운다.
 협업하는 방식과, 피드백, 테스트, 텥스트보고서 등...?
@@ -226,3 +227,17 @@ GitHub, 오픈 소스 커뮤니티, 직접 작성 등의 방법이 있다.
 
 아티팩트 스토리지를 이용해서 각 액션의 결과물을 다음 액션으로 넘길 수 있다고 한다. 이게 맞겠지? 
 브랜치 프로텍션을 해줘야 한다. 하지 않으면 봇이 멋대로 메인에 머지할 수도 있다고... 컨트리뷰터가 아니더라도 악용할 수 있기 때문에 이런 조치를 취해줘야 하는 듯.
+
+## 0730 TIL
+Publish packages
+깃헙 액션을 이용해 도커 이미지로 퍼블리싱하는 방법을 배운다!
+
+> **Continuous integration** (CI) is a practice where developers integrate tested code into a shared branch several times per day. **Continuous delivery** (CD) is the next phase of **continuous integration** (CI) where we also make sure to package the code in a _release_ and store it somewhere - preferably, in an artifact repository. Lastly, **Continuous deployment** (CD) takes **continuous delivery** (CD) to the next level by directly deploying our releases to the world.
+
+도커파일 넣었는데 패키지 등록이 안된다. 어쩌라는 거지?
+잘 찾아보니 publish.yml에서 yourname을 내 계정으로 바꿔주지 않았었다. 이런 젠장
+
+도커 이미지 잘 뜬다.
+이거 하려고 도커랑 wsl2 세팅햇다.
+근데 나쁘지 않은데?
+yml 생쇼한것만 빼면... 괜찮다....

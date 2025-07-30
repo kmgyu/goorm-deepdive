@@ -4,25 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "dba85f2f92d153ca",
+        "id": "850d560000a77c7b",
         "type": "tabs",
         "children": [
           {
-            "id": "41a893b25f5421cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Projects/mokjoon-project/week3_progress.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "week3_progress"
-            }
-          },
-          {
-            "id": "2f470030e792792d",
+            "id": "68bbc3377bb8d175",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,8 +21,7 @@
               "title": "week4_progress"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -184,38 +169,38 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2f470030e792792d",
+  "active": "68bbc3377bb8d175",
   "lastOpenFiles": [
-    "Projects/mokjoon-project/memo.md",
+    "Areas/software-develop-process/week2_how-to-waterfall.md",
+    "Resources/lecture-note/250726_Coding-test-Review.md",
+    "Areas/memo.md",
+    "Resources/lecture-note/250730-.md",
+    "Areas/github-skills.md",
+    "Areas/Java/Road-map.md",
+    "Areas/week1_Issue-tracking-system.md",
     "Projects/mokjoon-project/week3_progress.md",
+    "Areas/todo.md",
+    "Resources/week4_React-reduxVScontextAPI.md",
+    "Archives/week1_report_markdown.md",
+    "Archives/week1_report_vscode-tips.md",
+    "Archives/week1_report_vscode-hotkeys.md",
+    "Resources/week2_rubber-duck-debugging.md",
+    "Projects/mokjoon-project/week4_progress.md",
+    "Projects/mokjoon-project/memo.md",
     "Projects/mokjoon-project/user-story.md",
     "Projects/mokjoon-project/tool-selection.md",
     "Projects/mokjoon-project/requirements&constraints.md",
     "Projects/mokjoon-project/process-tracker.md",
-    "Projects/mokjoon-project/week4_progress.md",
     "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
-    "Areas/github-skills.md",
     "Areas/Spring-framework/10.bean-lifecycle-callback.md",
     "Areas/Spring-framework/7.single-ton-pattern.md",
     "Areas/Spring-framework/11.bean-scope.md",
     "Projects/clone-arknight/node.md",
     "Projects/clone-arknight/memo.md",
-    "Areas/Java/Road-map.md",
     "Areas/JD",
     "Areas/Java",
-    "Resources/lecture-note/250726_Coding-test-Review.md",
-    "Projects/clone-arknight/resource system.md",
-    "Projects/week3_report_list.md",
-    "Resources/lecture-note/250725-study.md",
     "Pasted image 20250725171115.png",
-    "Areas/read-a-book/List.md",
     "Areas/read-a-book",
-    "Resources/lecture-note/250725.md",
-    "Areas/Spring-framework/6.Spring-container&bean.md",
-    "Areas/Spring-framework/8.component-scan.md",
-    "Areas/Spring-framework/9.auto-di.md",
-    "Areas/week3_trend(writing).md",
-    "Areas/Spring-framework/week3_spring-auto-restart.md",
     "Areas/Spring-framework/images/Pasted image 20250724163954.png",
     "Areas/Spring-framework/images/Pasted image 20250724163535.png",
     "Areas/Spring-framework/images",
