@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/mokjoon-project/week4_progress.md",
+                "file": "Areas/JD/TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week4_progress"
+              "title": "TODO"
             }
           }
         ]
@@ -171,11 +171,22 @@
   },
   "active": "68bbc3377bb8d175",
   "lastOpenFiles": [
+    "Areas/JD/NAVER-BE.md",
+    "Areas/JD/TODO.md",
+    "Areas/JD/NHN-BE.md",
+    "Areas/design-pattern/week2_proxy-pattern.md",
+    "Pasted.md",
+    "Areas/design-pattern/week2_template-method.md",
+    "Areas/Spring-framework/99.spring-todo.md",
+    "Areas/Spring-framework/98.practice.md",
+    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
+    "Areas/Spring-framework/9.auto-di.md",
+    "Areas/github-skills.md",
+    "Projects/mokjoon-project/week4_progress.md",
     "Areas/software-develop-process/week2_how-to-waterfall.md",
     "Resources/lecture-note/250726_Coding-test-Review.md",
     "Areas/memo.md",
     "Resources/lecture-note/250730-.md",
-    "Areas/github-skills.md",
     "Areas/Java/Road-map.md",
     "Areas/week1_Issue-tracking-system.md",
     "Projects/mokjoon-project/week3_progress.md",
@@ -185,18 +196,7 @@
     "Archives/week1_report_vscode-tips.md",
     "Archives/week1_report_vscode-hotkeys.md",
     "Resources/week2_rubber-duck-debugging.md",
-    "Projects/mokjoon-project/week4_progress.md",
     "Projects/mokjoon-project/memo.md",
-    "Projects/mokjoon-project/user-story.md",
-    "Projects/mokjoon-project/tool-selection.md",
-    "Projects/mokjoon-project/requirements&constraints.md",
-    "Projects/mokjoon-project/process-tracker.md",
-    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
-    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
-    "Areas/Spring-framework/7.single-ton-pattern.md",
-    "Areas/Spring-framework/11.bean-scope.md",
-    "Projects/clone-arknight/node.md",
-    "Projects/clone-arknight/memo.md",
     "Areas/JD",
     "Areas/Java",
     "Pasted image 20250725171115.png",
