@@ -17,8 +17,10 @@
 - ~~WAS 엔진에 대해. php 엔진, tomcat, apache...~~
   현재 WAS에 대해 작성중
   (250710. 250710. 250711.)
-- MDN 등 자료 수집 가능한 웹 페이지 정리
-  개인 공부? 강의 내용 확장? (250710. . .)
+- ~~MDN 등 자료 수집 가능한 웹 페이지 정리~~
+  maeil-mail 등에서 매일 아티클을 받을 수 있다.
+  MDN, GeekForGeeks, w3schools 등에서 실습코드 및 좋은 자료 습득 가능...
+  (250710. 250710. 250801.)
 - CSSOM, render tree가 무엇인지, 인터프리팅 방식 등...
   (250710. . .)
 - soap에 대해 및 rest 메서드처럼 가이드가 있는지? 등 비교 분석.
@@ -40,8 +42,10 @@
 - GitHub Skills 공부 및 정리
   ~~0709 - first day on github~~
   ~~0710-0711 - first week on github~~
-  0714-0717 - automate workflows with github actions (아맞다..)
+  0714-0717(예상) - automate workflows with github actions (아맞다..)
+  0801.절반 했다.
   0717-0719 - code security and analysis
+  마무리 시 정리 필요. 기간이 더 소요될 예정.
   (250709. 250709. .)
 - 진행했던 프로젝트 회고 및 진행 기록 정리
   (250709. . .)

@@ -1,3 +1,4 @@
+# 미소지 서적 목록
 - 운영체제
 https://product.kyobobook.co.kr/detail/S000001868743
 
@@ -16,7 +17,7 @@ https://github.com/ckddn9496/modern-java-in-action
 - 헤드 퍼스트 디자인 패턴
 https://github.com/IT-Book-Organization/HeadFirst-DesignPattern
 
-신청함 어떻게 될지는 모른다아앗
+# 미소지, 신청 서적 목록
 - 개발자를 위한 쉬운 도커
 https://product.kyobobook.co.kr/detail/S000216089379
 
@@ -28,3 +29,9 @@ https://product.kyobobook.co.kr/detail/S000001942495
 
 - SQL 자격검정 실전문제
 https://product.kyobobook.co.kr/detail/S000212021705
+
+# 소지 서적 목록
+개발자를 위한 최소한의 실무 지식
+
+자바 ORM 표준 JPA 프로그래밍
+

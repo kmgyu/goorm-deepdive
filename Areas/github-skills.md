@@ -249,3 +249,109 @@ Deploy to Azure
 라벨에 따라서 다른 액션을 줄 수 있다.
 계정을 만들어야 한다.
 계정 아직 안만들었다. 다음에 한다. 으엥
+
+## 0801 TIL
+구독서비스 신청해야하는데 학생 요금제가 있어서 살았다. 끼얏호우
+
+```
+winget install --exact --id Microsoft.AzureCLI
+```
+
+azure cli 깔아준다. windows 10 이상부터는 winget이라는 패키지 관리자를 쓴다.
+
+``` bash
+az ad sp create-for-rbac --name "GitHub-Actions" --role contributor \
+ --scopes /subscriptions/{subscription-id} \
+ --sdk-auth
+
+    # Replace {subscription-id} with the same id stored in AZURE_SUBSCRIPTION_ID.
+```
+이거 추가하고한다.
+
+시크릿이랑 env랑 다른 게 뭔지 모르겠다.
+리포지토리에서 로드하는 건 액션이 알아서 하나?
+
+엄.....
+스테이징은 도커 컨테이너 생성?
+azure config는 뭐하는 거지. 아주르에 배포하는 액션인 듯?
+
+This new workflow has two jobs:
+
+1. **Set up Azure resources** will run if the pull request contains a label with the name "spin up environment".
+2. **Destroy Azure resources** will run if the pull request contains a label with the name "destroy environment".
+
+**Setting up Azure resources**
+
+The first job sets up the Azure resources as follows:
+
+1. Logs into your Azure account with the [`azure/login`](https://github.com/Azure/login) action. The `AZURE_CREDENTIALS` secret you created earlier is used for authentication.
+2. Creates an [Azure resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview#resource-groups) by running [`az group create`](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#az-group-create) on the Azure CLI, which is [pre-installed on the GitHub-hosted runner](https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners).
+3. Creates an [App Service plan](https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans) by running [`az appservice plan create`](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) on the Azure CLI.
+4. Creates a [web app](https://docs.microsoft.com/en-us/azure/app-service/overview) by running [`az webapp create`](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) on the Azure CLI.
+5. Configures the newly created web app to use [GitHub Packages](https://help.github.com/en/packages/publishing-and-managing-packages/about-github-packages) by using [`az webapp config`](https://docs.microsoft.com/en-us/cli/azure/webapp/config?view=azure-cli-latest) on the Azure CLI. Azure can be configured to use its own [Azure Container Registry](https://docs.microsoft.com/en-us/azure/container-registry/), [DockerHub](https://docs.docker.com/docker-hub/), or a custom (private) registry. In this case, we'll configure GitHub Packages as a custom registry.
+
+**Destroying Azure resources**
+
+The second job destroys Azure resources so that you do not use your free minutes or incur billing. The job works as follows:
+
+1. Logs into your Azure account with the [`azure/login`](https://github.com/Azure/login) action. The `AZURE_CREDENTIALS` secret you created earlier is used for authentication.
+2. Deletes the resource group we created earlier using [`az group delete`](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#az-group-delete) on the Azure CLI.
+
+두뇌 뜌땨당해버린 와타시는 흠 그렇군 하고 말아버리는 것이에오...
+액션에 if랑 with도 들어간다. creds는 credentials인가? 파일채로 끌어오는건가
+
+라벨 붙이니까 액션 돌아간다. PR까지 자동으로 해준다!! 딸깍 한번에 전부 해준다니 이렇게 편할 수가 없다
+
+deploy가 안된다. 아이에에에에!! 에러??!! 에러 왜???????
+
+음
+원인을 알아냈다! 시크릿에 구독 ID를 등록안했다.
+듀...
+
+아니 키 넣어줬더니 이번에는 등록안되있다고 뭐라고하네
+[에러모음](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/common-deployment-errors#noregisteredproviderfound)
+
+[해결법](https://learn.microsoft.com/en-us/azure/azure-resource-manager/troubleshooting/error-register-resource-provider?tabs=azure-cli)
+
+
+```
+az provider register --namespace Microsoft.Web
+```
+오류 코드 쪽에서 어떤 오류인지에 대한 설명과, 해결하는 곳으로 도달하는 하이퍼링크가 깔쌈하게 되있다. 역시 국가권력급 대기업이다. 문서화가 잘되있다.
+
+Re-run 버튼 예전에 써보고 어디서 찾는지 까먹었다가 알게된건데 workflow랑 job마다 구분이 되어있다! 딱히 쓸모있는 지식은 아니지만 지식이 늘?었다.
+
+yml 관련해서 on, job, workflow 단위 다 봤던 거 같은데 기록이 안되어있다. 이건 좀 사고인데... 여기 써진 기록 정리하면서 추가하면 될 것 같음
+
+아무튼 스테이징하니 리소스 모니터링하면서 VM이랑 웹앱 추가된걸 확인했다.
+이제 배포쪽 액션이 실행되면?
+
+틱퉥퉈!!!!가 나온다
+
+머리를 좀 더 굴려보니까 도커파일을 리포지토리에 미리 넣어놓고 VM에서 컨테이너형식으로 빌드하는 것 같ㄷㅏ.
+스테이징이 이미지 만들어서 클라우드(아주르) 쪽에 이미지 빌드하고 뚝딱뚝딱쓰하는 거인듯.
+
+이번엔 CI/CD에서 CD단계다.
+production-deployment-workflow 브랜치만든다.
+
+> **Continuous delivery** (CD) is a concept that contains many behaviors and other, more specific concepts. One of those concepts is **test in production**. That can mean different things to different projects and different companies, and isn't a strict rule that says you are or aren't "doing CD".
+
+라는데, 그럼 뭐 재즈 스윙 같은건가.
+넌 전혀 CD하고 있지 않아. 넌 매우 CD하고 있어 이런거임?
+
+아무턴 이 단계까지 하면 프로덕션 배포까지 끝난다고 한다. 메다닥 끝나서 좀 더 공부가 필요할 것 같은 레후.
+
+이제 실습 끝났으니 리소스 다 지우라고 한다. 야호!
+
+음. 수동으로 지웠는데 destory environment가 따로 있었다. 이제봤네
+닫았던 PR을 다시 열어서 라벨을 새로 적용하는 방법도 있나보다. 
+근데 실제로 그렇게 할 케이스가 있나..?
+으에...
+
+작업 Recap
+- Trigger a job based on labels
+- Set up the Azure environment
+- Spin up environment based on labels
+- Deploy to a staging environment based on labels
+- Deploy to a production environment based on labels
+- Destroy environment based on labels

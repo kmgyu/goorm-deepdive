@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/JD/TODO.md",
+                "file": "Areas/Study/JSON-Serialization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "JSON-Serialization"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"## 보호 프록시> 💡 **접근 권한을 바탕으로** 객체로의 접근을 제어하는 프록시### 구현 예제 - 보호 프록시데이팅 서비스를 구현해본다고 하자.이 서비스에서의 요구사항은 다음과 같다.1. 고객이 자기 정보를 직접 수정할 수 있도록 하면서, **다른 고객은 그 정보를 수정할 수 없도록** 해야 한다.2. 선호도는 반대로, 다른 고객만 점수를 매길 수 있고 **자신은 점수를 매길 수 없도록** 해야 한다.이들을 해결하기 위해서는 2개의 프록시가 필요하다.- 본인의 `Person` 객체에 접근하는 프록시- 다른 사람들의 `Person` 객체에 접근하는 프록시`Person` 객체는 다음과 같다.```javapublic interface Person {    String getName();    String getGender();    String getInterests();    int getGeekRating();    void setName(String name);    void setGender(String gender);    void setInterests(String interests);    void setGeekRating(int rating);}```  위에서 살펴보았던 동적 프록시 기술을 사용하여 동적 프록시를 구현해보자.  [![동적 프록시](https://user-images.githubusercontent.com/86337233/212689085-cd285023-fb6d-4650-88f7-c56207a5bd91.png)](https://user-images.githubusercontent.com/86337233/212689085-cd285023-fb6d-4650-88f7-c56207a5bd91.png)  1. 2개의 `InvocationHandler` 생성2. 동적 프록시 생성 코드 만들기3. 적절한 프록시로 `Person` 객체 감싸기    - 고객 자신의 객체 → owner    - 다른 고객의 객체 → non-owner        [![Person 객체 - 프록시](https://user-images.githubusercontent.com/86337233/212689087-1575a91e-0325-47e8-83b3-ac9f59633e77.png)](https://user-images.githubusercontent.com/86337233/212689087-1575a91e-0325-47e8-83b3-ac9f59633e77.png)    #### 1단계 : InvocationHandler 생성프록시의 메서드가 호출되면 프록시는 그 호출을 `InvocationHandler`(호출 핸들러)에게 넘기는데,  여기에는 메서드가 `invoke()` 하나밖에 없다.즉, 프록시의 어떤 메서드가 호출되든 무조건 `invoke()` 메서드가 호출되는 것이며,  그 메서드 속에서 주어진 요청을 어떻게 처리할지를 결정한다.```javareturn method.invoke(person,args);// method : invoke() 메서드 호출로 전달된 객체// person : 진짜 객체에 메서드를 호출// args : 처음에 받았던 인자들을 전달```##### 본인용 프록시를 위한 호출 핸들러 : OwnerInvocationHandler```javaimport java.lang.reflect.InvocationHandler;import java.lang.reflect.InvocationTargetException;import java.lang.reflect.Method;public class OwnerInvocationHandler implements InvocationHandler {    Person person;    public OwnerInvocationHandler(Person person) {        this.person = person;    }    @Override    public Object invoke(Object proxy, Method method, Object[] args) throws IllegalAccessException {        try {            if (method.getName().startsWith(\\\"get\")) {                return method.invoke(person, args);            } else if (method.getName().equals(\"setGeekRating\")) {                throw new IllegalAccessException(); // 메서드 호출을 막음            } else if (method.getName().startsWith(\"set\")) {                return method.invoke(person, args);            }            // 나머지 메서드는 모두 허용 → 주제에 있는 메서드를 호출        }        // 진짜 주제에서 예외를 던졌을 경우        catch (InvocationTargetException e) {            e.printStackTrace();        }        // 다른 메서드가 호출되었을 경우        return null;    }}```##### 타인용 프록시를 위한 호출 핸들러 : NonOwnerInvocationHandler```javaimport java.lang.reflect.InvocationHandler;import java.lang.reflect.InvocationTargetException;import java.lang.reflect.Method;public class NonOwnerInvocationHandler implements InvocationHandler {    Person person;    public NonOwnerInvocationHandler(Person person) {        this.person = person;    }    @Override    public Object invoke(Object proxy, Method method, Object[] args) throws IllegalAccessException {        try {            if (method.getName().startsWith(\"get\")) {                return method.invoke(person, args);            } else if (method.getName().equals(\"setGeekRating\")) {                return method.invoke(person, args);            } else if (method.getName().startsWith(\"set\")) {                throw new IllegalAccessException(); // 메서드 호출을 막음            }            // 나머지 메서드는 모두 허용 → 주제에 있는 메서드를 호출        }        // 진짜 주제에서 예외를 던졌을 경우        catch (InvocationTargetException e) {            e.printStackTrace();        }        // 다른 메서드가 호출되었을 경우        return null;    }}```#### 2단계 : 동적 프록시 생성 코드 만들기```java/** * TODO: 동적 프록시 생성 코드 * * @param person Person 객체(진짜 주제) * @return 프록시 * (프록시의 인터페이스 == 주제의 인터페이스) */    Person getOwnerProxy(Person person) {            return (Person) Proxy.newProxyInstance(            person.getClass().getClassLoader(), // person의 클래스 로더            person.getClass().getInterfaces(), // 프록시에서 구현해야 하는 인터페이스            new OwnerInvocationHandler(person)); // 호출 핸들러    }    Person getNonOwnerProxy(Person person) {            return (Person) Proxy.newProxyInstance(            person.getClass().getClassLoader(),            person.getClass().getInterfaces(),            new NonOwnerInvocationHandler(person));    }```> `InvocationHandler` 자체는 프록시가 아니라, **메서드 호출을 처리하는 클래스일 뿐**이다.  > 실제 프록시는 `Proxy.newProxyInstance()` 정적 메서드에 의해서 실행 중에 동적으로 생성된다.`newProxyInstance()`를 호출할 때의 형식에는 몇가지 제한이 존재한다.- 인터페이스의 배열을 인자로 전달해야 한다.- `public`으로 지정되지 않은 인터페이스는 같은 패키지에 들어있는 인터페이스만 인자로 전달할 수 있다.더 자세한 사항들은 [해당 링크](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Proxy.html)를 참고하길 바란다.  #### 3단계 : 적절한 프록시로 Person 객체 감싸기전체 코드##### 본인용 프록시 생성 후 테스트```java// 1-1. 인물 정보를 DB로부터 가져옴Person joe=getPersonFromDatabase(\"Joe Javabean\");// 1-2. 본인용 프록시 생성Person ownerProxy = getOwnerProxy(joe);System.out.println(\"Name is \" + ownerProxy.getName());ownerProxy.setInterests(\"bowling, Go\");System.out.println(\"Interests set from owner proxy\");// 1-3. 선호도 설정 시도 (본인용 프록시에서는 불가)try {    ownerProxy.setGeekRating(10);} catch (Exception e) {    System.out.println(\"Can't set rating from owner proxy\");}System.out.println(\"Rating is \" + ownerProxy.getGeekRating());```출력 결과```Name is Joe JavabeanInterests set from owner proxyCan't set rating from owner proxyRating is 7```##### 타인용 프록시 생성 후 테스트```java// 2-1. 타인용 프록시 생성Person nonOwnerProxy = getNonOwnerProxy(joe);System.out.println(\"Name is \" + nonOwnerProxy.getName());// 2-2. 관심사 변경 시도 (타인용 프록시에서는 불가)try {    nonOwnerProxy.setInterests(\"bowling, Go\");} catch (Exception e) {    System.out.println(\"Can't set interests from non owner proxy\");}// 2-3. 선호도 설정nonOwnerProxy.setGeekRating(3);System.out.println(\"Rating set from non owner proxy\");System.out.println(\"Rating is \" + nonOwnerProxy.getGeekRating());```출력 결과```Name is Joe JavabeanCan't set interests from non owner proxyRating set from non owner proxyRating is 5```\"",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -171,32 +171,33 @@
   },
   "active": "68bbc3377bb8d175",
   "lastOpenFiles": [
-    "Areas/JD/NAVER-BE.md",
+    "Areas/Study/REST-vs-SOAP.md",
+    "Areas/Study/JSON-Serialization.md",
+    "Areas/Study/Controller-vs-RestController(Writing).md",
+    "Areas/Study/GraphQL(writing).md",
+    "Areas/todo.md",
     "Areas/JD/TODO.md",
+    "Areas/read-a-book/List.md",
+    "Areas/week3_trend(writing).md",
+    "Areas/week2_what-is-framework.md",
+    "Areas/week2_pair-programming.md",
+    "Areas/Study/memo.md",
+    "Areas/Study",
+    "Areas/week1_Issue-tracking-system.md",
+    "Areas/week3_zero-downtime-Deployment(writing).md",
+    "Projects/mokjoon-project/week4_progress.md",
+    "Projects/mokjoon-project/user-story.md",
+    "Projects/mokjoon-project/tool-selection.md",
+    "Projects/mokjoon-project/requirements&constraints.md",
+    "Projects/mokjoon-project/process-tracker.md",
+    "Projects/mokjoon-project/memo.md",
+    "Areas/github-skills.md",
+    "Areas/JD/NAVER-BE.md",
     "Areas/JD/NHN-BE.md",
     "Areas/design-pattern/week2_proxy-pattern.md",
     "Pasted.md",
     "Areas/design-pattern/week2_template-method.md",
     "Areas/Spring-framework/99.spring-todo.md",
-    "Areas/Spring-framework/98.practice.md",
-    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
-    "Areas/Spring-framework/9.auto-di.md",
-    "Areas/github-skills.md",
-    "Projects/mokjoon-project/week4_progress.md",
-    "Areas/software-develop-process/week2_how-to-waterfall.md",
-    "Resources/lecture-note/250726_Coding-test-Review.md",
-    "Areas/memo.md",
-    "Resources/lecture-note/250730-.md",
-    "Areas/Java/Road-map.md",
-    "Areas/week1_Issue-tracking-system.md",
-    "Projects/mokjoon-project/week3_progress.md",
-    "Areas/todo.md",
-    "Resources/week4_React-reduxVScontextAPI.md",
-    "Archives/week1_report_markdown.md",
-    "Archives/week1_report_vscode-tips.md",
-    "Archives/week1_report_vscode-hotkeys.md",
-    "Resources/week2_rubber-duck-debugging.md",
-    "Projects/mokjoon-project/memo.md",
     "Areas/JD",
     "Areas/Java",
     "Pasted image 20250725171115.png",
@@ -215,7 +216,6 @@
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/jwt_warning.png",
     "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf",
-    "Resources/Images/design-pattern",
-    "Areas/design-pattern"
+    "Resources/Images/design-pattern"
   ]
 }
