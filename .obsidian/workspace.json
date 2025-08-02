@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Study/JSON-Serialization.md",
+                "file": "Areas/Study/Controller-vs-RestController(Writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JSON-Serialization"
+              "title": "Controller-vs-RestController(Writing)"
             }
           }
         ]
@@ -171,17 +171,17 @@
   },
   "active": "68bbc3377bb8d175",
   "lastOpenFiles": [
-    "Areas/Study/REST-vs-SOAP.md",
-    "Areas/Study/JSON-Serialization.md",
-    "Areas/Study/Controller-vs-RestController(Writing).md",
     "Areas/Study/GraphQL(writing).md",
+    "Areas/Study/Controller-vs-RestController(Writing).md",
+    "Areas/Study/REST-vs-SOAP(writing).md",
+    "Areas/Study/JSON-Serialization(writing).md",
+    "Areas/Study/memo.md",
     "Areas/todo.md",
     "Areas/JD/TODO.md",
     "Areas/read-a-book/List.md",
     "Areas/week3_trend(writing).md",
     "Areas/week2_what-is-framework.md",
     "Areas/week2_pair-programming.md",
-    "Areas/Study/memo.md",
     "Areas/Study",
     "Areas/week1_Issue-tracking-system.md",
     "Areas/week3_zero-downtime-Deployment(writing).md",
