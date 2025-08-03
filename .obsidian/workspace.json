@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "850d560000a77c7b",
+        "id": "c99d8ad87f6d5427",
         "type": "tabs",
         "children": [
           {
-            "id": "68bbc3377bb8d175",
+            "id": "43dd4b4ae07342a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/mokjoon-project/week4_progress.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "week4_progress"
+            }
+          },
+          {
+            "id": "7a664a855421bb21",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -21,7 +35,8 @@
               "title": "Controller-vs-RestController(Writing)"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -169,12 +184,18 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "68bbc3377bb8d175",
+  "active": "7a664a855421bb21",
   "lastOpenFiles": [
-    "Areas/Study/GraphQL(writing).md",
     "Areas/Study/Controller-vs-RestController(Writing).md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
+    "controllerVSrestcontroller2.png",
+    "Projects/mokjoon-project/week4_progress.md",
+    "Projects/mokjoon-project/memo.md",
+    "Pasted.md",
+    "Areas/Study/GraphQL(writing).md",
     "Areas/Study/JSON-Serialization(writing).md",
+    "Areas/Study/REST-vs-SOAP(writing).md",
+    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
+    "controllerVSrestcontroller.png",
     "Areas/Study/memo.md",
     "Areas/todo.md",
     "Areas/JD/TODO.md",
@@ -185,19 +206,14 @@
     "Areas/Study",
     "Areas/week1_Issue-tracking-system.md",
     "Areas/week3_zero-downtime-Deployment(writing).md",
-    "Projects/mokjoon-project/week4_progress.md",
     "Projects/mokjoon-project/user-story.md",
     "Projects/mokjoon-project/tool-selection.md",
     "Projects/mokjoon-project/requirements&constraints.md",
     "Projects/mokjoon-project/process-tracker.md",
-    "Projects/mokjoon-project/memo.md",
     "Areas/github-skills.md",
     "Areas/JD/NAVER-BE.md",
     "Areas/JD/NHN-BE.md",
     "Areas/design-pattern/week2_proxy-pattern.md",
-    "Pasted.md",
-    "Areas/design-pattern/week2_template-method.md",
-    "Areas/Spring-framework/99.spring-todo.md",
     "Areas/JD",
     "Areas/Java",
     "Pasted image 20250725171115.png",
@@ -210,11 +226,9 @@
     "Areas/Spring-framework/images/Pasted image 20250724164034.png",
     "Pasted image 20250721160429.png",
     "Pasted image 20250721160435.png",
-    "Pasted image 20250721160433.png",
     "Projects/clone-arknight",
     "Areas/design-pattern/Images",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Resources/jwt_warning.png",
     "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf",
     "Resources/Images/design-pattern"
   ]
