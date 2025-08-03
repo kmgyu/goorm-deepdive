@@ -103,6 +103,7 @@ public class ScrapController {
 1. Client는 URI 형식으로 웹 서비스에 요청을 보낸다.
 2. DispatcherServlet이 요청을 처리할 대상을 찾는다.
 	1. HandlerMapping을 통해 요청을 처리할 Controller를 찾는다.
+	2. 요청에 적절한 HandlerAdapter를 찾는다.
 3. HandlerAdapter을 통해 요청을 Controller로 위임한다.
 4. Controller는 요청을 처리한 후에 ViewName을 반환한다.
 5. DispatcherServlet은 ViewResolver를 통해 ViewName에 해당하는 View를 찾아 사용자에게 반환한다.
@@ -115,9 +116,14 @@ public class ScrapController {
 
 1. Client는 URI 형식으로 웹 서비스에 요청을 보낸다.
 2. DispatcherServlet이 요청을 처리할 대상을 찾는다.
-3. HandlerAdapter을 통해 요청을 Controller로 위임한다.
-4. Controller는 요청을 처리한 후에 객체를 반환한다.
-5. 반환되는 객체는 Json으로 Serialize되어 사용자에게 반환된다.
+3. HandlerAdapter는 해당 작업을 handlerMethodArgumentResolver에게 위임한다.
+	1. HandlerMethodArgumentResolver는 HttpMessageConverter에게 Http Request Body의 데이터를 특정 타입 객체로 변환 요청한다.
+	2. HttpMessageConverter는 Http Request Body의 데이터를 특정 타입 객체로 변환한다.
+	3. HandlerMethodArgumentResolver는 변환된 객체를 전달받아 HandlerAdapter에게 전달한다.
+	4. HandlerAdapter는 전달받은 변환 객체를 Controller의 핸들러 메서드에 전달한다.
+4. Controller는 요청을 처리한 후에 객체를 HandlerAdapter에 반환한다.
+5. HandlerAdapter는 DispatcherServlet에게 Controller의 전달 데이터와 View 이름을 전달한다.
+6. DispatcherServlet은 전달받은 View 이름을 ViewResolver에게 넘겨 적절한 View를 찾아 데이터와 함께 화면을 보여준다.
 
 컨트롤러를 통해 객체를 반환할 시에는 일반적으로 ResponseEntity로 감싸서 반환한다. 그리고 객체를 반환하기 위해 `viewResolver` 대신 `HttpMessageConverter`가 동작한다.
 `HttpMessageConverter`에는 여러 `Converter`가 등록되어 있고, 반환해야 하는 데이터에 따라 사용되는 Converter가 달라진다.
@@ -215,6 +221,8 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
           }  
 
 		// #2 매핑된 핸들러와 어댑터 연결
+		// @ResponseBody의 경우 여기서 HttpMessageConverter를 연결해줌.
+		// 반환 값을 http 응답 바디로 전환하는 역할
           // Determine handler adapter for the current request.  
           HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());  
 
@@ -248,7 +256,9 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
              return;  
           }  
 
-		// 핸들러 실행 이후, 뷰 렌더링
+		// 핸들러 실행 이후, 뷰 렌더링 이전 후처리
+		// 1. 뷰 기본 이름 없을 경우, 기본값 지정
+		// 2. 인터셉터의 후처리 메서드 실행
           applyDefaultViewName(processedRequest, mv);  
           mappedHandler.applyPostHandle(processedRequest, response, mv);  
        }  
@@ -278,6 +288,10 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
           asyncManager.setMultipartRequestParsed(multipartRequestParsed);  
        }  
        else {  
+       // multipart 요청이 들어온 경우 리소스 청소
+       // 요청 파일의 처리를 위해 디스크나 임시파일을 생성하거나, 메모리에 스트림을 열어두는 등의 리소스를 사용하게 되는데, 이들은 가비지 컬렉션 대상이 아니므로 명시적으로 정리해준다.
+       // spring java doc
+       // https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/multipart/MultipartResolver.html
           // Clean up any resources used by a multipart request.  
           if (multipartRequestParsed || asyncManager.isMultipartRequestParsed()) {  
              cleanupMultipart(processedRequest);  
@@ -288,20 +302,76 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 ```
 
 
+## View 렌더링
+ViewResolver 등을 통한 렌더링은 `processDispatchResult`에서 처리된다.
+```java
+/**  
+ * Handle the result of handler selection and handler invocation, which is * either a ModelAndView or an Exception to be resolved to a ModelAndView. */
+private void processDispatchResult(HttpServletRequest request, HttpServletResponse response,  
+       @Nullable HandlerExecutionChain mappedHandler, @Nullable ModelAndView mv,  
+       @Nullable Exception exception) throws Exception {  
+  
+    boolean errorView = false;  
+  
+    if (exception != null) {  
+       if (exception instanceof ModelAndViewDefiningException mavDefiningException) {  
+          logger.debug("ModelAndViewDefiningException encountered", exception);  
+          mv = mavDefiningException.getModelAndView();  
+       }  
+       else {  
+          Object handler = (mappedHandler != null ? mappedHandler.getHandler() : null);  
+          mv = processHandlerException(request, response, handler, exception);  
+          errorView = (mv != null);  
+       }  
+    }  
+  
+    // Did the handler return a view to render?  
+    if (mv != null && !mv.wasCleared()) {  
+	    // render 메서드를 통해 뷰를 반환한다.
+	    // 1. Locale 설정 (사용자 국가, 언어 등)
+		// 2. View 객체 가져오기
+		// 3. ModelAndView의 View 객체 사용
+		// 4. 응답 상태 설정 및 렌더링
+	    // 코드 참고
+	    // https://koosco.tistory.com/entry/Spring-Web-61-DispatcherServlet-%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0-view-%EA%B4%80%EB%A0%A8
+       render(mv, request, response);  
+       if (errorView) {  
+          WebUtils.clearErrorRequestAttributes(request);  
+       }  
+    }  
+    else {  
+       if (logger.isTraceEnabled()) {  
+          logger.trace("No view rendering, null ModelAndView returned.");  
+       }  
+    }  
+  
+    if (WebAsyncUtils.getAsyncManager(request).isConcurrentHandlingStarted()) {  
+       // Concurrent handling started during a forward  
+       return;  
+    }  
+  
+    if (mappedHandler != null) {  
+       // Exception (if any) is already handled..  
+       mappedHandler.triggerAfterCompletion(request, response, null);  
+    }  
+}
+```
 
-# 추가적인 구상거리
 
-### @ResponseBody? @RequestBody?
-`@ResponseBody`는 Handler 매핑을 통해 자동으로 직렬화시켜주는 전략을 선택했다.
+## @ResponseBody 및 @RequestBody 동작 참고
+![](https://blog.kakaocdn.net/dna/lwSUx/btrEYh91acV/AAAAAAAAAAAAAAAAAAAAAPcb9UTu29HLS6SLO0Tvmghx7pSlypRbMb4RYu_xH4WL/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1756652399&allow_ip=&allow_referer=&signature=dosDyuJKfvHHB4gXq5hh7mW047M%3D)
+https://www.inflearn.com/course/스프링-mvc-1/dashboard
 
 
 
-The Spring @Controller and @RestController Annotations
-https://www.baeldung.com/spring-controller-vs-restcontroller
+[The Spring @Controller and @RestController Annotations](https://www.baeldung.com/spring-controller-vs-restcontroller)
 
-[Spring] @Controller와 @RestController 차이
-- 그림자료 있음. 내부 구조를 이해하기 좋으므로 해당 자료 인용 필요
-https://mangkyu.tistory.com/49
+[[Spring] @Controller와 @RestController 차이](https://mangkyu.tistory.com/49)
 
-@Controller와 @RestController의 차이점
-https://dncjf64.tistory.com/288
+[@Controller와 @RestController의 차이점](https://dncjf64.tistory.com/288)
+
+[dispatcherServlet 뜯어보기](https://koosco.tistory.com/entry/Spring-Web-61-DispatcherServlet-%EB%9C%AF%EC%96%B4%EB%B3%B4%EA%B8%B0-view-%EA%B4%80%EB%A0%A8)
+
+[dispatcherServlet이란?](https://yejun-the-developer.tistory.com/4)
+
+[HttpMessageConverter, DispatcherServlet 동작원리](https://okimaru.tistory.com/entry/HttpMessageConverter)
