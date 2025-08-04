@@ -1,5 +1,5 @@
 # 미소지 서적 목록
-- 운영체제
+- 운영체제(짱룡책)
 https://product.kyobobook.co.kr/detail/S000001868743
 
 - SQL AntiPatterns

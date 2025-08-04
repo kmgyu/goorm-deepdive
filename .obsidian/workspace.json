@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c99d8ad87f6d5427",
+        "id": "62a28f749eba61d9",
         "type": "tabs",
         "children": [
           {
-            "id": "43dd4b4ae07342a1",
+            "id": "e5d1347947277a54",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "week4_progress"
             }
-          },
-          {
-            "id": "7a664a855421bb21",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Study/Controller-vs-RestController(Writing).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Controller-vs-RestController(Writing)"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c8a03d5a0fb0a617",
@@ -185,22 +169,25 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "7a664a855421bb21",
+  "active": "e5d1347947277a54",
   "lastOpenFiles": [
-    "Areas/Study/Controller-vs-RestController(Writing).md",
-    "controllerVSrestcontroller2.png",
+    "Areas/todo.md",
+    "Areas/memo.md",
+    "Areas/Study/REST-vs-SOAP(writing).md",
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
+    "Areas/read-a-book/List.md",
+    "Areas/software-develop-process/week1_how-to-agile.md",
+    "Resources/lecture-note/250804.md",
     "Projects/mokjoon-project/week4_progress.md",
+    "controllerVSrestcontroller2.png",
     "Projects/mokjoon-project/memo.md",
     "Pasted.md",
     "Areas/Study/GraphQL(writing).md",
     "Areas/Study/JSON-Serialization(writing).md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
     "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
     "controllerVSrestcontroller.png",
     "Areas/Study/memo.md",
-    "Areas/todo.md",
     "Areas/JD/TODO.md",
-    "Areas/read-a-book/List.md",
     "Areas/week3_trend(writing).md",
     "Areas/week2_what-is-framework.md",
     "Areas/week2_pair-programming.md",
@@ -213,8 +200,6 @@
     "Projects/mokjoon-project/process-tracker.md",
     "Areas/github-skills.md",
     "Areas/JD/NAVER-BE.md",
-    "Areas/JD/NHN-BE.md",
-    "Areas/design-pattern/week2_proxy-pattern.md",
     "Areas/JD",
     "Areas/Java",
     "Pasted image 20250725171115.png",

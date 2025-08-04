@@ -1,17 +1,18 @@
 Spring Boot는 MVC 아키텍처를 위해 Spring-Boot-MVC라는 모듈을 사용한다.
 (해당 모듈은 Spring Boot Starter Web에 종속성으로 연결됨. Spring Initializr에서 확인할 수 있다.)
 
-MVC는 Model, View, Controller로 이루어져있고, 스프링은 어노테이션 기반 MVC를 통해 `@Controller`로 컨트롤러를 정의한다. 이때 `@Controller`보다는 `@RestController`를 사용한 경험이 많을 것이다. 그렇다면 그 둘에는 어떤 것이 차이가 있는가에 대해서 알아보도록 하자.
+MVC는 Model, View, Controller로 이루어져있고, 스프링은 어노테이션 기반 MVC를 통해 `@Controller`로 컨트롤러를 정의한다. 이때 `@Controller`보다는 `@RestController`를 사용한 경험이 많을 것이다. 그렇다면 그 둘에는 어떤 차이가 있는가에 대해서 알아보도록 하자.
 
 > ? : MVC 모델에서 비즈니스 로직은 어디에 위치하는가?
 > 갑작스러운 궁금증으로 찾던 도중 [적합한 자료(구글 그룹 대화)](https://groups.google.com/g/ksug/c/RAMmQAV_P9I)를 발견함.
 > 원칙적으로는 MVC 기술 유형이 비즈니스 로직 구성 방식에 전혀 영향을 미치면 안된다.
 > 단순한 애플리케이션일 경우 컨트롤러에 바로 비즈니스 로직을 구성할 수 있으나, 서비스나 도메인 객체 또는, 비즈니스 객체로 로직을 옮기는 것이 좋다.
+> (2010년 자료이므로, 현재와는 다를 수 있음을 참고하자. 이때는 스프링부트가 나오기 이전이다.)
 
 # @Controller
 
 전통적인 Spring MVC 컨트롤러를 사용하기 위해 사용하는 어노테이션이다.
-자동으로 구현체를 탐지해주는 `@Component` 어노테이션 중 특화된 클래스라고 할 수 있다.
+`@Component` 어노테이션 중 특화된 클래스라고 할 수 있다.
 보통 `@RequestMapping` 어노테이션과 조합하여 리퀘스트 핸들링 메서드를 만들 때 사용한다.
 
 간단한 예제를 확인하자.
@@ -21,6 +22,7 @@ MVC는 Model, View, Controller로 이루어져있고, 스프링은 어노테이�
 @RequestMapping("books")
 public class SimpleBookController {
 
+	// 응답의 Media 타입
     @GetMapping("/{id}", produces = "application/json")
     public @ResponseBody Book getBook(@PathVariable int id) {
         return findBookById(id);
@@ -110,20 +112,24 @@ public class ScrapController {
 
 ### Case2 : Controller로 Data 반환하기
 
-`@ResponseBody`를 활용하는 케이스이다. 앞의 예제에서 보여진 바 있다.
+`@ResponseBody`를 활용하는 케이스이다.
+앞의 예제와 유사하므로, 좀 더 자세하게 설명한다.
 
 ![](https://blog.kakaocdn.net/dna/b2WNwu/btstaBd0DBg/AAAAAAAAAAAAAAAAAAAAALbFTn3n8QQ8DYaiozriHcbNiYHzyQUQ9VKTVJaEbsGx/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1756652399&allow_ip=&allow_referer=&signature=gP30rfHSo5bqn6fbx%2FotIgRt7yI%3D)
 
 1. Client는 URI 형식으로 웹 서비스에 요청을 보낸다.
-2. DispatcherServlet이 요청을 처리할 대상을 찾는다.
-3. HandlerAdapter는 해당 작업을 handlerMethodArgumentResolver에게 위임한다.
-	1. HandlerMethodArgumentResolver는 HttpMessageConverter에게 Http Request Body의 데이터를 특정 타입 객체로 변환 요청한다.
-	2. HttpMessageConverter는 Http Request Body의 데이터를 특정 타입 객체로 변환한다.
-	3. HandlerMethodArgumentResolver는 변환된 객체를 전달받아 HandlerAdapter에게 전달한다.
-	4. HandlerAdapter는 전달받은 변환 객체를 Controller의 핸들러 메서드에 전달한다.
-4. Controller는 요청을 처리한 후에 객체를 HandlerAdapter에 반환한다.
-5. HandlerAdapter는 DispatcherServlet에게 Controller의 전달 데이터와 View 이름을 전달한다.
-6. DispatcherServlet은 전달받은 View 이름을 ViewResolver에게 넘겨 적절한 View를 찾아 데이터와 함께 화면을 보여준다.
+2. DispatcherServlet이 HandlerAdapter와 HandlerExecutionChain을 찾는다.
+3. HandlerAdapter는 메서드 인자 분석을 위해 handlerMethodArgumentResolver에게 위임한다.
+4. HandlerMethodArgumentResolver는 HttpMessageConverter에게 Http Request Body의 데이터를 특정 타입 객체로 변환 요청한다.
+5. HttpMessageConverter는 Http Request Body의 데이터를 특정 타입 객체로 변환한다.
+6. HandlerMethodArgumentResolver는 변환된 객체를 전달받아 HandlerAdapter에게 전달한다.
+7. HandlerAdapter는 전달받은 변환 객체를 Controller의 핸들러 메서드에 전달한다.
+8. Controller의 핸들러 메서드는 요청을 처리한 후에 객체를 반환한다.
+9. HandlerMethodReturnValueHandler는 핸들러의 반환값을 처리하는 작업을 위임받는다.
+	1. 작업을 `RequestResponseBodyMethodProcessor`**에 위임한다.
+	2. ViewResolver 대신, `HttpMessageConverter`에 반환 객체를 전달하여 데이터를 직렬화한다.
+	3. 직렬화된 데이터를 HTTP response body에 넣고 반환한다.
+10. Dispatcher Servlet이 반환값을 받아 사용자에게 전달한다.
 
 컨트롤러를 통해 객체를 반환할 시에는 일반적으로 ResponseEntity로 감싸서 반환한다. 그리고 객체를 반환하기 위해 `viewResolver` 대신 `HttpMessageConverter`가 동작한다.
 `HttpMessageConverter`에는 여러 `Converter`가 등록되어 있고, 반환해야 하는 데이터에 따라 사용되는 Converter가 달라진다.
@@ -192,8 +198,11 @@ Dispatcher Servlet의 dispatch, 즉 요청을 받고 반환하는 과정은 doDi
   
 /**  
  * Process the actual dispatching to the handler. * <p>The handler will be obtained by applying the servlet's HandlerMappings in order.  
- * The HandlerAdapter will be obtained by querying the servlet's installed HandlerAdapters * to find the first that supports the handler class. * <p>All HTTP methods are handled by this method. It's up to HandlerAdapters or handlers  
- * themselves to decide which methods are acceptable. * @param request current HTTP request  
+ * The HandlerAdapter will be obtained by querying the servlet's installed HandlerAdapters 
+ * to find the first that supports the handler class. 
+ * <p>All HTTP methods are handled by this method. It's up to HandlerAdapters or handlers  
+ * themselves to decide which methods are acceptable. 
+ * @param request current HTTP request  
  * @param response current HTTP response  
  * @throws Exception in case of any kind of processing failure  
  */@SuppressWarnings("deprecation")  
@@ -221,7 +230,7 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
           }  
 
 		// #2 매핑된 핸들러와 어댑터 연결
-		// @ResponseBody의 경우 여기서 HttpMessageConverter를 연결해줌.
+		// @ResponseBody의 경우 
 		// 반환 값을 http 응답 바디로 전환하는 역할
           // Determine handler adapter for the current request.  
           HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());  
@@ -356,6 +365,12 @@ private void processDispatchResult(HttpServletRequest request, HttpServletRespon
     }  
 }
 ```
+
+
+## response는 대체 어떻게 보내줌?
+관련자료를 찾지 못해서 GPT에 물어보았다.
+응답 내용을 생성하는 로직의 경우, `HttpServletResponse`의 버퍼에 작성하는 것으로 끝난다.
+DispatchServlet의 처리가 종료되면 서블릿 컨테이너가 이 버퍼를 flush하여 실제로 클라이언트에 전송하는 형태라고 한다.
 
 
 ## @ResponseBody 및 @RequestBody 동작 참고
