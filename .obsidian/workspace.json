@@ -11,14 +11,10 @@
             "id": "e5d1347947277a54",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Resources/lecture-note/250806.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "250806"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -171,19 +167,26 @@
   },
   "active": "e5d1347947277a54",
   "lastOpenFiles": [
-    "Resources/jwt_warning.png",
+    "Projects/tennis-competition-system/memo.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식.md",
+    "Projects/tennis-.md",
+    "Projects/tennis-competition-system",
+    "Archives/week4_SOLID.md",
+    "Archives/week4_intellij-live-template.md",
+    "Resources/lecture-note/250806-study.md",
+    "Projects/week4_report_list.md",
+    "Resources/lecture-note/250806-coffee-chat.md",
     "Resources/lecture-note/250806.md",
+    "Resources/jwt_warning.png",
     "Projects/mokjoon-project/process-tracker.md",
     "Projects/mokjoon-project/requirements&constraints.md",
     "Areas/read-a-book/List.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식.md",
     "Resources/week1_seo-optimization.md",
     "Areas/Study/JSON-Serialization(writing).md",
     "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
     "Projects/mokjoon-project/week4_progress.md",
     "Resources/lecture-note/250805-study.md",
     "Resources/lecture-note/250709.md",
-    "Resources/lecture-note/Untitled.md",
     "Projects/mokjoon-project/week3_progress.md",
     "Projects/week3_report_list.md",
     "Projects/mokjoon-project/memo.md",
@@ -192,12 +195,7 @@
     "Resources/lecture-note/250804.md",
     "Areas/todo.md",
     "Areas/memo.md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
-    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
-    "Areas/software-develop-process/week1_how-to-agile.md",
     "controllerVSrestcontroller2.png",
-    "Pasted.md",
-    "Areas/Study/GraphQL(writing).md",
     "controllerVSrestcontroller.png",
     "Areas/Study",
     "Areas/JD",
@@ -211,11 +209,9 @@
     "Areas/Spring-framework/images/Pasted image 20250724170150.png",
     "Areas/Spring-framework/images/Pasted image 20250724164034.png",
     "Pasted image 20250721160429.png",
-    "Pasted image 20250721160435.png",
     "Projects/clone-arknight",
     "Areas/design-pattern/Images",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf",
-    "Resources/Images/design-pattern"
+    "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf"
   ]
 }

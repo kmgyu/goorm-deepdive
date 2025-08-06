@@ -1,0 +1,3 @@
+- ~~실습 예제 수행~~
+- IntelliJ live template 조사
+- solid 원칙 참고자료 조사
