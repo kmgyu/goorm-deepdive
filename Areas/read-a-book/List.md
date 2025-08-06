@@ -22,6 +22,7 @@ https://github.com/IT-Book-Organization/HeadFirst-DesignPattern
 https://product.kyobobook.co.kr/detail/S000216089379
 
 - 주니어 백엔드 개발자가 반드시 알아야 할 실무 지식
+비슷한 책 있는데, 읽어서 차이를 알아봐야 할 듯.
 https://product.kyobobook.co.kr/detail/S000216376461
 
 - 그림으로 공부하는 IT 인프라 구조
