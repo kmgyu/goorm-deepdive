@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e5d1347947277a54",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Archives/week4_Context-APIvsRedux.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "week4_Context-APIvsRedux"
-            }
-          },
-          {
             "id": "edd1b5682e2cf56d",
             "type": "leaf",
             "state": {
@@ -183,37 +169,38 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e5d1347947277a54",
+  "active": "edd1b5682e2cf56d",
   "lastOpenFiles": [
-    "Areas/Spring-framework/99.spring-todo.md",
+    "Areas/read-a-book/PowerJAVA-review/Chapter 1..md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Resources/lecture-note/250807-study.md",
+    "Areas/Spring-framework/9.auto-di.md",
+    "Areas/Spring-framework/11.bean-scope.md",
+    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
+    "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
+    "Areas/Spring-framework/week3_spring-auto-restart.md",
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
+    "Projects/tennis-competition-system/0807.md",
+    "Projects/tennis-competition-system/memo.md",
+    "Resources/lecture-note/250806-coffee-chat.md",
+    "Resources/lecture-note/250806-study.md",
+    "Areas/JD/TODO.md",
+    "Areas/JD/NHN-BE.md",
+    "Areas/JD/NAVER-BE.md",
+    "Areas/read-a-book/PowerJAVA-review/0..md",
+    "Areas/read-a-book/List.md",
+    "Areas/read-a-book/PowerJAVA-review",
     "Archives/week4_Context-APIvsRedux.md",
+    "Areas/Spring-framework/99.spring-todo.md",
     "Areas/todo.md",
     "Projects/week4_report_list.md",
     "Projects/week3_report_list.md",
     "Resources/lecture-note/250807.md",
     "Resources/lecture-note/250722.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
     "Areas/design-pattern/week2_template-method.md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식",
-    "Projects/tennis-competition-system/memo.md",
-    "Projects/tennis-.md",
     "Projects/tennis-competition-system",
-    "Archives/week4_SOLID.md",
-    "Archives/week4_intellij-live-template.md",
-    "Resources/lecture-note/250806-study.md",
-    "Resources/lecture-note/250806-coffee-chat.md",
-    "Resources/lecture-note/250806.md",
     "Resources/jwt_warning.png",
-    "Projects/mokjoon-project/process-tracker.md",
-    "Projects/mokjoon-project/requirements&constraints.md",
-    "Areas/read-a-book/List.md",
-    "Resources/week1_seo-optimization.md",
-    "Areas/Study/JSON-Serialization(writing).md",
-    "Areas/software-develop-process/week1_how-to-eXtremeProgramming.md",
-    "Projects/mokjoon-project/week4_progress.md",
-    "Resources/lecture-note/250805-study.md",
-    "Resources/lecture-note/250709.md",
-    "Projects/mokjoon-project/week3_progress.md",
     "controllerVSrestcontroller2.png",
     "controllerVSrestcontroller.png",
     "Areas/Study",
@@ -229,7 +216,6 @@
     "Areas/Spring-framework/images/Pasted image 20250724164034.png",
     "Pasted image 20250721160429.png",
     "Projects/clone-arknight",
-    "Areas/design-pattern/Images",
-    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf"
+    "Areas/design-pattern/Images"
   ]
 }
