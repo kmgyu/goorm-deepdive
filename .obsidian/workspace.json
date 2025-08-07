@@ -11,10 +11,28 @@
             "id": "e5d1347947277a54",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Archives/week4_Context-APIvsRedux.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "week4_Context-APIvsRedux"
+            }
+          },
+          {
+            "id": "edd1b5682e2cf56d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 1."
             }
           }
         ]
@@ -167,14 +185,22 @@
   },
   "active": "e5d1347947277a54",
   "lastOpenFiles": [
+    "Areas/Spring-framework/99.spring-todo.md",
+    "Archives/week4_Context-APIvsRedux.md",
+    "Areas/todo.md",
+    "Projects/week4_report_list.md",
+    "Projects/week3_report_list.md",
+    "Resources/lecture-note/250807.md",
+    "Resources/lecture-note/250722.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Areas/design-pattern/week2_template-method.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식",
     "Projects/tennis-competition-system/memo.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식.md",
     "Projects/tennis-.md",
     "Projects/tennis-competition-system",
     "Archives/week4_SOLID.md",
     "Archives/week4_intellij-live-template.md",
     "Resources/lecture-note/250806-study.md",
-    "Projects/week4_report_list.md",
     "Resources/lecture-note/250806-coffee-chat.md",
     "Resources/lecture-note/250806.md",
     "Resources/jwt_warning.png",
@@ -188,13 +214,6 @@
     "Resources/lecture-note/250805-study.md",
     "Resources/lecture-note/250709.md",
     "Projects/mokjoon-project/week3_progress.md",
-    "Projects/week3_report_list.md",
-    "Projects/mokjoon-project/memo.md",
-    "Areas/week3_trend(writing).md",
-    "Resources/lecture-note/250805.md",
-    "Resources/lecture-note/250804.md",
-    "Areas/todo.md",
-    "Areas/memo.md",
     "controllerVSrestcontroller2.png",
     "controllerVSrestcontroller.png",
     "Areas/Study",
@@ -211,7 +230,6 @@
     "Pasted image 20250721160429.png",
     "Projects/clone-arknight",
     "Areas/design-pattern/Images",
-    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Resources/Behind_the_scenes__How_do_lambda_expressions_really_work_in_Java_.pdf"
+    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf"
   ]
 }

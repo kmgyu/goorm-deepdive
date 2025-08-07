@@ -1,3 +1,8 @@
 - ~~실습 예제 수행~~
-- IntelliJ live template 조사
-- solid 원칙 참고자료 조사
+  (250803)
+- ~~IntelliJ live template 조사~~
+  (250804)
+- ~~solid 원칙 참고자료 조사~~
+  (250805)
+- 실습 예제 수행 
+  (250806)
