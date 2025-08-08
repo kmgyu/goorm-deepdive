@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+                "file": "Projects/mokjoon-project/5.journey-map.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 1."
+              "title": "5.journey-map"
+            }
+          },
+          {
+            "id": "a15e8315de6aefec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/mokjoon-project/week4_progress.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "week4_progress"
             }
           }
         ]
@@ -171,33 +185,34 @@
   },
   "active": "edd1b5682e2cf56d",
   "lastOpenFiles": [
-    "Areas/read-a-book/PowerJAVA-review/Chapter 1..md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
-    "Resources/lecture-note/250807-study.md",
-    "Areas/Spring-framework/9.auto-di.md",
-    "Areas/Spring-framework/11.bean-scope.md",
-    "Areas/Spring-framework/10.bean-lifecycle-callback.md",
-    "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
-    "Areas/Spring-framework/week3_spring-auto-restart.md",
-    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
-    "Projects/tennis-competition-system/0807.md",
-    "Projects/tennis-competition-system/memo.md",
-    "Resources/lecture-note/250806-coffee-chat.md",
-    "Resources/lecture-note/250806-study.md",
-    "Areas/JD/TODO.md",
-    "Areas/JD/NHN-BE.md",
+    "Projects/mokjoon-project/4.menu-tree.md",
+    "Projects/mokjoon-project/5.journey-map.md",
+    "Projects/mokjoon-project/3.constraints.md",
+    "Projects/mokjoon-project/week4_progress.md",
+    "Projects/mokjoon-project/2.main-process.md",
+    "Projects/mokjoon-project/1.Requirement-Specification.md",
+    "Projects/mokjoon-project/0.memo.md",
+    "Projects/mokjoon-project/week3_progress.md",
+    "Projects/mokjoon-project/user-story.md",
+    "Projects/mokjoon-project/tool-selection.md",
+    "Projects/mokjoon-project/requirements&constraints.md",
+    "Projects/mokjoon-project/process-tracker.md",
+    "Areas/thinkbig/differ-@Component&@Controller&etc.md",
+    "Areas/thinkbig/tooMany@Qualifier(writing).md",
+    "Areas/github-skills.md",
+    "Resources/lecture-note/250808-study.md",
     "Areas/JD/NAVER-BE.md",
-    "Areas/read-a-book/PowerJAVA-review/0..md",
-    "Areas/read-a-book/List.md",
-    "Areas/read-a-book/PowerJAVA-review",
-    "Archives/week4_Context-APIvsRedux.md",
-    "Areas/Spring-framework/99.spring-todo.md",
-    "Areas/todo.md",
+    "Areas/Spring-framework/week3_spring-auto-restart.md",
+    "Projects/tennis-competition-system/250808.md",
+    "Projects/tennis-competition-system/250807.md",
+    "Areas/thinkbig/memo.md",
+    "Areas/thinkbig",
+    "Areas/Spring-framework/9.auto-di.md",
     "Projects/week4_report_list.md",
-    "Projects/week3_report_list.md",
-    "Resources/lecture-note/250807.md",
-    "Resources/lecture-note/250722.md",
-    "Areas/design-pattern/week2_template-method.md",
+    "Resources/lecture-note/250808.md",
+    "Areas/todo-old.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Areas/read-a-book/PowerJAVA-review",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식",
     "Projects/tennis-competition-system",
     "Resources/jwt_warning.png",
@@ -215,7 +230,6 @@
     "Areas/Spring-framework/images/Pasted image 20250724170150.png",
     "Areas/Spring-framework/images/Pasted image 20250724164034.png",
     "Pasted image 20250721160429.png",
-    "Projects/clone-arknight",
-    "Areas/design-pattern/Images"
+    "Projects/clone-arknight"
   ]
 }
