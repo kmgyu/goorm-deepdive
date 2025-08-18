@@ -355,3 +355,80 @@ production-deployment-workflow 브랜치만든다.
 - Deploy to a staging environment based on labels
 - Deploy to a production environment based on labels
 - Destroy environment based on labels
+
+
+
+## 0818 TIL
+Write JS actions
+https://github.com/skills/write-javascript-actions
+
+깃헙 JS 액션을 작성하고 자동화 커스텀된 특별한 태스크를 워크플로에 적용한다.
+
+step 1. js 플젝 초기화
+액션은 기본으로 활성화되있지만 리포지토리가 그걸 쓰게 해줘야 함.
+일단 워크플로 파일부터 만들 거임
+
+워크플로 파일은 태스크 자동화하는 레시피라고 보면 된다.
+특정 트리거에 따라 발생해야할 job과 step에 대한 시작과 종료 지침을 하우징함.
+
+리포지토리는 다양한 범위의 태스크 유형을 가진 복수의 워크플로 파일을 보유할 수 있음. 따라서 워크플로에 네이밍하는 건 매우 중요하다. 선택된 이름은 수행하는 작업을 반영해야 한다.
+
+JS 작업은 깃헙 개발을 위해 깃헙 툴킷을 이용한다.
+
+npm을 이용해 설치할 확장 라이브러리임. 따라서 node.js가 필요함.
+
+로컬환경에서 워크플로 작성은 리포지토리에서 바로 처리하는 것보다 훨씬 쉽다. 로컬 환경에서 이런 단계 수행 시 원하는 편집기를 사용가능하므로, 코드 작성 시 익숙한 모든 확장 기능 및 스니펫을 사용 가능.
+
+스텝 2. 액션 설정하기
+액션 추가한다.
+
+스텝 3. 메타데이터 파일 만들기
+
+액션 메타데이터
+우리가 작성하는 모든 깃헙 액션에는 메타데이터 파일이 필요함.
+몇 가지 규칙이 있다.
+- 파일 이름은 반드시 action.yml
+- 도커 컨테이너와 JS 액션이 요구됨.
+- YAML 문법으로 작성됨
+
+액션에 대한 다음 정보를 정의한다.
+
+|Parameter|Description|Required|
+|---|---|:-:|
+|Name|The name of your action. Helps visually identify the actions in a job.|✅|
+|Description|A summary of what your action does.|✅|
+|Inputs|Input parameters allow you to specify data that the action expects to use during runtime. These parameters become environment variables in the runner.|❌|
+|Outputs|Specifies the data that subsequent actions can use later in the workflow after the action that defines these outputs has run.|❌|
+|Runs|The command to run when the action executes.|✅|
+|Branding|You can use a color and Feather icon to create a badge to personalize and distinguish your action in GitHub Marketplace.|❌|
+
+메타데이터 파일을 추가한다.
+
+스텝 4. 액션을 위한 JS 파일 만들기
+
+> 아시다시피, JavaScript를 비롯한 다른 프로그래밍 언어에서는 코드를 모듈로 나누어 가독성과 유지 관리를 용이하게 하는 것이 일반적입니다. JavaScript 액션은 특정 트리거에 따라 실행되는 JavaScript로 작성된 프로그램일 뿐이므로, 액션 코드도 모듈화할 수 있습니다.
+
+두 개 파일을 만든다.
+하나는 외부 API와 joke를 가져오는 로직
+다른 건 그 모듈을 불러서 joke를 액션 콘솔에 출력시킬 것
+제대로 해석한 건가?
+joke.js로 외부에서 가져오고, main.js를 통해 실행하는 듯
+
+스텝 5. 액션을 워크 플로 파일에 추가하기
+```
+      - name: ha-ha
+        uses: ./.github/actions/joke-action
+```
+해당 코드를 이미 존재하는 yml에 추가한다.
+
+스텝 6. joke 액션 트리거
+first joke, second joke 라벨로 액션을 트리거한다.
+
+joke를 액션 콘솔에서 확인할 수 있다.
+```
+Two peanuts were walking down the street. One was a salted
+```
+second joke는 작동을 안한다. 왜지?
+### TODO
+reusable workflows
+https://github.com/skills/reusable-workflows
