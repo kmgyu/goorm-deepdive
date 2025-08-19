@@ -30,6 +30,10 @@
 - graphQL 마무리 및 스터디 발표
 - 무중단 배포 자료
 
+
+### Github Skills
+JS 워크플로
+
 ### 목준
 - 목준 api docs 작성 done
 

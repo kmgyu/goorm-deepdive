@@ -69,7 +69,7 @@
 
 ### 롤링 배포 (Rolling Deployment)
 
-**롤링 릴리스**(rolling release), **롤링 업데이트**(rolling update), **지속적 배포**(continuous delivery)라고도 한다.
+**롤링 업데이트**(rolling update), **지속적 배포**(continuous delivery)라고도 한다. 쿠버네티스의 기본 배포 전략이다.
 
 ![](https://cdn.prod.website-files.com/6171016af5f2c575401ac7a0/667bc30effd7bd92ebcd93a4_6645bea6cc736d8c99824a6a_ImageryEppo_1.png)
 [geteppo - what is rolling deployments](https://www.geteppo.com/blog/what-are-rolling-deployments)
@@ -152,6 +152,11 @@
   환경이 두 개이기 때문에 시스템 자원이 2배 필요하며 비용 문제가 있을 수 있어 소규모 프로젝트에 적용하기 어렵습니다.
 
 
+### 실제 기업은 어떻게 활용하는가
+LG 전자 - Amazon Aurora 및 RDS Blue/Green Deployment 활용
+
+
+
 ### 카나리 배포 (canary deployment)
 
 ![canary deployment](canary-deployments.png)
@@ -193,6 +198,50 @@
 - **호환성 문제**
   배포 진행 간 구/신 버전 공전으로 인해 호환성 문제가 발생할 수 있습니다.
 
+
+### 실제 기업은 어떻게 활용하는가
+카나리 배포에서 핵심은 구 버전과 신 버전 사이의 트래픽의 양을 제어하는 것입니다. 그리고 이를 위한 기술은 대표적으로 아래와 같습니다.
+- Kubernetes의 kube-proxy를 활용
+- Ingress Gateway 활용 (Ex. Nginx)
+- Service Mesh Provider (Ex. Istio)
+
+1. 버즈빌 [링크](https://tech.buzzvil.com/blog/%EB%B0%B0%ED%8F%AC%EB%A5%BC-%EC%95%88%EC%A0%84%ED%95%98%EA%B2%8C/)
+- **Istio**의 traffic shifting을 활용한 카나리 배포 지원
+- 데이터독(datadog)을 활용한 버전별 메트릭 제공 및 비교
+
+1. 하이퍼 커넥트 [링크](https://hyperconnect.github.io/2020/08/19/microsrv-deploy-3.html)
+- **Istio**를 활용한 카나리 배포 수행
+- **Spinnaker**를 활용한 pipeline 생성
+
+1. 데브시스터즈 [링크](https://tech.devsisters.com/posts/blue-green-canary-deployment/)
+- **Blue-Green과 Canary 기법을 함께 활용.**
+- Blue-Green 전략을 바탕으로 구 서버와 같은 스펙으로 신 서버를 미리 프로비저닝
+- Canary 전략을 바탕으로 신 서버에 조금의 트래픽을 흘려 검증 과정을 거친 후 모든 트래픽을 한번에 옮긴다.
+- **Istio**를 활용한 traffic shifting
+
+세 기업 모두 공통적으로 **Istio**를 활용하여 신 버전과 구 버전 사이의 **traffic shifting**을 수행하였습니다.
+
+또한 데브시스터스의 경우 **두 가지 배포 방식(Blue-Green, Canary)을 함께 사용** 하여 각 배포 방식의 장단점을 보완하는 점이 인상적이었습니다.
+
+
+**Isto?**
+준영님의 8월 8일 대규모 트래픽 제어에서도 나왔습니다!
+**“Simplify observability, traffic management, security, and policy with the leading service mesh.”**
+
+직역하면 **service mesh**를 통해 가시성(observability), 트래픽 관리(traffic management), 보안(security) 그리고 정책(policy)을 단순화한다는 뜻입니다.
+
+그럼 **service mesh**는 또 무엇일까요?  
+서비스 메시는 **애플리케이션 코드의 변경 없이** 서비스간의 통신을 제어하고 관리하는 infrastructure 계층입니다.
+
+여기서 **애플리케이션 코드의 변경 없이**라는 표현에 주목해봅시다.
+
+최근 MSA가 발전하면서 수십~수천개의 마이크로서비스를 관리해야하는 일이 많아졌습니다. 이는 수많은 서비스 인스턴스 간의 통신을 처리하고 관리 및 모니터링 하는 것 또한 매우 복잡해진 것이죠.
+
+따라서 서비스 메시를 통해 서비스 간 통신을 추상화하여 **이들 통신과 관리를 유용하게** 한 것이죠.
+
+그리고 **서비스 메시를 구현하는 대표적인 오픈소스 툴이 Istio**인 것입니다.
+
+---
 
 ## 추가 개념
 *버전 관리에서, 롤링 릴리즈라는 단어가 쓰인다.
@@ -258,3 +307,10 @@ https://sinabroit53.tistory.com/44
 https://3juhwan.tistory.com/47
 
 
+실무 사례
+
+LG전자의 Amazon Aurora 및 RDS 블루/그린 배포를 이용한 데이터베이스 업그레이드 안정성 확보
+https://aws.amazon.com/ko/blogs/tech/lg-electronics-blue-green-deployments-in-amazon-aurora-and-amazon-rds/
+
+카나리 배포 파헤치기
+https://facerain.github.io/canary-deployment/canary-deployment/

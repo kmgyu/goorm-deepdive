@@ -4,53 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "a4df85f2815490c9",
+        "id": "f4af981ebe95d6fe",
         "type": "tabs",
         "children": [
           {
-            "id": "a4d9c8f81552a392",
+            "id": "f157d3a8149a1c86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/todo/DONE.md",
+                "file": "Areas/read-a-book/PowerJAVA-review/Chapter 16. (writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DONE"
+              "title": "Chapter 16. (writing)"
             }
           },
           {
-            "id": "b3eeb34021941934",
+            "id": "04346bd912b36336",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/todo/TODO.md",
+                "file": "Areas/JD/NHN-BE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
-            }
-          },
-          {
-            "id": "ec265043a31e7354",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/github-skills.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "github-skills"
+              "title": "NHN-BE"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,83 +97,14 @@
   "right": {
     "id": "c8a03d5a0fb0a617",
     "type": "split",
-    "children": [
-      {
-        "id": "ea2950accec189cd",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "4b880ba72832965c",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "week1/vscode_hotkeys.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for vscode_hotkeys"
-            }
-          },
-          {
-            "id": "11436ef7709b1e3b",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "week1/vscode_hotkeys.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from vscode_hotkeys"
-            }
-          },
-          {
-            "id": "17976f588dc8abde",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
-            "id": "a18f60ab6cc7edda",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "week1/vscode_hotkeys.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of vscode_hotkeys"
-            }
-          }
-        ]
-      }
-    ],
+    "children": [],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -198,35 +114,35 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "ec265043a31e7354",
+  "active": "f157d3a8149a1c86",
   "lastOpenFiles": [
+    "Areas/read-a-book/PowerJAVA-review/Chapter 15..md",
+    "Areas/read-a-book/PowerJAVA-review/Chapter 16. (writing).md",
+    "Areas/read-a-book/PowerJAVA-review/Chapter 14..md",
     "Areas/todo/TODO.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Areas/JD/NHN-BE.md",
+    "Areas/JD/NAVER-BE.md",
+    "Areas/JD/business.md",
     "Areas/Spring-framework/tooMany@Qualifier.md",
+    "Areas/Study/week3_zero-downtime-Deployment.md",
+    "Areas/JD/TODO.md",
+    "Areas/todo/DONE.md",
+    "Areas/Study/seminar/250819.md",
+    "Areas/Study/seminar/Untitled.md",
+    "Projects/tennis-competition-system/250819.md",
+    "Resources/lecture-note/250819-특강.md",
+    "Resources/lecture-note/250819.md",
+    "Projects/week2_report_list.md",
     "Areas/github-skills.md",
     "Resources/honey-tips.md",
-    "Areas/todo/DONE.md",
     "Areas/tech/week3_trend(writing).md",
     "Areas/thinkbig/memo.md",
     "Areas/Spring-framework/differ-@Component&@Controller&etc.md",
     "Areas/read-a-book/PowerJAVA-review/Chapter 13..md",
     "Projects/clone-arknight/memo.md",
-    "Areas/read-a-book/PowerJAVA-review/Chapter 14..md",
-    "Areas/Study/seminar/250819.md",
     "Resources/lecture-note/250818.md",
-    "Areas/Spring-framework/spring-core-principles/11.bean-scope.md",
-    "Areas/Spring-framework/spring-MVC-1/3.servlet.md",
-    "Areas/Spring-framework/spring-MVC-1/2.understanding-web-application.md",
-    "Areas/read-a-book/PowerJAVA-review/0..md",
-    "Areas/memo.md",
-    "Areas/Study/OAuth2-implementation(writing).md",
-    "Areas/read-a-book/PowerJAVA-review/Chapter 2..md",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Resources/week1_WAS.md",
-    "Areas/Study/week3_zero-downtime-Deployment.md",
-    "Areas/Study/JSON-Serialization(writing).md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
-    "Areas/todo/todo-old.md",
-    "Resources/week5_firebaseCI-tutorial.md",
     "Areas/Spring-framework/spring-MVC-1",
     "Areas/Spring-framework/spring-core-principles",
     "blue-green-deployment-schema.png",
