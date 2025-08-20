@@ -77,9 +77,8 @@
 ![rolling-deployments-schema.png](rolling-deployments-schema.png)
 [Koyeb - CD explained](https://www.koyeb.com/blog/blue-green-rolling-and-canary-continuous-deployments-explained)
 
-서비스를 하면서 기능에 변경이 생기면 업데이트는 필연적이며, 업데이트를 하는 동안에는 서비스를 사용할 수 없다.
-보통 서비스를 하는 기업들은 2개 이상의 서버를 가진다.
-'*그렇다면 한 번에 몇 개만 순차적으로 업데이트한다면 서비스를 유지하면서 업데이트를 할 수 있지 않을까?*' 라는 아이디어이다.
+서비스를 하면서 기능에 변경이 생기면 업데이트는 필연적이며, 업데이트를 하는 동안에는 서비스를 사용할 수 없습니다.
+보통 서비스를 하는 기업들은 2개 이상의 서버를 가지는데요, 롤링 배포는 '*그렇다면 한 번에 몇 개만 순차적으로 업데이트한다면 서비스를 유지하면서 업데이트를 할 수 있지 않을까?*' 라는 아이디어를 구현한 것입니다.
 
 기본 개념
 - **순차적 업데이트**
@@ -161,9 +160,9 @@ LG 전자 - Amazon Aurora 및 RDS Blue/Green Deployment 활용
 
 ![canary deployment](canary-deployments.png)
 
-새로운 소프트웨어 버전을 전체 사용자에게 배포하기 전에 소수의 사용자에게 먼저 배포하여 시스템의 안정성과 성능을 검증하는 전략
+새로운 소프트웨어 버전을 전체 사용자에게 배포하기 전에 소수의 사용자에게 먼저 배포하여 시스템의 안정성과 성능을 검증하는 전략입니다.
 
-소수의 사용자를 대상으로 일종의 베타 테스트를 시행해 안전한지 확인하기 때문에 카나리아(canary)라는 이름이 붙었다! 마스터-슬레이브 급의 작명센스이다.
+소수의 사용자를 대상으로 일종의 베타 테스트를 시행해 안전한지 확인하기 때문에 카나리아(canary)라는 이름이 붙었습니다! 마스터-슬레이브 급의 작명센스라 할 수 있습니다.
 
 기본 개념
 
@@ -221,7 +220,10 @@ LG 전자 - Amazon Aurora 및 RDS Blue/Green Deployment 활용
 
 세 기업 모두 공통적으로 **Istio**를 활용하여 신 버전과 구 버전 사이의 **traffic shifting**을 수행하였습니다.
 
-또한 데브시스터스의 경우 **두 가지 배포 방식(Blue-Green, Canary)을 함께 사용** 하여 각 배포 방식의 장단점을 보완하는 점이 인상적이었습니다.
+또한 데브시스터스의 경우 **두 가지 배포 방식(Blue-Green, Canary)을 함께 사용** 하여 각 배포 방식의 장단점을 보완하는 점은 인상깊게 볼 수 있습니다.
+
+프로비저닝?
+**사용자가 요청한 IT 자원을 사용할 수 있는 상태로 준비하는 것**
 
 
 **Isto?**
@@ -307,7 +309,7 @@ https://sinabroit53.tistory.com/44
 https://3juhwan.tistory.com/47
 
 
-실무 사례
+### 실무 사례
 
 LG전자의 Amazon Aurora 및 RDS 블루/그린 배포를 이용한 데이터베이스 업그레이드 안정성 확보
 https://aws.amazon.com/ko/blogs/tech/lg-electronics-blue-green-deployments-in-amazon-aurora-and-amazon-rds/
