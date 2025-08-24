@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9b3646e1c3cc08e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/todo/DONE.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DONE"
-            }
-          },
-          {
             "id": "d89976e0d7aa5157",
             "type": "leaf",
             "state": {
@@ -34,9 +20,22 @@
               "icon": "lucide-file",
               "title": "TODO"
             }
+          },
+          {
+            "id": "140decb801b1840c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/JD/activities-for-JD(writing).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "activities-for-JD(writing)"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -187,8 +186,18 @@
   },
   "active": "d89976e0d7aa5157",
   "lastOpenFiles": [
+    "Areas/Study/Index-structure(writing).md",
+    "Pasted image 20250824225116.png",
+    "Areas/Study/topics.md",
     "Areas/todo/DONE.md",
+    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
     "Areas/todo/TODO.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Areas/todo/github-skills.md",
+    "Areas/Study/JSON-Serialization(writing).md",
+    "Areas/JD/TODO.md",
+    "Areas/Spring-framework/spring-MVC-1/6.spring-mvc.md",
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
     "Areas/Spring-framework/99.spring-todo.md",
     "Areas/Study/seminar/250822.md",
     "Areas/read-a-book/PowerJAVA-review/Chapter 17&18..md",
@@ -202,18 +211,8 @@
     "Projects/tennis-competition-system/daily",
     "Resources/lecture-note/250822.md",
     "Areas/Study/OAuth2-implementation(writing).md",
-    "Areas/Spring-framework/spring-MVC-1/Untitled 1.md",
     "Areas/Spring-framework/spring-MVC-1/4.servlet&jsp&mvc.md",
     "Areas/Spring-framework/spring-MVC-1/3.servlet.md",
-    "Resources/lecture-note/250723.md",
-    "Projects/tennis-competition-system/daily/250821.md",
-    "Resources/lecture-note/250821.md",
-    "Areas/Study/topics.md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
-    "Resources/lecture-note/250821-특강.md",
-    "Resources/lecture-note/250819-특강.md",
-    "Areas/Study/memo.md",
-    "Areas/todo/github-skills.md",
     "ab-testing.png",
     "Archives/report-list-old",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
@@ -231,7 +230,6 @@
     "Resources/jwt_warning.png",
     "controllerVSrestcontroller2.png",
     "controllerVSrestcontroller.png",
-    "Areas/Spring-framework/images/Pasted image 20250724163954.png",
-    "Areas/Spring-framework/images/Pasted image 20250724163535.png"
+    "Areas/Spring-framework/images/Pasted image 20250724163954.png"
   ]
 }
