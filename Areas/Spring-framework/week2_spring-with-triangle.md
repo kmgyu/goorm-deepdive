@@ -1,6 +1,6 @@
 # 스프링 삼각형으로 알아보는 스프링
 
-![스프링삼각형](https://blog.kakaocdn.net/dna/wvBhF/btsB6kIzX9d/AAAAAAAAAAAAAAAAAAAAAH75uO3RQLaHFEvh3Bojlczx_MR5oghSSqxQC5zUYA5i/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1753973999&allow_ip=&allow_referer=&signature=2DkcpC43qo3w9IeaqZvkeP%2Fz7PI%3D)
+![[spring-triangle.png]]
 *스프링의 주요 특징을 삼각형으로 표현한 것, 개발 철학과도 관련이 있다.*
 
 ## 스프링 개발 철학
