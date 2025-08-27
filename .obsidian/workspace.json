@@ -11,26 +11,14 @@
             "id": "c2d160406ea2980f",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "lecture-spring-mvc-1.57.1.png"
-              },
-              "icon": "lucide-image",
-              "title": "lecture-spring-mvc-1.57.1"
-            }
-          },
-          {
-            "id": "afca4044959911ad",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
+                "file": "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage(writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7.spring-mvc-basic-feature-2"
+              "title": "8. spring-mvc-webpage(writing)"
             }
           },
           {
@@ -39,30 +27,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/todo/TODO.md",
+                "file": "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage(writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "8. spring-mvc-webpage(writing)"
             }
           },
           {
-            "id": "61c24c827b309188",
+            "id": "ed9b809ba70552c5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/JD/activities-for-JD(writing).md",
+                "file": "Areas/Study/Index-structure-for-interview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "activities-for-JD(writing)"
+              "title": "Index-structure-for-interview"
+            }
+          },
+          {
+            "id": "16816155c967dc10",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/tennis-competition-system/daily/250827.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "250827"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,19 +212,29 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "8686113cba622d80",
+  "active": "c2d160406ea2980f",
   "lastOpenFiles": [
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 2..md",
+    "Projects/tennis-competition-system/daily/250827.md",
+    "Areas/Study/Index-structure-introduction.md",
+    "Areas/Study/Index-structure-for-interview.md",
+    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage(writing).md",
+    "Resources/lecture-note/250827.md",
+    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
+    "Resources/week1_WAS.md",
+    "Resources/lecture-note/250826.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Areas/todo/TODO.md",
+    "lecture-spring-mvc-1.57.1.png",
     "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
     "lecture-spring-mvc-1.58.2.png",
     "lecture-spring-mvc-1.58.1.png",
-    "lecture-spring-mvc-1.57.1.png",
     "Areas/Spring-framework/spring-MVC-1/6.spring-mvc.md",
-    "Areas/JD/activities-for-JD(writing).md",
     "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
     "Areas/Study/seminar/250826.md",
     "Areas/todo/github-skills.md",
-    "Areas/todo/TODO.md",
     "Projects/tennis-competition-system/daily/250826.md",
     "Projects/tennis-competition-system/daily/250822.md",
     "Projects/tennis-competition-system/daily/250819.md",
@@ -233,24 +244,15 @@
     "Projects/tennis-competition-system/daily/250811-coffee-chat.md",
     "Projects/tennis-competition-system/daily/250812-coffee-chat.md",
     "Projects/tennis-competition-system/daily/250814.md",
-    "Projects/tennis-competition-system/daily/250821.md",
-    "Areas/Study/Index-structure-introduction.md",
-    "Areas/Study/Index-structure-for-interview.md",
     "hash table.png",
     "Fractal-Tree.png",
     "B+tree.png",
     "B-tree.png",
     "B-tree-bookmark-lookup.png",
-    "Resources/lecture-note/250826.md",
-    "Resources/lecture-note/250825.md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
-    "Areas/Study/OAuth2-implementation(writing).md",
-    "Areas/Study/JSON-Serialization(writing).md",
     "spring-triangle.png",
     "Pasted image 20250824225116.png",
     "Projects/tennis-competition-system/daily",
     "Archives/report-list-old",
-    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Areas/Spring-framework/spring-MVC-1",
     "Areas/Spring-framework/spring-core-principles",
     "미확인 793717.crdownload",

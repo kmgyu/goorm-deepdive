@@ -107,6 +107,8 @@ MySQL의 엔진인 InnoDB에서는 더 복잡하게 구현된다.
 키키의 범위마다 찾아가야할 페이지 넘버(포인터)가 있는데, 해당 페이지 넘버를 통해 곧바로 다음 노드로 넘어간다.
 그리고 리프 노드에 다다랐을 때 디스크에 존재하는 데이터의 주소값을 구할 수 있고, Double Linked List를 통해 탐색도 가능하다. 
 
+B+tree의 생성 시뮬레이션
+https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html
 
 
 ## Hash 인덱스 알고리즘

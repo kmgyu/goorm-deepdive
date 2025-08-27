@@ -29,12 +29,40 @@
 - B-트리 알고리즘 (MySQL에서도 사용하는 방식)
 - 프랙탈-트리 알고리즘 (비교적 최근에 나온 알고리즘)
 
+![[B-tree.png]]
+
 MySQL(InnoDB)에서 가장 기본적으로 사용되는 인덱스 알고리즘은 B-Tree의 아종인 **B+Tree**입니다.
 B+Tree는 리프 노드에만 실제 데이터가 저장되고, 리프 노드들은 Linked List 형태로 연결되어 있습니다.  
 이 구조 덕분에 범위 검색이나 `ORDER BY` 같은 정렬 최적화가 가능하며, 시간 복잡도는 O(log N) 수준으로 안정적입니다.
 
+![[hash table.png]]
+
 반면에, **Hash 인덱스**는 값의 동등 비교, 즉 `=` 연산에는 매우 빠릅니다. 하지만 범위 검색이나 정렬에서 불리합니다.
 따라서 Redis나, MySQL의 Memory 엔진처럼 메모리 기반의 특정 엔진에서 주로 사용됩니다.
+
+hash 인덱스 예제
+```sql
+-- 1. 메모리 엔진으로 테이블 생성
+CREATE TABLE user_sessions (
+    session_id CHAR(36) NOT NULL, -- UUID 같은 세션 키
+    user_id BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (session_id) USING HASH  -- 해시 인덱스 지정
+) ENGINE=MEMORY;
+
+-- 2. 데이터 삽입
+INSERT INTO user_sessions (session_id, user_id) VALUES
+('550e8400-e29b-41d4-a716-446655440000', 1),
+('550e8400-e29b-41d4-a716-446655440001', 2),
+('550e8400-e29b-41d4-a716-446655440002', 3);
+
+-- 3. 해시 인덱스는 동등 비교(=)에 특화
+SELECT * FROM user_sessions
+WHERE session_id = '550e8400-e29b-41d4-a716-446655440001';
+
+-- 4. 해시 인덱스 확인
+SHOW INDEX FROM user_sessions;
+```
 
 > B-Tree의 장점은 RID(row ID, record ID) 원본을 유지한다는 것입니다.
 > 해시와 다르게 PK를 유지하므로 범위 비교, 정렬 등에서 해당 유용하게 사용할 수 있습니다.
@@ -49,7 +77,11 @@ B+Tree는 리프 노드에만 실제 데이터가 저장되고, 리프 노드들
     
 - 보조 인덱스(세컨더리 인덱스)는 여러 개를 만들 수 있습니다.  
 리프 페이지에는 데이터 자체가 아니라 클러스터 인덱스 키 값이 저장됩니다. 따라서 데이터를 실제로 가져오려면 보조 인덱스를 탐색하고, 거기서 PK를 추출한 뒤 다시 클러스터 인덱스를 탐색하는 과정이 필요합니다. 이를 Bookmark Lookup이라고 부릅니다.  
-실무에서 인덱스 튜닝의 대부분은 이 보조 인덱스를 어떻게 설계할지에 달려 있습니다.
+실무에서 인덱스 튜닝의 대부분은 이 보조 인덱스를 어떻게 설계할 지에 달려 있습니다.
+
+> 참고사항
+> 페이지 스플릿은 두 유형에서 모두 일어나며 모두 디스크 I/O가 발생함.
+> 그러나 보조 인덱스는 스플릿 시 데이터 페이지를 옮기지 않기 때문에 상대적으로 부담이 덜하다.
 
 ![[B-tree-bookmark-lookup.png]]
 *보조 인덱스의 Bookmark look up 예시*
@@ -70,7 +102,9 @@ INDEX는 ORDER BY와 GROUP BY에도 영향을 끼치는데 다음과 같은 경�
 
 ---
 
-## 4. 면접 대비 질문 포인트
+## 4. 중요 포인트
+
+> 면접 예상 질문 포인트 (인덱스만)
 
 ### 1. 인덱스를 만들면 무조건 성능이 좋아지나요?
 그렇지 않습니다. 조회는 빨라지지만 변경 작업에는 부하가 생깁니다. 따라서 읽기 위주의 시스템에서는 인덱스 효과가 크지만, 쓰기 작업이 많은 시스템에서는 오히려 성능이 나빠질 수 있습니다.
@@ -213,6 +247,25 @@ ORDER BY에 사용되는 컬럼이 인덱스에 포함되어 있어야 합니다
 6. 튜닝의 핵심은 EXPLAIN 실행계획 분석과 적절한 보조 인덱스 설계, 그리고 Covering Index 활용이다.
     
 
+# what is this
+
+## filesort
+
+조회된 데이터를 인덱스로 정렬할 수 없을 때, 내부적으로 추가적인 정렬 작업을 수행하는 것을 칭함.
+
+Using temporary와 Using filesort로 나뉜다.
+
+
+`Using filesort`는 쿼리에서 첫 번째로 조회하는 테이블(**드라이빙 테이블**이라고 한다)에 대해서만 정렬이 필요한 경우이다.
+
+일반적으론 단일 테이블에 대해 실행한 쿼리가 정렬 시 인덱스를 사용하지 못하는 경우 발생한다.
+
+> 이때 SortBuffer로 복사 및 in-place 정렬을 실행하게 된다.
+
+`Using temporary`는 정렬 작업을 위해 임시 테이블이 필요한 경우를 말한다.
+
+인덱스를 통해 정렬을 수행할 수 없거나, `filesort`만으로 정렬을 완료할 수 없는 경우 임시 테이블을 생성해 그곳에 조회된 데이터들을 모두 밀어넣고 정렬하는 작업을 거친다.
+
 # Reference
 
 랜덤 액세스, 순차 액세스
@@ -246,3 +299,6 @@ cardinality와 selectivity의 차이
 
 면접 대비 - join
 - https://one-armed-boy.tistory.com/entry/JOIN-%EB%A9%B4%EC%A0%91-%EB%8C%80%EB%B9%84
+
+filesort
+https://seongonion.tistory.com/158
