@@ -429,6 +429,35 @@ joke를 액션 콘솔에서 확인할 수 있다.
 Two peanuts were walking down the street. One was a salted
 ```
 second joke는 작동을 안한다. 왜지?
-### TODO
+### 0828 TIL
 reusable workflows
 https://github.com/skills/reusable-workflows
+
+재사용 가능한 워크 플로 전략
+
+깃헙 워크 플로 복붙하는 사람이 많을 것이다.
+이런 귀찮은 복붙을 없애기 위해 재사용 워크 플로를 소개한다!
+그 예시로, 노드 앱이 모두 같은 방식으로 빌드하는 경우 그냥 같은 워크플로를 사용할 수 있음.
+
+재사용 가능하게 만드려면 어떻게 해야 하는가?
+재사용가능한 워크플로는  푸시, 이슈, 워크플로 디스패치 등과 유사한 이벤트 트리거인 workflow_call 트리거를 포함한다.
+
+스텝3
+매트릭스 전략을 추가하여 범용으로 만든다!
+
+**What is a matrix strategy**: A matrix strategy lets you use variables in a single job definition to automatically create multiple job runs that are based on the combinations of the variables. For example, you can use a matrix strategy to test your code in multiple versions of a language or on multiple operating systems. Below is an example:
+
+```yaml
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+```
+
+example matrix는 os와 nodejs 버전을 조합해 가능한 것으로 실행한다.
+총 6개 잡을 각각 돌려서 가능한 것을 실행시킴.
+
+Actions 탭에서 내 워크플로들이 뜬다. 거기서 선택해서 직접 브랜치에 트리거 시킬 수 있다. 브랜치도 선택해야 함.
+run workflow 돌리면 된다.
