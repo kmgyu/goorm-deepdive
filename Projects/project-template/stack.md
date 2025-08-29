@@ -4,7 +4,6 @@
 무근본 스택 정하기
 
 코어
-자바 24까지 지원한다지만 호환성 안 맞는 패키지가 나올 것 같기 때문에 조금 연식이 쌓인 21을 선택했다.
 스프링 부트는 3.5 이용하게 될 듯.
 
 자바 21, Spring Boot 3.5
@@ -22,6 +21,10 @@ https://jinhos-devlog.tistory.com/entry/Spring-Initializr%EC%97%90%EC%84%9C-Grad
 
 DB 및 ORM
 JPA & QueryDSL
+
+
+---
+GPT가 추천한 내용. 보류함.
 
 - JPA(Hibernate 6.x) + QueryDSL. Boot가 호환 버전 관리하므로 버전은 가급적 생략. [Stack Overflow](https://stackoverflow.com/questions/74756871/spring-boot-3-with-querydsl?utm_source=chatgpt.com)
 - 마이그레이션은 Flyway/Liquibase 중 하나 필수. prod에선 ddl-auto 끄기.
