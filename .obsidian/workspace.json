@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/project-template/security/start.md",
+                "file": "Projects/project-template/security/issue.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "start"
+              "title": "issue"
             }
           }
         ]
@@ -172,13 +172,19 @@
   },
   "active": "18072b5d8fecfc73",
   "lastOpenFiles": [
-    "Projects/project-template/security/gpt-min.md",
     "Projects/project-template/security/start.md",
+    "Projects/project-template/security/issue.md",
+    "Projects/project-template/Untitled.md",
+    "Resources/week2_getter-setter.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 3..md",
+    "Areas/Spring-framework/week3_spring-auto-restart.md",
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
+    "Areas/tech/week3_zero-downtime-Deployment.md",
+    "Projects/project-template/security/gpt-min.md",
     "Projects/project-template/security/gpt-recommendation.md",
     "Areas/todo/TODO.md",
     "Resources/honey-tips.md",
     "Resources/github-skills.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 3. (writing).md",
     "Areas/Study/seminar/250829.md",
     "Areas/todo/todo-old.md",
     "Areas/todo/DONE.md",
@@ -193,13 +199,7 @@
     "Resources/lecture-note/250828.md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 2..md",
     "Areas/Study/Index-structure-for-interview.md",
-    "Areas/Study/seminar/250828.md",
-    "Areas/read-a-book/List.md",
-    "Resources/lecture-note/250819-특강.md",
-    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage.md",
     "Projects/project-template",
-    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
-    "Areas/Study/Index-structure-introduction.md",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "lecture-spring-mvc-1.57.1.png",
     "lecture-spring-mvc-1.58.2.png",
