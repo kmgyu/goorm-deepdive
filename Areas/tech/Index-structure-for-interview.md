@@ -1,3 +1,6 @@
+[[Index-structure-introduction]]
+원본이 되는 내용
+
 # 데이터베이스 인덱스 for 면접 대비
 
 ## 1. 인덱스 기본 개념

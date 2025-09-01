@@ -3,9 +3,10 @@
 즉 앱의 현재 상태를 유지하면서 변경사항을 반영하는 것이다.
 그런데 Spring DevTools가 지원하는 기능은 애플리케이션 현재 상태(메모리의 Bean 상태, static 변수, 세션) 등은 유지가 되지 않는다.
 
-사실 스프링이 지원하는 기능은 정확히는 [Automatic Restart](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.restart)라는 명칭이 있다.<br> 위의 기능과는 다른 점이 존재하니 혼동하지 않는 것이 좋다.
+사실 스프링이 지원하는 기능은 정확히는 [Automatic Restart](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.restart)라는 명칭이 있다...!
+그런데 핫-리로드로도 많이 쓰인다.
 
-## 비슷한 유형의 기술
+## 비슷한 용어
 
 | 용어                               | 정의                                                | 특징                           | 대표 사용처                         |
 | -------------------------------- | ------------------------------------------------- | ---------------------------- | ------------------------------ |
@@ -15,6 +16,10 @@
 | **Hot Deploy**                   | 단일 서버(WAS)에 애플리케이션을 **중단 없이 재배포**                 | 애플리케이션 컨테이너(WAS)가 담당         | Tomcat, JBoss, WebLogic 등      |
 | **HMR (Hot Module Replacement)** | 모듈 단위로 변경된 JS 코드만 **즉시 교체**                       | 브라우저 리프레시 없음, 상태 유지          | Webpack, Vite, React, Vue 등    |
 | **Live Reload**                  | 파일 변경 시 **자동으로 브라우저 새로고침**                        | 상태 유지 ❌, 주로 정적 리소스용          | Spring DevTools, BrowserSync   |
+
+> Hot Deploy 설명 추가
+> 톰캣이 유지되면서 어플리케이션 언로드 과정을 통해 app context와 관련 클래스 로더를 종료한다. 연결 풀 해제 등을 포함.
+> 따라서 톰캣은 유지되면서 애플리케이션만 교체하는 방식.
 
 ## 장점
 
@@ -47,7 +52,7 @@ build.gradle에 의존성을 추가해주기만 하면 자동으로 적용된다
 
 ### Automatic Restart의 트리거 조건
 어떤 조건에서 재시작이 발생하는가?<br>
-DevTools는 컴파일된 `.class` 파일들이 위치한 클래스 경로의 자원이 변경될 때를 감지한다. 즉, IDE가 컴파일해주어야 감지를 할 수 있다는 것이다.
+DevTools는 컴파일된 `.class` 파일들이 위치한 클래스 경로(classpath)의 자원이 변경될 때를 감지한다. 즉, IDE가 컴파일해주어야 감지를 할 수 있다는 것이다. (파일 저장 시 자동으로 컴파일 되도록 설정되어 저장하는 순간 보통 재시작이 트리거된다.)
 
 > 이클립스에서는 수정한 파일을 저장하는 것이 트리거가 된다.<br>
 > 인텔리제이의 경우, build -> build project가 똑같은 효과를 가진다.<br>
@@ -60,9 +65,23 @@ Spring Boot에서 제공하는 재시작 기술은 두 개의 클래스 로더�
 변하지 않는 정적 파일들(`.jar` 같은 서드파티 유형)은 `base` 클래스로더가 로딩하고, 현재 개발자가 개발하는 부분에서는 `restart` 클래스 로더가 로딩하게 된다.
 이런 방식을 통해 `cold starts`(서버 완전 종료 후 재실행)보다 빠르게 실행할 수 있다.
 
- 재 릴리즈된 [restartClassLoader](https://github.com/spring-projects/spring-boot/blob/main/module/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/classloader/RestartClassLoader.java)의 소스코드이다.
+**클래스 로더란?**
+> 자바는 동적 로드, 즉 컴파일 타임이 아니라 런타임에 클래스를 로드하고 링크하는 특징이 있다.
+> 이 동적 로드를 담당하는 부분이 JVM의 클래스 로더이다.
 
-이 클래스 로더는 [Restarter](https://github.com/spring-projects/spring-boot/blob/main/module/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/Restarter.java#L47)에서 실제로 사용된다.
+![[spring_hot-reload_classloader.png]]
+[*자바 클래스 로더 종류*](https://steady-coding.tistory.com/593)
+> System Class loader는 JVM의 표준적인 명칭이며, `CLASSPATH`에 있는 모든 클래스를 로드하는 역할
+> 대부분의 문맥에서 Application Class loader와 동일하게 간주함
+> 스프링 코어에서도 기본 클래스 로더(System Class Loader)를 사용한다.
+
+
+![[spring_restartclassloader_inheritnace.png]]
+> DevTools 사용 시 RestartClassLoader가 적용된다.
+
+[restartClassLoader 소스코드](https://github.com/spring-projects/spring-boot/blob/main/module/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/classloader/RestartClassLoader.java)
+
+이 클래스 로더가 사용되는 것을 [Restarter](https://github.com/spring-projects/spring-boot/blob/main/module/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/restart/Restarter.java#L47)에서 볼 수 있다.
 ```java
 	private Throwable doStart() throws Exception {
 		Assert.state(this.mainClassName != null, "Unable to find the main class to restart");
@@ -78,14 +97,12 @@ Spring Boot에서 제공하는 재시작 기술은 두 개의 클래스 로더�
 *274-283line*
 classLoader를 통해 클래스를 로드한다.
 
-**클래스 로더란?**
-> 자바는 동적 로드, 즉 컴파일 타임이 아니라 런타임에 클래스를 로드하고 링크하는 특징이 있다.
-> 이 동적 로드를 담당하는 부분이 JVM의 클래스 로더이다.
 
+**동작 방식 알아보기**
 
-![Java JVM의 클래스 로더란? - 클래스 로더의 종류](https://blog.kakaocdn.net/dna/AbVQB/btrsH92x5AR/AAAAAAAAAAAAAAAAAAAAAI6VIkjuy7S5aNuukHSg6OLY9WQSuyQHcX48rX0tdxWO/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1753973999&allow_ip=&allow_referer=&signature=v0X8XXSeiNHGKC7eTwBHQrjIHig%3D "[Java] JVM의 클래스 로더란? - 클래스 로더의 종류")
-[*자바 클래스 로더 종류*](https://steady-coding.tistory.com/593)
-요약하면, 로딩 - 링크 - 초기화 단계를 통해 클래스 로딩이 이루어진다.
+![[jvm_how-to-work-classloader.png]]
+[동작 방식](https://goodgid.github.io/Java-Class-Loader/)
+클래스 로더는 로딩 - 링크 - 초기화 단계를 통해 클래스 로딩이 이루어진다.
 
 > RestartClassLoader는 java.net.URLClassLoader를 상속받아 사용한다.<br>
 > [*java SE11 docs*](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URLClassLoader.html)<br>
@@ -131,7 +148,7 @@ Hot Swapping은 바뀌는 범위가 매우 한정적이다.<br>
 따라서 JVM이 재시작하게 되는데 이럴 필요없도록 Hot Swapping을 이용한다.
 
 #### 사용법 in IntelliJ
-감사하게도, 대부분의 현대적인 IDE는 정적 리소스 및 자바 클래스 변경에 대한 hot-swapping을 지원한다.
+대부분의 현대적인 IDE는 정적 리소스 및 자바 클래스 변경에 대한 hot-swapping을 지원한다.
 
 인텔리제이에서는 다음과 같이 설정할 수 있다.
 
@@ -155,7 +172,7 @@ Hot Swapping은 바뀌는 범위가 매우 한정적이다.<br>
 > 주의: 설정 -  빌드, 실행, 배포 - 컴파일러에서 프로젝트 자동 빌드 옵션이 켜져있어야 한다.
 
 ## Live Reload는 또 무엇인가?
-정적 리소스만 업로드한다. 이건 또 무엇인가 싶다.<br>
+정적 리소스만 업로드한다.<br>
 생각해보면 우리의 서버는 정적 리소스는 건드리지 않는 선에서 동적 소스만 바꾸는 방식을 택했다. 그럼 정적인 건 변경될 때 어떻게 관리하는 걸까?<br>
 그리고 정적인 파일을 서버 종료도 안하고 어떻게 바로 로드하는 걸까? <br>
 나이브한 방식으로 그때그때 정적파일을 URL을 통해 로드하는 것도 아닐 텐데 말이다.
