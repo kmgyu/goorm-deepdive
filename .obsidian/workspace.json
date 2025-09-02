@@ -4,38 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "c4696c84599da41c",
+        "id": "f03c45ef9364fac3",
         "type": "tabs",
         "children": [
           {
-            "id": "18072b5d8fecfc73",
+            "id": "467f0b36dac98e9c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/JD/activities-for-JD(writing).md",
+                "file": "Areas/Study/Garbage Collector(writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "activities-for-JD(writing)"
+              "title": "Garbage Collector(writing)"
             }
           },
           {
-            "id": "b1ce1a406bd3c47f",
+            "id": "bb051d9767b1c38b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Spring-framework/week3_spring-auto-restart.md",
+                "file": "Projects/mokjoon-project/https-implementation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "week3_spring-auto-restart"
+              "title": "https-implementation"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,38 +185,39 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "18072b5d8fecfc73",
+  "active": "bb051d9767b1c38b",
   "lastOpenFiles": [
+    "Projects/mokjoon-project/old/0.memo.md",
+    "Projects/mokjoon-project/https-implementation.md",
+    "Projects/mokjoon-project/old/process-tracker.md",
+    "Projects/mokjoon-project/old",
+    "Projects/mokjoon-project/old/5.journey-map.md",
     "Areas/todo/TODO.md",
-    "Projects/tennis-competition-system/daily/250901.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 4. (writing).md",
-    "Areas/Study/seminar/250829.md",
-    "Areas/Spring-framework/spring-MVC-2/1.thymeleaf-basic feature(writing).md",
-    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage.md",
-    "Areas/Spring-framework/spring-MVC-2",
-    "Areas/tech/Index-structure-for-interview.md",
+    "Areas/Study/Garbage Collector(writing).md",
+    "Projects/project-template/kanban roadmap.md",
+    "Areas/Study/topics.md",
+    "Areas/Study/REST-vs-SOAP(writing).md",
+    "Areas/Study/OAuth2-implementation(writing).md",
+    "Areas/Study/JSON-Serialization(writing).md",
+    "Areas/thinkbig/memo.md",
     "Areas/tech/week1_Issue-tracking-system.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
     "Areas/Spring-framework/week3_spring-auto-restart.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 3..md",
-    "Projects/project-template/security/issue.md",
-    "Projects/project-template/security/gpt-min.md",
+    "Projects/tennis-competition-system/daily/250902.md",
+    "Projects/tennis-competition-system/daily/250901.md",
+    "Resources/lecture-note/250819-특강.md",
+    "Resources/lecture-note/250821-특강.md",
+    "Areas/Spring-framework/spring-MVC-2/1.thymeleaf-basic feature(writing).md",
+    "Resources/lecture-note/250902.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 4..md",
+    "Areas/Study/seminar/250813.md",
+    "Resources/lecture-note/250820.md",
+    "Areas/read-a-book/PowerJAVA-review/Chapter 16..md",
+    "Areas/Study/seminar/250806.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Areas/Spring-framework/spring-MVC-2",
     "spring_hot-reload_classloader.png",
     "jvm_how-to-work-classloader.png",
     "spring_restartclassloader_inheritnace.png",
-    "Areas/Spring-framework/week3_JDBC&ORM&JPA.md",
-    "Areas/Spring-framework/tooMany@Qualifier.md",
-    "Areas/Spring-framework/week3_Builder&Mapper (writing).md",
-    "Areas/Spring-framework/week2_spring-with-triangle.md",
-    "Areas/Spring-framework/differ-@Component&@Controller&etc.md",
-    "Resources/lecture-note/250901.md",
-    "Resources/lecture-note/250829.md",
-    "Projects/project-template/security/start.md",
-    "Projects/project-template/Untitled.md",
-    "Resources/week2_getter-setter.md",
-    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
-    "Areas/tech/week3_zero-downtime-Deployment.md",
-    "Projects/project-template/security/gpt-recommendation.md",
     "Projects/project-template/security",
     "Projects/project-template",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
@@ -230,7 +232,6 @@
     "Archives/report-list-old",
     "Areas/Spring-framework/spring-MVC-1",
     "Areas/Spring-framework/spring-core-principles",
-    "미확인 793717.crdownload",
-    "미확인 489545.crdownload"
+    "미확인 793717.crdownload"
   ]
 }
