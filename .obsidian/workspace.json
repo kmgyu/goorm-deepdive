@@ -4,39 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "f03c45ef9364fac3",
+        "id": "6dd353446de3c7b9",
         "type": "tabs",
         "children": [
           {
-            "id": "467f0b36dac98e9c",
+            "id": "4e72cf96e41c4e92",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Study/Garbage Collector(writing).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Garbage Collector(writing)"
-            }
-          },
-          {
-            "id": "bb051d9767b1c38b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Projects/mokjoon-project/https-implementation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "https-implementation"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,35 +166,36 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "bb051d9767b1c38b",
+  "active": "4e72cf96e41c4e92",
   "lastOpenFiles": [
-    "Projects/mokjoon-project/old/0.memo.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Index.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 4..md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 3..md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 2..md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 5..md",
+    "Resources/honey-tips.md",
+    "Areas/Study/seminar/250903.md",
+    "Projects/tennis-competition-system/daily/250903.md",
+    "Projects/tennis-competition-system/ERD.sql",
+    "Projects/tennis-competition-system/daily/250902.md",
+    "Areas/tech/week2_what-is-framework.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Resources/lecture-note/250903.md",
+    "Areas/Spring-framework/spring-MVC-2/1.thymeleaf-basic feature(writing).md",
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
+    "Areas/JD/business-domain.md",
+    "Areas/JD/NAVER-BE.md",
+    "Areas/JD/NHN-BE.md",
     "Projects/mokjoon-project/https-implementation.md",
+    "Areas/Study/Garbage Collector(writing).md",
+    "Projects/mokjoon-project/old/0.memo.md",
     "Projects/mokjoon-project/old/process-tracker.md",
     "Projects/mokjoon-project/old",
     "Projects/mokjoon-project/old/5.journey-map.md",
     "Areas/todo/TODO.md",
-    "Areas/Study/Garbage Collector(writing).md",
     "Projects/project-template/kanban roadmap.md",
     "Areas/Study/topics.md",
-    "Areas/Study/REST-vs-SOAP(writing).md",
-    "Areas/Study/OAuth2-implementation(writing).md",
-    "Areas/Study/JSON-Serialization(writing).md",
-    "Areas/thinkbig/memo.md",
-    "Areas/tech/week1_Issue-tracking-system.md",
-    "Areas/Spring-framework/week3_spring-auto-restart.md",
-    "Projects/tennis-competition-system/daily/250902.md",
-    "Projects/tennis-competition-system/daily/250901.md",
-    "Resources/lecture-note/250819-특강.md",
-    "Resources/lecture-note/250821-특강.md",
-    "Areas/Spring-framework/spring-MVC-2/1.thymeleaf-basic feature(writing).md",
-    "Resources/lecture-note/250902.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 4..md",
-    "Areas/Study/seminar/250813.md",
-    "Resources/lecture-note/250820.md",
-    "Areas/read-a-book/PowerJAVA-review/Chapter 16..md",
-    "Areas/Study/seminar/250806.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
     "Areas/Spring-framework/spring-MVC-2",
     "spring_hot-reload_classloader.png",
     "jvm_how-to-work-classloader.png",
@@ -231,7 +213,6 @@
     "Projects/tennis-competition-system/daily",
     "Archives/report-list-old",
     "Areas/Spring-framework/spring-MVC-1",
-    "Areas/Spring-framework/spring-core-principles",
-    "미확인 793717.crdownload"
+    "Areas/Spring-framework/spring-core-principles"
   ]
 }
