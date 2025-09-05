@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/JD/activities-for-JD(writing).md",
+                "file": "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 6..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "activities-for-JD(writing)"
+              "title": "Chapter 6."
             }
           }
         ]
@@ -172,6 +172,7 @@
   },
   "active": "4e72cf96e41c4e92",
   "lastOpenFiles": [
+    "Areas/JD/activities-for-JD(writing).md",
     "Areas/Spring-framework/spring-MVC-2/2.thymeleaf-intergration.md",
     "Areas/Study/seminar/250904.md",
     "Projects/tennis-competition-system/daily/250904.md",
@@ -192,13 +193,12 @@
     "Areas/read-a-book/PowerJAVA-review/Chapter 13..md",
     "Areas/read-a-book/PowerJAVA-review/Chapter 2..md",
     "Areas/read-a-book/PowerJAVA-review/Chapter 1..md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 6. (writing).md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 6..md",
     "Areas/Spring-framework/spring-MVC-2/1.thymeleaf-basic feature.md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Index.md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 4..md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 3..md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 2..md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
     "Projects/tennis-competition-system/ERD.sql",
     "Projects/mokjoon-project/old",
     "Areas/Spring-framework/spring-MVC-2",
