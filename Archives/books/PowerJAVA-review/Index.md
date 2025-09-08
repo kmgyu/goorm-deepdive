@@ -1,8 +1,8 @@
 자바 기본
-[[Areas/read-a-book/PowerJAVA-review/Chapter 1.]]
+[[Archives/books/PowerJAVA-review/Chapter 1.]]
 
 문법
-[[Areas/read-a-book/PowerJAVA-review/Chapter 2.]]
+[[Archives/books/PowerJAVA-review/Chapter 2.]]
 
 제너릭 & 콜렉션
 [[Chapter 13.]]

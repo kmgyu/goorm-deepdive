@@ -4,53 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "caaeb7b27033a045",
+        "id": "bf87b662c0c837f2",
         "type": "tabs",
         "children": [
           {
-            "id": "00c2f3270757fd6f",
+            "id": "5c7195d4a3b4e1ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Study/topics&rough/spring-validation++(writing).md",
+                "file": "Areas/Study/topics&rough/Virtual-Thread(writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "spring-validation++(writing)"
+              "title": "Virtual-Thread(writing)"
             }
           },
           {
-            "id": "b74cdd7b62a2c6b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "7.spring-mvc-basic-feature-1"
-            }
-          },
-          {
-            "id": "9c85eeccedd1dea6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Spring-framework/spring-MVC-2/5.Bean-Validation(writing).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "5.Bean-Validation(writing)"
-            }
-          },
-          {
-            "id": "066490d09bf19b2e",
+            "id": "f55f596afb663477",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -62,8 +34,21 @@
               "icon": "lucide-file",
               "title": "activities-for-JD(writing)"
             }
+          },
+          {
+            "id": "688ad3a34e0dc3a5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Areas/JD/resume/resume-1.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "resume-1"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,19 +197,46 @@
       "bases:Create new base": false
     }
   },
-  "active": "00c2f3270757fd6f",
+  "active": "688ad3a34e0dc3a5",
   "lastOpenFiles": [
-    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
-    "Areas/Spring-framework/spring-MVC-1/6.spring-mvc.md",
-    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage.md",
-    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Areas/JD/resume/resume-1.pdf",
+    "Areas/JD/resume/resume-1.md",
+    "Areas/JD/resume",
+    "Areas/Study/topics&rough/Virtual-Thread(writing).md",
+    "Areas/Study/topics&rough/Garbage Collector(writing).md",
+    "Areas/Study/topics&rough/stresstest-nGrinder(writing).md",
+    "Areas/Spring-framework/tooMany@Qualifier.md",
     "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
     "Areas/Spring-framework/spring-MVC-2/5.Bean-Validation(writing).md",
+    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage.md",
+    "Areas/Study/seminar/250908.md",
+    "Projects/tennis-competition-system/daily/250908.md",
+    "Pasted image 20250908144551.png",
+    "Pasted image 20250908144513.png",
+    "Pasted image 20250908144445.png",
+    "Pasted image 20250908144436.png",
+    "Resources/lecture-note/250908.md",
+    "Archives/books",
+    "Resources/lecture-note/Untitled.md",
+    "Pasted image 20250908140142.png",
+    "Pasted image 20250908140104.png",
+    "Pasted image 20250908140053.png",
+    "Pasted image 20250908135954.png",
+    "virtual_thread_temp1.png",
+    "virtual_thread_continuation_scope.png",
     "Areas/Study/topics&rough/spring-validation++(writing).md",
+    "Areas/Study/topics&rough/spring-batch(writing).md",
+    "Areas/Study/topics&rough/OAuth2-implementation(writing).md",
+    "Areas/Study/topics&rough/REST-vs-SOAP(writing).md",
+    "Areas/Study/topics&rough/LLM-service-backend(writing).md",
+    "Areas/Study/topics&rough/LLM-API-optimization(writing).md",
+    "Areas/Study/topics&rough/JSON-Serialization(writing).md",
+    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
+    "Areas/Spring-framework/spring-MVC-1/6.spring-mvc.md",
+    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
     "Areas/JD/todo.md",
     "Areas/JD/refer",
-    "Areas/Spring-framework/spring-MVC-2/3.message-globalization.md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Areas/Spring-framework/spring-MVC-2/2.thymeleaf-intergration (writing).md"
+    "Areas/Spring-framework/spring-MVC-2/3.message-globalization.md"
   ]
 }

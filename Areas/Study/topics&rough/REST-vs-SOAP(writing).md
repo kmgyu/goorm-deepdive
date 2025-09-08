@@ -1,1 +1,0 @@
-https://www.redhat.com/ko/topics/integration/whats-the-difference-between-soap-rest
