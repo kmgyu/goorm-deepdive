@@ -4,35 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "bf87b662c0c837f2",
+        "id": "81e693cc67e80748",
         "type": "tabs",
         "children": [
           {
-            "id": "5c7195d4a3b4e1ef",
+            "id": "dcf5691f4feb7f2e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Resources/lecture-note/250909.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "250909"
-            }
-          },
-          {
-            "id": "0b8e70391d39b7cd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Study/topics&rough/Java-Virtual-Thread-woowatech(writing).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Java-Virtual-Thread-woowatech(writing)"
+              "title": "New tab"
             }
           }
         ]
@@ -67,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "#todo",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -184,24 +166,46 @@
       "bases:Create new base": false
     }
   },
-  "active": "5c7195d4a3b4e1ef",
+  "active": "dcf5691f4feb7f2e",
   "lastOpenFiles": [
-    "Areas/Study/topics&rough/java-virtual-thread (writing).md",
-    "virtual-thread-runContinuation.png",
-    "Areas/Study/topics&rough/Java-Virtual-Thread-woowatech(writing).md",
-    "virtual-thread-create-default-scheduler.png",
-    "virtual-thread-constructor.png",
-    "virtual-thread-field-chunk.png",
-    "Resources/lecture-note/250909.md",
-    "virtual-thread-architecture.png",
-    "virtual-thread-comment.png",
-    "virtual-thread-hierarchy.png",
-    "virtual-thread-start-native.png",
-    "virtual-thread-start.png",
-    "virtual-thread-test2.png",
-    "Areas/Study/seminar/250909.md",
-    "Resources/lecture-note/250821.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 7..md",
     "Areas/todo/TODO.md",
+    "Areas/Study/topics&rough/java-virtual-thread/Java-Virtual-Thread-woowatech(writing).md",
+    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
+    "Areas/Study/seminar/2509/250910.md",
+    "Projects/tennis-competition-system/daily/250910.md",
+    "Areas/Study/seminar/2509/250903.md",
+    "Areas/Study/seminar/2508/250805.md",
+    "Areas/Study/seminar/2509",
+    "Areas/Study/seminar/2507/250722.md",
+    "Areas/Study/seminar/2508",
+    "Areas/Study/seminar/2507",
+    "Projects/tennis-competition-system/daily/2508/250806-coffee-chat.md",
+    "Resources/lecture-note/2509/250901.md",
+    "Projects/tennis-competition-system/daily/2508",
+    "Resources/lecture-note/2508/250804.md",
+    "Resources/lecture-note/2509",
+    "Resources/lecture-note/2507/250709.md",
+    "Resources/lecture-note/2508",
+    "Resources/lecture-note/2507",
+    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-1.md",
+    "Resources/lecture-note/2509/250910.md",
+    "Areas/Study/topics&rough/java-virtual-thread/virtual-thread-hierarchy.png",
+    "Archives/books/PowerJAVA-review/Chapter 16..md",
+    "Pasted image 20250910124453.png",
+    "Areas/Study/topics&rough/java-virtual-thread/virtual-thread-test2.png",
+    "Areas/Study/topics&rough/java-virtual-thread/virtual-thread-comment.png",
+    "Areas/Study/topics&rough/java-virtual-thread/virtual_thread_blokingio.png",
+    "Pasted image 20250716134732.png",
+    "Pasted image 20250725171115.png",
+    "Pasted image 20250908135954.png",
+    "Pasted image 20250908140053.png",
+    "Pasted image 20250908140104.png",
+    "Areas/Study/topics&rough/java-virtual-thread",
+    "Resources/lecture-note/2508/250805.md",
+    "Resources/lecture-note/2509/250909.md",
+    "Areas/Study/seminar/2509/250909.md",
+    "Resources/lecture-note/2508/250821.md",
     "Archives/books/PowerJAVA-review/Chapter 14..md",
     "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
     "Areas/JD/activities-for-JD(writing).md",
@@ -209,21 +213,6 @@
     "Areas/JD/resume/resume-1.pdf",
     "Areas/JD/resume/resume-1.md",
     "Areas/JD/resume",
-    "Areas/Study/topics&rough/Garbage Collector(writing).md",
-    "Areas/Study/topics&rough/stresstest-nGrinder(writing).md",
-    "Areas/Spring-framework/tooMany@Qualifier.md",
-    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage.md",
-    "Areas/Study/seminar/250908.md",
-    "Projects/tennis-competition-system/daily/250908.md",
-    "Resources/lecture-note/250908.md",
-    "Archives/books",
-    "Areas/Study/topics&rough/spring-validation++(writing).md",
-    "Areas/Study/topics&rough/spring-batch(writing).md",
-    "Areas/Study/topics&rough/OAuth2-implementation(writing).md",
-    "Areas/Study/topics&rough/REST-vs-SOAP(writing).md",
-    "Areas/Study/topics&rough/LLM-service-backend(writing).md",
-    "Areas/Study/topics&rough/LLM-API-optimization(writing).md",
-    "Areas/Study/topics&rough/JSON-Serialization(writing).md",
-    "Areas/JD/refer"
+    "Areas/Study/topics&rough/Garbage Collector(writing).md"
   ]
 }
