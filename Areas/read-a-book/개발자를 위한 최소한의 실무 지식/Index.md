@@ -19,3 +19,12 @@ Part 2.
 개발 도구
 [[Chapter 6.]]
 
+테스팅 도구
+[[Chapter 7.]]
+
+Part 3.
+클린 코드 & 에러 처리
+[[Chapter 8.]]
+
+국제화
+chapter 9. (예정)

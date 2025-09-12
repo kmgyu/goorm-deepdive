@@ -1,17 +1,92 @@
+# 1편 내용 요약
 
-# 동작 과정
+## 1. 배경과 등장
 
-Java Thread
-- 플랫폼 스레드 (또는 유저 스레드)
+- 자바는 기본적으로 OS 기반 네이티브 스레드(Kernel Level Thread)를 사용
+- 문제점:
+    - 높은 스레드 생성 비용과 메모리 점유율
+    - OS 스케줄링 과정에서 시스템 콜 발생 → 컨텍스트 스위칭 비용 증가
+        
+- 대안: 경량 스레드 모델(Lightweight Thread Model)
+- 가상 스레드(Virtual Thread): JDK 레벨에서 구현된 경량 스레드 모델
+
+---
+
+## 2. 주요 특징
+
+### (1) 저렴한 생성 비용
+- 기존 스레드: 생성·소멸 비용이 비싸서 스레드 풀 활용
+- 가상 스레드: 생성/종료가 수십 μs 수준으로 가볍고, 메모리 점유도 약 50KB → 요청 단위로 스레드 생성 가능
+    
+| 항목       | 플랫폼 스레드 | 가상 스레드 |
+| -------- | ------- | ------ |
+| 메모리 크기   | ~2MB    | ~50KB  |
+| 생성 시간    | ~1ms    | ~10μs  |
+| 컨텍스트 스위칭 | ~100μs  | ~10μs  |
+
+---
+
+### (2) Non-Blocking I/O 지원
+
+- Thread per request 모델: Blocking I/O 사용 시 I/O 대기 시간이 길 수록 치명적
+    
+- 가상 스레드:
+    - JVM 수준 스케줄링 + Continuation 활용
+    - 블로킹 호출을 중단(suspend) → 다른 스레드 실행 → 완료 시 재개(resume)
+
+
+---
+
+### (3) 기존 코드와의 호환성
+
+- VirtualThread는 `Thread`를 상속 → LSP 원칙 충족
+- 기존 Thread API와 완벽히 호환
+- Spring Boot 3.2+에서 `spring.threads.virtual.enabled=true` 설정만으로 적용 가능
+
+→ Webflux/Coroutine처럼 새로운 패러다임 학습 없이 Non-blocking 처리 가능
+
+---
+
+## 4. 정리
+
+- Virtual Thread는 **가볍고 빠르며, Non-blocking I/O를 자연스럽게 지원하는 경량 스레드**
+    
+- 장점:
+    - 저렴한 생성 비용 → 풀 필요 없음
+    - JVM 스케줄링으로 System call 오버헤드 제거
+    - 기존 코드와 높은 호환성 → 러닝 커브 낮음
+- 단점:
+	- 스레드 제한이 없어 메모리 관리 필요
+	- CPU 작업을 많이 할 경우 장점이 사라짐.
+        
+- 적용 시점:
+    - Thread per request 구조에서 I/O 블로킹이 문제인 경우
+    - Webflux/Coroutine 러닝 커브가 부담되는 경우
+
+---
+
+# 학습 내용
+
+오늘 알아볼 내용
+
+JVM의 가상 스레드 스케줄링
+가상 스레드의 작업 단위 : Continuation
+
+
+# 동작 과정 살펴보기
+
+## Java Thread
+
+- 플랫폼 스레드 (또는 네이티브 스레드)
 - OS에 의해 스케줄링
 - 커널 스레드와 1:1 매핑
-- 작업 단위로 Runnable 사용
+- 작업 단위 Runnable
 
 어플리케이션은 커널과 유저 영역으로 나뉘어 실행됨
 
-유저 영역에서 커널 영역을 사용하기 위해선 커널 영역(OS), 유저 영역(JVM) 사이를 통신하는 과정이 필요하다.
-이를 위해 JNI(Java Native Interface)를 사용함.
-각 스레드는 1대1로 매핑된다.
+유저 영역에서 커널 영역을 사용하기 위해선 커널 영역(OS), 유저 영역(JVM) 사이를 통신하는 과정 필요
+이를 위해 JNI(Java Native Interface) 사용
+각 스레드는 1대1로 매핑
 
 ![[virtual-thread_java-platform-thread.png]]
 *[Image from](https://velog.io/@zenon8485/Java21-Virtual-Thread) 기존 스레드 구조*
@@ -21,7 +96,7 @@ Java Thread
 2. JNI를 통해 커널 스레드 생성을 요청한다.
 3. 커널 스레드 생성 및 스케줄링
 
-테스트 코드의 `Thread::start`를 참고.
+커널 스레드 생성 과정을 자바에서 확인하기 위해 1편 테스트 코드의 `Thread::start`를 부분을 확인한다.
 ```java
 public static void main(String[] args) {
 	List<Thread> threads = IntStream.range(0, 1_000_000)
@@ -33,23 +108,46 @@ public static void main(String[] args) {
 }
 ```
 
-start 메서드에 들어가보면 `start0()`라는 메서드를 통해 커널 스레드를 생성 요청함.
+start 메서드에 내부
+`start0()`라는 메서드를 통해 커널 스레드를 생성 요청함.
 
 ![[virtual-thread-start.png]]
 ![[virtual-thread-start-native.png]]
-`start0()` 메서드는 native 키워드를 사용함. native 키워드는 사용자의 
+`start0()` 메서드는 native 키워드를 사용함.
 이를 통해 JNI를 이용하는 것을 확인 가능
 
+### JNI
 
-가상 스레드
-- 가상 스레드 (진짜임)
+> 위에서 start0이라는 메서드가 native 키워드를 사용하는 것을 확인하였다. 그러나 실제 구현되는 코드는 확인해보지 않았다.
+
+native 메서드의 실제 구현은 C/C++로 이루어지기 때문이다.
+
+구현 코드
+내부 구현 함수와 JNI 메서드를 매핑하는 코드
+https://github.com/openjdk/jdk/blob/221e1a426070088b819ddc37b7ca77d9d8626eb4/src/java.base/share/native/libjava/Thread.c
+
+start0 구현체 (2933 라인부터)
+https://github.com/openjdk/jdk/blob/221e1a426070088b819ddc37b7ca77d9d8626eb4/src/hotspot/share/prims/jvm.cpp
+
+
+#todo
+스레드 C/C++ 코드 딥다이브
+https://code-run.tistory.com/59
+
+추가로 공부해볼 것?
+CDS 아카이브
+https://blog.igooo.org/123
+
+
+## 가상 스레드
+
+동작 방식
 - JVM에 의해 스케줄링
 - 캐리어 스레드와 1:N 매핑
 - 작업 단위 Continuation
 
----
 
-## JVM에 의한 스케줄링
+### JVM 스케줄링
 
 
 ![[virtual-thread-comment.png]]
@@ -62,6 +160,17 @@ Virtual Thread는 생성 시 유저 영역에 생성됨
 
 ![[virtual-thread-architecture.png]]
 *[Image from](https://velog.io/@zenon8485/Java21-Virtual-Thread) 가상 스레드 구조*
+
+
+#todo 
+다시 올라가보면 기존 스레드들을 플랫폼 스레드라고 표현했다.
+왜일까?
+1:1로 커널 스레드와 매핑되는 실제 스레드이기 때문.
+플랫폼 스레드는 스레드 풀로 관리된다.
+*VirtualThreadFactory에서도 캐리어 스레드를 관리하는 코드가 있던 것으로 기억. 해당 코드 찾아서 삽입해두기*
+
+
+VirtualThread의 구조를 알아보기 위해 코드 탐색 해본다.
 
 ```java
 /**  
@@ -130,7 +239,7 @@ Executor 타입의 scheduler가 있는 것을 볼 수 있음.
 
 
 ![[virtual-thread-constructor.png]]
-이 값이 어떤 값으로 처리되는지 확인하기 위해 생성자로 넘어감
+이 값이 어떤 값으로 처리되는지 확인하기 위해 생성자에서 타입을 확인한다.
 
 별도 파라미터로 받지 않을 경우, DEFAULT_SCHEDULER 사용
 
@@ -146,6 +255,9 @@ ForkJoinPool 메커니즘으로 스케줄링
 **createDefaultScheduler 확인하기**
 ![[virtual-thread-create-default-scheduler.png]]
 CarrierThread라는 것을 사용함.
+
+#todo 캐리어 스레드 딥다이브
+
 캐리어 스레드는 일반 자바 스레드와 동일함. 워커 스레드임.
 ForkJoinWorkerThread로 사용되는 것을 볼 수 있음.
 
@@ -172,15 +284,61 @@ if (maxPoolSizeValue != null) {
 따라서 포크조인 풀을 사용한다는 것을 알 수 있다
 프로세서 수 만큼의 캐리어 스레드를 워커 스레드로 사용한다.
 
-> ForkJoinPool?
-> Work-Stealing 알고리즘을 기반으로 하는 특별한 유형의 스레드 풀
+
+#### Fork/Join Framework
+
+#todo https://burningfalls.github.io/java/what-is-fork-join-framework/
+대규모 병렬 처리를 위해 설계된 고성능 멀티스레딩 프레임워크
+앞서 등장한 포크조인 풀은 포크/조인 프레임워크의 컴포넌트이다.
+
+Java 7에서 소개됨.
+분할 정복 알고리즘을 기반으로 작업을 더 작은 작업으로 분할하고, 이를 병렬로 처리한 다음, 최종 결과를 결합하는 방식으로 작동
+CPU 코어를 효율적으로 활용하여 복잡한 연산을 빠르게 처리하는 것을 가능케 함.
+
+주요 컴포넌트
+- ForkJoinPool
+- ForkJoinTask
+
+**ForkJoinPool** 
+Work-Stealing 알고리즘을 기반으로 하는 특별한 유형의 스레드 풀
+Fork/Join 프레임워크의 핵심
+
+작업을 수행할 워커 스레드를 관리하며, 작업의 분할과 실행을 조정함.
 
 
-> Work Stealing 매커니즘?
-> 워커 스레드는 워커 큐를 각각 가지고 있고, 각각 태스크를 담아 순차적으로 처리하는 방식
-> 본인 워커큐가 비어있을 경우, 남의 워커큐에서 태스크를 훔쳐옴.
-> 따라서 워크 스틸링 방식
+**ForkJoinTask**
+분할 가능한 작업
+이 클래스의 인스턴스는 ForkJoinPool에 의해 실행된다.
 
+핵심 메서드
+- fork() : 작업을 비동기적으로 시행. 즉, 작업을 ForkJoinPool의 작업 큐에 추가하고 즉시 반환
+- join() : 작업 결과가 준비될 때까지 기다린 다음, 결과 반환
+
+
+**동작 방식**
+1. 작업 분할(Fork)
+복잡한 작업을 더 작은 작업으로 분할한다.
+분할은 문제를 더 작게 만들어 해결 가능한 수준에 도달할 때까지 재귀적으로 발생한다.
+    
+2. 작업 실행
+분할된 작업은 병렬로 실행된다.
+각 스레드는 자신의 작업 큐를 갖고 있으며, 다른 스레드의 작업 큐에서 작업을 훔쳐올 수 있는 `work-stealing` 알고리즘을 사용한다.
+
+3. 결과 결합(Join)
+모든 하위 작업이 완료되면, 그 결과들은 최종 결과를 형성하기 위해 결합된다.
+
+
+> **Work Stealing**
+> 멀티스레드를 위한 병렬 컴퓨팅 스케줄링 전략
+> OS를 기준으로 설명됨. 개념은 동일하다.
+> #todo https://en.wikipedia.org/wiki/Work_stealing
+> 각 프로세서는 작업 큐(Working Queue)를 각각 가지고 있으며, 각각 태스크를 담아 순차적으로 처리한다. 만약 해당 작업 실행 과정에서 다른 작업과 병렬로 처리될 수 있는 새로운 작업이 생성될 경우, 즉시 해당 프로세스 대기열에 추가된다.
+> 만약 대기 상태의 프로세서가 존재할 경우, 다른 프로세서의 워커큐에서 태스크를 *훔친다.*
+> 모든 프로세서가 작업 상태에 있다면 스케줄링 오버헤드는 발생하지 않는다. (즉, 훔치기는 발생하지 않는다.)
+> 반대되는 전략으로 **Work-Sharing**이 있다.
+> 스케줄러가 바쁜 프로세서에서 새로 생성된 작업(스레드 또는 태스크)을 활용도가 낮은 프로세서로 적극적으로 마이그레이션하여 부하를 분산하고 전체 응답 시간을 개선하려고 시도하는 병렬 컴퓨팅 스케줄링 패러다임이라고 한다.
+> 관련 논문이 존재하나 자료가 충분히 존재하지 않음.
+> #todo https://ieeexplore.ieee.org/document/7462221/
 
 JVM 스케줄링의 이유
 - 스레드는 생성 및 스케줄링 시 커널 영역 접근
@@ -188,7 +346,12 @@ JVM 스케줄링의 이유
 - 버추얼 스레드는 커널 영역 접근 없이 단순 Java 객체 생성
 - 즉, Virtual Thread는 생성 시 시스템 콜 X
 
-## Continuation 작업 단위
+#todo JVM 스케줄링 시 어떻게 작동할까? 딥다이브 해보자.
+
+
+
+
+### Continuation 작업 단위
 
 오래 전부터 사용되던 프로그래밍 패러다임
 
@@ -210,6 +373,7 @@ Continuation의 기본적인 동작 방식
 - 중단 가능
 - 중단 지점으로부터 재실행 가능
 
+> 즉 일종의 작업 실행에 대한 컨텍스트를 나타내는 메타 데이터이다.
 
 ```java
 public void runnable() {
@@ -523,4 +687,10 @@ Virtual Thread는 배압 조절 기능이 없다.
 
 
 
+# Reference
 
+자바 스레드 딥다이브
+https://code-run.tistory.com/59
+
+고루틴
+https://ykarma1996.tistory.com/188

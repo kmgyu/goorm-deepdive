@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "81e693cc67e80748",
+        "id": "66231f6625c411e9",
         "type": "tabs",
         "children": [
           {
-            "id": "dcf5691f4feb7f2e",
+            "id": "50f4ba570a0f3725",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "java-virtual-thread-2"
             }
           }
         ]
@@ -166,12 +170,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "dcf5691f4feb7f2e",
+  "active": "50f4ba570a0f3725",
   "lastOpenFiles": [
+    "Areas/Spring-framework/week2_spring-with-triangle.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
+    "Areas/Study/seminar/2509/250912.md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Index.md",
+    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
+    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-1.md",
+    "Resources/lecture-note/2509/250912.md",
+    "Areas/Study/topics&rough/java-virtual-thread/images/virtual_thread_blokingio.png",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 8..md",
+    "Areas/Study/topics&rough/java-virtual-thread/images",
+    "Areas/JD/job-posting/Wanted/레디센, redisen.md",
+    "Areas/JD/job-posting/Wanted/에피넷, epinet.md",
+    "Areas/JD/resume/resume-2.pdf",
+    "Areas/JD/resume/resume-1.pdf",
+    "Areas/JD/job-posting/Wanted",
+    "Areas/JD/job-posting",
+    "Areas/Spring-framework/spring-MVC-2/6.cookie&session(writing).md",
+    "Areas/Study/seminar/2509/250911.md",
+    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
+    "Projects/tennis-competition-system/daily/2508/250911.md",
+    "Resources/lecture-note/2509/250911.md",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 7..md",
+    "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
+    "Areas/Spring-framework/spring-MVC-2/5.Bean-Validation(writing).md",
+    "Areas/Study/seminar/2509/250908.md",
     "Areas/todo/TODO.md",
     "Areas/Study/topics&rough/java-virtual-thread/Java-Virtual-Thread-woowatech(writing).md",
-    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
     "Areas/Study/seminar/2509/250910.md",
     "Projects/tennis-competition-system/daily/250910.md",
     "Areas/Study/seminar/2509/250903.md",
@@ -180,39 +207,16 @@
     "Areas/Study/seminar/2507/250722.md",
     "Areas/Study/seminar/2508",
     "Areas/Study/seminar/2507",
-    "Projects/tennis-competition-system/daily/2508/250806-coffee-chat.md",
-    "Resources/lecture-note/2509/250901.md",
     "Projects/tennis-competition-system/daily/2508",
-    "Resources/lecture-note/2508/250804.md",
     "Resources/lecture-note/2509",
-    "Resources/lecture-note/2507/250709.md",
-    "Resources/lecture-note/2508",
-    "Resources/lecture-note/2507",
-    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-1.md",
-    "Resources/lecture-note/2509/250910.md",
-    "Areas/Study/topics&rough/java-virtual-thread/virtual-thread-hierarchy.png",
-    "Archives/books/PowerJAVA-review/Chapter 16..md",
+    "Areas/Study/topics&rough/java-virtual-thread/images/virtual-thread-hierarchy.png",
     "Pasted image 20250910124453.png",
-    "Areas/Study/topics&rough/java-virtual-thread/virtual-thread-test2.png",
-    "Areas/Study/topics&rough/java-virtual-thread/virtual-thread-comment.png",
-    "Areas/Study/topics&rough/java-virtual-thread/virtual_thread_blokingio.png",
+    "Areas/Study/topics&rough/java-virtual-thread/images/virtual-thread-test2.png",
+    "Areas/Study/topics&rough/java-virtual-thread/images/virtual-thread-comment.png",
     "Pasted image 20250716134732.png",
     "Pasted image 20250725171115.png",
     "Pasted image 20250908135954.png",
     "Pasted image 20250908140053.png",
-    "Pasted image 20250908140104.png",
-    "Areas/Study/topics&rough/java-virtual-thread",
-    "Resources/lecture-note/2508/250805.md",
-    "Resources/lecture-note/2509/250909.md",
-    "Areas/Study/seminar/2509/250909.md",
-    "Resources/lecture-note/2508/250821.md",
-    "Archives/books/PowerJAVA-review/Chapter 14..md",
-    "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Areas/Spring-framework/spring-MVC-2/5.Bean-Validation(writing).md",
-    "Areas/JD/resume/resume-1.pdf",
-    "Areas/JD/resume/resume-1.md",
-    "Areas/JD/resume",
-    "Areas/Study/topics&rough/Garbage Collector(writing).md"
+    "Pasted image 20250908140104.png"
   ]
 }
