@@ -1,4 +1,4 @@
-일단 기억나는 거 작성 ~ 정리 ~ 일단 지원할 곳에 맞춰서 조합 ~ 지원서 작성
+ 일단 기억나는 거 작성 ~ 정리 ~ 일단 지원할 곳에 맞춰서 조합 ~ 지원서 작성
 
 https://m.blog.naver.com/wlgml013/223320554382?recommendCode=2&recommendTrackingCode=2
 

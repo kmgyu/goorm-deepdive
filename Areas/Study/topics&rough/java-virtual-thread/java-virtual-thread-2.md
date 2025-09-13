@@ -346,14 +346,19 @@ JVM 스케줄링의 이유
 - 버추얼 스레드는 커널 영역 접근 없이 단순 Java 객체 생성
 - 즉, Virtual Thread는 생성 시 시스템 콜 X
 
-#todo JVM 스케줄링 시 어떻게 작동할까? 딥다이브 해보자.
+#todo JVM 스케줄링 시 메모리에선 어떤 일이 일어날까?
+힙, 스택 그림으로 보여주기...
 
 
 
 
 ### Continuation 작업 단위
 
-오래 전부터 사용되던 프로그래밍 패러다임
+Continuation 개념 자체는 오래 전부터 사용되던 프로그래밍 패러다임
+https://en.wikipedia.org/wiki/Continuation
+
+> 컴퓨터 사이언스에서, Continuation은 컴퓨터 프로그램의 제어 상태에 대한 추상적 표현.
+> LISP이라는 함수형 프로그래밍 언어와 Java의 가상 스레드, C++ Fiber 등에서도도 지원한다.
 
 ![[virtual_thread_kotlin_coroutine.png]]
 [image from](https://techblog.woowahan.com/7349/)
@@ -365,7 +370,7 @@ JVM 스케줄링의 이유
 
 suspend()는 중단이 가능해짐
 코루틴 개념을 적용해서 Caller가 호출하면 어느 정도 실행 중 중단 지점에서 Caller로 제어권 반환
-Caller가 다시 진행, 코루틴은 중단지점을 기록해뒀다가 다시 진행
+Caller가 다시 진행, 코루틴은 중단 지점을 기록해뒀다가 다시 진행
 Caller로 반환 시 콜러는 다시 자기 일 했다가 코루틴 다시 줌. 이때 코루틴은 자기 작업을 다시 진행
 
 Continuation의 기본적인 동작 방식
@@ -402,6 +407,10 @@ continuation은 중단 가능
 
 Continuation은 관리를 위한 Scope가 존재
 
+> #todo yield() 말고도 프로세스 실행을 위해 사용하는 여러 메소드들이 존재한다.
+> 이 메소드들에 대해 선행적으로 간단히 설명하고, 내부 동작 과정을 설명할 것.
+> 프로세스 생명주기 그림을 가져와서 각각 대응되는 개념들을 매칭시키는 것도 좋을 것 같음.
+
 현재 그림은 Continuation1이 실행되는 과정
 1. Continuation1이 진행, Runnable1 실행
 2. yield()로 작업 중단
@@ -417,6 +426,7 @@ Continuation은 관리를 위한 Scope가 존재
 
 
 예제
+> #todo 작동을 안 합니다.
 ```java
 public static void main(String[] args) {
 	ContinuationScope continuationScope = new ContinuationScope("Virtual Thread");
@@ -464,22 +474,24 @@ submitRunContinuation에서 사용하던 변수들인 scheduler는 ForkJoinPool 
 이제 단순히 Continuation을 실행하는 작업이다라는 것을 알 수 있다.
 
 
-Continuation이 그림으로 어떻게 동작하는 지도 알아보자.
+Continuation이 그림으로 어떻게 스케줄링 되는지 알아보자.
 작업 큐에는 RunContinuation이라는 람다가 들어가게 된다.
 
 ![[virtual_thread_temp1.png]]
 
 yield는 현재 작업을 중단하고 제어권을 반환하는 메서드이다.
-yield를 명시적으로 주어야 할까?
+yield를 명시적으로 주어야 할까? -> #todo 이 표현에 대해서는 좀 '더' 잘 설명해야 할 필요가 있음.
 언제 yield가 되는지 살펴보자
 
 void park()를 통해 작업을 중단 시킨다.
 이때 try문에서 yieldContinuation();이 실행된다.
 
-Virtual Thread의 메서드는 패키지 프라이빗이기 때문에 외부 호출이 어려움.
+이때 Virtual Thread의 메서드는 패키지 프라이빗이기 때문에 외부 호출이 어려움.
 
 자바 유틸 패키지의 LockSupport.park()가 이를 도와준다.
-현재 스레드가 VirtualThread일 때 park를 호출한다.
+현재 스레드가 VirtualThread일 때 park를 호출하는 역할을 한다.
+
+#todo LockSupport 클래스의 park 코드
 
 이때 else문에서 U.park을 호출한다. 일반 스레드에서 호출할 시 이걸 사용함. U는 unsafe의 park 메서드를 의미함
 기본적으로 일반 스레드에서 블로킹할 때 사용한다.
@@ -512,7 +524,7 @@ Continuation 사용 이유
 - 커널 스레드 중단이 없으므로 시스템 콜 x -> 컨텍스트 스위칭 비용이 낮음
 
 
-중간요약 2
+#todo 중간요약 타임
 JVM에 의한 스케줄링
 Continuation 작업단위
 
@@ -521,6 +533,10 @@ Virtual Thread는 어떤 스케줄러를 사용하더라?
 
 Continuation 중단 메서드 호출시에는?
 yield(park)
+
+### 시나리오
+
+시나리오를 가정하여 기존 스레드 모델과 가상 스레드 모델의 트랜잭션이 어떻게 스케줄링되는지 확인한다.
 
 ![[Pasted image 20250908135954.png]]
 커널 스레드 및 톰캣 스레드 2개 밖에 없는 상황 가정
@@ -543,6 +559,7 @@ yield(park)
 virtual thread로 변경하면 어떻게 될까?
 한 라인이면 된다.
 
+> 톰캣의 경우 프로토콜핸들러커스터마이저라는 빈을 수정해서 ExecutorService를 바꿔줘야 한다. 이를 충분히 인지시키기 바람.
 ![[Pasted image 20250908140142.png]]
 
 
@@ -575,14 +592,14 @@ Continuation + JDK 라이브러리 리팩토링 = Nonblocking
 어떤 상황에서 적용해야 이점을 볼 수 있을까?
 
 환경
-구릴수록 성능 차이 극명
+환경의 스펙이 좋지 않을수록 성능 차이 극명
 Thread vs VirtualThread
 AWS EC2
 - 1core cpu
 - 1GB ram
 Spring MVC
 JVM heap 256mb
-ngrinder
+부하 테스트 도구 : ngrinder
 - vUser: 200
 I/O bound / cpu bound
 - api 호출
@@ -625,6 +642,7 @@ vUser 수가 일정 이상 넘어가면 WebFlux는 줄어들게 된다.
 I/O Bound 작업 효율이 높아진다.
 제한된 사양에서 최대 처리량을 보일 수 있다.
 
+> cpu 작업의 경우 일반 스레드 작업과 차이가 없다. 결국 non-blocking 작업의 경우 io 사용으로 인해 중단되면서 생긴 유휴시간을 최대한 활용하기 위해 쓰게 되는 것인데 cpu 사용량이 많은 작업의 경우 비동기 blocking과 같은 안티 패턴이 되어버린다.
 
 # 주의사항
 
@@ -648,7 +666,10 @@ virtual thread의 synchronized, parallelStream 사용 부분을 다른 락인 Re
 
 - 병목 가능성 존재
 - 사용 라이브러리 release 점검
-- 변경 가능하다면 java.util의 ReentrantLock을 사용하도록 qusrud
+- 변경 가능하다면 java.util의 ReentrantLock을 사용하도록 변경
+
+
+> #todo 그렇다면 Pinned Thread 현상은 언제 생깁니까?
 
 
 No Pooling
@@ -659,12 +680,15 @@ No Pooling
 따라서 오히려 스레드를 풀링하는 것이 병목현상이 될 수 있음.
 주석에서도 무제한으로 설정하도록 되어있다.
 
+> #todo 왜 스레드 풀을 설정하면 오히려 병목 현상이 생기는 것입니까? 어떤 곳에서 병목현상이 생기게 됩니까? 스레드 풀의 작동 방식이 어떤 것이기에 그런 것입니까?
+
+
 CPU bound task
 - 결국 Carrier Thread 위에서 동작하므로 성능 낭비
 - nonblocking의 장점을 활용하지 못함
+> 앞서 설명된 방법이다.
 
-
-경량 스레드
+경량 스레드 특징 재확인                                                                                 
 - 수백만개의 스레드 생성 컨셉
 - Thread Local을 최대한 가볍게 유지해야 함
   무거운 객체를 넣을 시, Virtual Thread의 이점을 살릴 수 없다.
@@ -682,6 +706,9 @@ Virtual Thread는 배압 조절 기능이 없다.
 기존에는 스레드로 인해 강제로 배압조절이 되었었다. 스레드가 부족해지면 요청을 처리하지 못하니 자연스럽게 처리량이 줄어들어 배압이 조절됨.
 그러나 가상 스레드는 서버가 가질 수 있는 최대치를 가지려 노력할 것임. 따라서 하드웨어 성능을 충분히 테스트하지 않고 사용 시 하드웨어 상에 문제가 발생할 수 있다.
 
+> #todo 배압 조절 기능이 무엇입니까?
+> 기존 스레드는 어떤 알고리즘으로 배압을 조절합니까?
+> 가상 스레드의 배압 조절을 할 수 있습니까? 아니면 배압 조절의 대안이 존재합니까?
 
 
 
