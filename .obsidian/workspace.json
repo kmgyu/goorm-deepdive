@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "activities-for-JD(writing)"
             }
+          },
+          {
+            "id": "fa7d6b87eeb09126",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 9..md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 9."
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -68,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "@valid",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,39 +199,40 @@
       "bases:Create new base": false
     }
   },
-  "active": "74c950b4880a69b3",
+  "active": "fa7d6b87eeb09126",
   "lastOpenFiles": [
+    "Areas/Spring-framework/spring-MVC-2/6.cookie&session(writing).md",
+    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 9..md",
+    "Areas/Spring-framework/99.spring-todo.md",
+    "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
+    "Areas/Spring-framework/spring-core-principles/4.oop&spring.md",
+    "Areas/Spring-framework/spring-core-principles/8.component-scan.md",
+    "Areas/Spring-framework/spring-core-principles/6.Spring-container&bean.md",
+    "Areas/Spring-framework/spring-core-principles/7.single-ton-pattern.md",
+    "Areas/Spring-framework/spring-core-principles/10.bean-lifecycle-callback.md",
+    "Areas/Spring-framework/spring-core-principles/11.bean-scope.md",
+    "Areas/Spring-framework/spring-core-principles/98.practice.md",
+    "Areas/Spring-framework/spring-MVC-1/3.servlet.md",
+    "Areas/Spring-framework/spring-MVC-1/2.understanding-web-application.md",
+    "Areas/Spring-framework/spring-MVC-1/4.servlet&jsp&mvc.md",
+    "Areas/Spring-framework/spring-MVC-1/5.mvc-framework.md",
+    "Areas/Spring-framework/spring-MVC-1/8. spring-mvc-webpage.md",
+    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
+    "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
+    "Areas/Spring-framework/spring-MVC-1/6.spring-mvc.md",
+    "Areas/Spring-framework/spring-MVC-2/3.message-globalization.md",
+    "Areas/JD/activities-for-JD(writing).md",
     "Areas/JD/feedback.md",
     "Areas/JD/resume/resume-1.pdf",
     "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
     "Areas/Spring-framework/week4_Controller-vs-RestController.md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Areas/Spring-framework/spring-MVC-2/6.cookie&session(writing).md",
     "Areas/Java/Road-map.md",
     "Areas/Spring-framework/week2_spring-with-triangle.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 1..md",
-    "Areas/Study/seminar/2509/250912.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Index.md",
-    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-1.md",
-    "Resources/lecture-note/2509/250912.md",
     "Areas/Study/topics&rough/java-virtual-thread/images/virtual_thread_blokingio.png",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 8..md",
     "Areas/Study/topics&rough/java-virtual-thread/images",
-    "Areas/JD/job-posting/Wanted/레디센, redisen.md",
-    "Areas/JD/job-posting/Wanted/에피넷, epinet.md",
     "Areas/JD/resume/resume-2.pdf",
     "Areas/JD/job-posting/Wanted",
     "Areas/JD/job-posting",
-    "Areas/Study/seminar/2509/250911.md",
-    "Projects/tennis-competition-system/daily/2508/250911.md",
-    "Resources/lecture-note/2509/250911.md",
-    "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 7..md",
-    "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
-    "Areas/Spring-framework/spring-MVC-2/5.Bean-Validation(writing).md",
-    "Areas/Study/seminar/2509/250908.md",
-    "Areas/todo/TODO.md",
-    "Areas/Study/topics&rough/java-virtual-thread/Java-Virtual-Thread-woowatech(writing).md",
-    "Areas/Study/seminar/2509/250910.md",
     "Areas/Study/seminar/2509",
     "Areas/Study/seminar/2508",
     "Areas/Study/seminar/2507",
