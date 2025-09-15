@@ -165,7 +165,9 @@ Virtual Thread는 생성 시 유저 영역에 생성됨
 #todo 
 다시 올라가보면 기존 스레드들을 플랫폼 스레드라고 표현했다.
 왜일까?
+
 1:1로 커널 스레드와 매핑되는 실제 스레드이기 때문.
+
 플랫폼 스레드는 스레드 풀로 관리된다.
 *VirtualThreadFactory에서도 캐리어 스레드를 관리하는 코드가 있던 것으로 기억. 해당 코드 찾아서 삽입해두기*
 
@@ -347,7 +349,7 @@ JVM 스케줄링의 이유
 - 즉, Virtual Thread는 생성 시 시스템 콜 X
 
 #todo JVM 스케줄링 시 메모리에선 어떤 일이 일어날까?
-힙, 스택 그림으로 보여주기...
+추가 정보에서 따로 설명한다. 되도록 힙, 스택 그림으로 보여주기...
 
 
 
@@ -407,9 +409,16 @@ continuation은 중단 가능
 
 Continuation은 관리를 위한 Scope가 존재
 
-> #todo yield() 말고도 프로세스 실행을 위해 사용하는 여러 메소드들이 존재한다.
-> 이 메소드들에 대해 선행적으로 간단히 설명하고, 내부 동작 과정을 설명할 것.
-> 프로세스 생명주기 그림을 가져와서 각각 대응되는 개념들을 매칭시키는 것도 좋을 것 같음.
+Countinuation의 주요 메서드들은 다음과 같다.
+- `run()`: 이 메서드는 Continuation의 본체(body)를 마운트하고 실행합니다. 만약 이전에 `yield()` 또는 `unmount()`로 인해 중단된 상태였다면, 마지막 중단 지점부터 실행을 재개합니다. 가상 스레드가 캐리어 스레드에 할당될 때 `run()`이 호출되어 작업을 시작하거나 이어갑니다.
+    
+- `mount()`: Continuation의 실행 컨텍스트(스택 프레임)를 현재 스레드(캐리어 스레드)의 스택에 올리는(mount) 역할을 합니다. 이 작업은 `run()` 메서드 내부에서 자동으로 처리됩니다. `mount()`가 호출되면 Continuation은 실행을 위한 준비를 마치고 제어권을 넘겨받습니다.
+    
+- `unmount()`: `mount()`의 반대 개념으로, 현재 실행 중인 Continuation의 실행 컨텍스트를 스택에서 내리고(unmount) 그 상태를 힙 메모리에 저장합니다. `unmount()`는 `yield()` 또는 I/O 블로킹과 같은 특정 상황에서 자동으로 호출됩니다. 이 과정을 통해 캐리어 스레드는 해당 가상 스레드로부터 해방되어 다른 가상 스레드를 실행할 수 있게 됩니다.
+    
+- `yield()`: 이 메서드는 현재 실행 중인 Continuation을 일시적으로 중단시키고, 캐리어 스레드를 다른 작업에 양보합니다. `yield()`가 호출되면 `unmount()`가 내부적으로 실행되어 Continuation의 상태가 힙에 저장되고, 캐리어 스레드는 다른 작업을 스케줄링할 수 있게 됩니다. 이는 명시적인 `Thread.yield()`와 유사하지만, OS 레벨의 컨텍스트 스위칭 없이 JVM 내에서만 이루어진다는 점에서 다릅니다.
+    
+- `enter()`: 이 메서드는 `yield()` 또는 `unmount()`를 통해 중단된 Continuation을 재개(resume)하는 데 사용됩니다. `enter()`가 호출되면 `mount()`가 내부적으로 실행되어 Continuation의 상태가 다시 스택에 로드되고, 중단되었던 지점부터 실행을 이어갑니다. 이 메서드는 주로 내부 JVM 스케줄러에 의해 자동으로 호출됩니다.
 
 현재 그림은 Continuation1이 실행되는 과정
 1. Continuation1이 진행, Runnable1 실행
@@ -434,13 +443,13 @@ public static void main(String[] args) {
 	System.out.println("Continuation1 running 1");
 	Continuation.yield(continuationScope);
 	System.out.println("Continuation1 running 2");
-	})
+	});
 	
 	Continuation continuation2 = new Continuation(continuationScope, () -> {
 	System.out.println("Continuation2 running 1");
 	Continuation.yield(continuationScope);
 	System.out.println("Continuation2 running 2");
-	})
+	});
 	
 	continuation1.run();
 	continuation2.run();
@@ -480,7 +489,8 @@ Continuation이 그림으로 어떻게 스케줄링 되는지 알아보자.
 ![[virtual_thread_temp1.png]]
 
 yield는 현재 작업을 중단하고 제어권을 반환하는 메서드이다.
-yield를 명시적으로 주어야 할까? -> #todo 이 표현에 대해서는 좀 '더' 잘 설명해야 할 필요가 있음.
+yield를 어떤 시점에서 명시적으로 줘서 제어권을 반환해야 할까?
+즉, 제어권이 반환되는 시점은 어디일까?
 언제 yield가 되는지 살펴보자
 
 void park()를 통해 작업을 중단 시킨다.
@@ -491,25 +501,37 @@ void park()를 통해 작업을 중단 시킨다.
 자바 유틸 패키지의 LockSupport.park()가 이를 도와준다.
 현재 스레드가 VirtualThread일 때 park를 호출하는 역할을 한다.
 
-#todo LockSupport 클래스의 park 코드
+![[LockSupport_park.png]]
+![[LockSupport_park2.png]]
 
 이때 else문에서 U.park을 호출한다. 일반 스레드에서 호출할 시 이걸 사용함. U는 unsafe의 park 메서드를 의미함
 기본적으로 일반 스레드에서 블로킹할 때 사용한다.
 
-일반 스레드는 커널 스레드를 사용하기 때문에 일반 스레드를 block 시킬 시 커널 스레드도 같이 block시켜줘야 한다.
+```java
+/**  
+ * Blocks current thread, returning when a balancing * {@code unpark} occurs, or a balancing {@code unpark} has  
+ * already occurred, or the thread is interrupted, or, if not * absolute and time is not zero, the given time nanoseconds have * elapsed, or if absolute, the given deadline in milliseconds * since Epoch has passed, or spuriously (i.e., returning for no * "reason"). Note: This operation is in the Unsafe class only * because {@code unpark} is, so it would be strange to place it  
+ * elsewhere. */@IntrinsicCandidate  
+public native void park(boolean isAbsolute, long time);
+```
+다음과 같이 native로 구현됨.
 
-그래서 native 붙음
+일반 스레드는 커널 스레드를 사용하기 때문에 일반 스레드를 block 시킬 시 커널 스레드도 같이 block시켜줘야 한다. 따라서 U.park()의 경우 native로 구현된다.
 
+하지만 이런 메서드는 너무 로우레벨에 존재해서 개발자가 사용하기 어렵다.
+
+기존 스레드의 블락은 아래 세 가지처럼 외부에서도 사용할 수 있게 처리되어있다.
 Thread.sleep()
 Mono.block()
 CompletableFuture.get()
-과 같이 스레드 블락시킬 시 쓰는 메서드
+
+가상 스레드는 어떻게 블락시킬까?
 
 기존 lockSupport는 호출 시 스레드를 블락시키는 함수였음.
 그런데 버추얼 스레드 추가 이후(JDK21)로는 버추얼 스레드인 경우 버추얼 스레드의 park 사용하도록 변경
 블로킹 되던 것이 버추얼 스레드 분기가 생기면서 버추얼 스레드 사용되고 있으면 continuation의 yield 를 호출한다는 것을 알 수 있다.
 
-JDK17과 JDK21 살펴보면 다르다.
+그래서 JDK17과 JDK21 살펴보면 다르다고 함.
 
 WorkQueue를 보면 Continuation1이 실행되고 있고, Cont1.yiled() 상황 가정해보자.
 cont1이 중단되고 힙메모리로 넘어가서 워크큐에서 제거됨.
@@ -536,7 +558,8 @@ yield(park)
 
 ### 시나리오
 
-시나리오를 가정하여 기존 스레드 모델과 가상 스레드 모델의 트랜잭션이 어떻게 스케줄링되는지 확인한다.
+Thread per Request 모델을 사용한다는 시나리오를 가정하여 기존 스레드 모델과 가상 스레드 모델의 트랜잭션이 어떻게 스케줄링되는지 확인한다.
+
 
 ![[Pasted image 20250908135954.png]]
 커널 스레드 및 톰캣 스레드 2개 밖에 없는 상황 가정
@@ -585,65 +608,6 @@ Continuation + JDK 라이브러리 리팩토링 = Nonblocking
 서버 환경에서 보여주었다.
 
 
-
-# 성능 테스트
-
-가상 스레드가 일반 스레드 대비 얼마나 성능 향상이 될까?
-어떤 상황에서 적용해야 이점을 볼 수 있을까?
-
-환경
-환경의 스펙이 좋지 않을수록 성능 차이 극명
-Thread vs VirtualThread
-AWS EC2
-- 1core cpu
-- 1GB ram
-Spring MVC
-JVM heap 256mb
-부하 테스트 도구 : ngrinder
-- vUser: 200
-I/O bound / cpu bound
-- api 호출
-- cpu 연산
-테스트의 경우 i/o, cpu로 나눠서 테스트함
-
-
-
-I/O bound 작업은 기존 151%, cpu bound는 93% 성능의 TPS를 보임
-
-일반 Thread 방식에 비해
-- I/O bound 작업은 더 높은 처리량
-  non blocking 방식이라.
-- CPU bound 작업은 더 낮은 처리량
-  platform thread 위에서 결국 동작.
-  가상 스레드 스케줄링, 생성 비용이 낭비가 된다.
-- Thread 서버는 특정 vuser수 부터 장애 발생
-  최대 처리량에서 일반 스레드 서버가 낮다.
-
-
-WebFlux vs Virtual Thread
-AWS EC2
-- 1core cpu
-- 1GB ram
-Spring WebFlux
-JVM heap 256mb
-ngrinder
-- vUser: 500
-api 호출
-
-I/O Bound만 처리
-VirtualThread는 211% 차이가 난다.
-
-vUser 수가 일정 이상 넘어가면 WebFlux는 줄어들게 된다.
-유저수가 많고 메모리도 낮기 때문에 컨텍스트 스위칭에서 병목이 걸린다.
-
-극한 상황에서 차이점이 있다고 결론내릴 수 있음.
-
-요약
-I/O Bound 작업 효율이 높아진다.
-제한된 사양에서 최대 처리량을 보일 수 있다.
-
-> cpu 작업의 경우 일반 스레드 작업과 차이가 없다. 결국 non-blocking 작업의 경우 io 사용으로 인해 중단되면서 생긴 유휴시간을 최대한 활용하기 위해 쓰게 되는 것인데 cpu 사용량이 많은 작업의 경우 비동기 blocking과 같은 안티 패턴이 되어버린다.
-
 # 주의사항
 
 Blocking carrier thread
@@ -662,14 +626,16 @@ VM Optoin으로 감지 가능
 
 이걸 지원하도록 만드는 방법이 있다?
 virtual thread의 synchronized, parallelStream 사용 부분을 다른 락인 ReentrantLock을 사용하게 할 수 있다.
-51:40 부근
 
 - 병목 가능성 존재
 - 사용 라이브러리 release 점검
 - 변경 가능하다면 java.util의 ReentrantLock을 사용하도록 변경
 
+- **`synchronized`**: `synchronized` 블록은 JVM이 아닌 OS 모니터(OS Monitor)를 사용하기 때문에, 해당 블록이 실행되는 동안 가상 스레드는 OS에 의해 캐리어 스레드에 고정됩니다.
+    
+- **JNI(Java Native Interface)**: 네이티브 코드는 JVM 외부에서 실행되므로, JVM이 Continuation을 관리할 수 없어 가상 스레드를 중단하고 해제하는 메커니즘이 작동하지 않습니다.
 
-> #todo 그렇다면 Pinned Thread 현상은 언제 생깁니까?
+> #todo 그렇다면 Pinned Thread 현상은 어떤 구체적인 케이스에서 생기는가?
 
 
 No Pooling
@@ -709,6 +675,36 @@ Virtual Thread는 배압 조절 기능이 없다.
 > #todo 배압 조절 기능이 무엇입니까?
 > 기존 스레드는 어떤 알고리즘으로 배압을 조절합니까?
 > 가상 스레드의 배압 조절을 할 수 있습니까? 아니면 배압 조절의 대안이 존재합니까?
+
+
+
+# 추가 내용
+
+## 가상 스레드의 OS 레벨 동작
+
+가상 스레드(Virtual Thread)는 OS 관점에서 보면 **단일 플랫폼 스레드(캐리어 스레드)의 일부**로만 보입니다. OS는 여러 개의 가상 스레드가 존재한다는 사실을 알지 못하며, 오직 실행 중인 **플랫폼 스레드(캐리어 스레드)**만 인식하고 스케줄링합니다.
+
+### 메모리 동작 방식
+
+가상 스레드의 메모리 동작은 다음과 같습니다.
+
+- **JVM 사용자 영역**: 모든 가상 스레드와 그 상태 정보(Continuation)는 JVM의 **힙(Heap) 메모리**에 저장됩니다. 각 가상 스레드는 약 50KB의 작은 힙 영역을 차지하며, 이 영역에는 스택 프레임 정보와 같은 실행 컨텍스트가 포함됩니다.
+    
+- **OS 커널 영역**: OS는 단지 몇 개의 **플랫폼 스레드(캐리어 스레드)**만 인식합니다. 각 플랫폼 스레드는 커널 스레드와 1:1로 매핑되며, 각각의 스택 메모리 공간을 가집니다.
+    
+
+가상 스레드가 실행 중일 때, 그 상태 정보(Continuation)는 **캐리어 스레드의 스택**에 로드되어 실행됩니다. 만약 가상 스레드가 I/O 블로킹 작업으로 인해 중단되면, 그 스택 상태는 힙 메모리의 Continuation 객체로 저장되고, 캐리어 스레드의 스택은 비워져 다음 작업을 수행할 준비를 합니다. 이 과정에서 캐리어 스레드는 OS에 "나를 블록하지 말고 다른 작업을 하겠다"고 알리는 것이 아니라, 단순히 다음 가상 스레드를 실행하는 것입니다. 따라서 OS는 계속해서 캐리어 스레드가 바쁘게 일하고 있다고 인식합니다.
+
+결론적으로, OS는 가상 스레드들을 개별적인 실행 단위로 보지 않습니다. OS에게는 오직 소수의 플랫폼 스레드(캐리어 스레드)만이 보일 뿐이며, 이들이 사용자 영역에서 수많은 가상 스레드 작업을 효율적으로 처리하는 것입니다. 이 덕분에 시스템 콜 오버헤드와 컨텍스트 스위칭 비용이 크게 줄어듭니다.
+
+---
+
+### 컨텍스트 스위칭 비용
+
+**플랫폼 스레드(네이티브 스레드)**의 컨텍스트 스위칭은 OS가 수행하며, 이는 커널 모드 진입과 같은 고비용의 시스템 콜을 수반합니다. OS는 스레드의 레지스터 상태, 프로그램 카운터, 스택 포인터 등을 모두 저장하고 복원해야 하므로 비용이 높습니다.
+
+반면, **가상 스레드**의 컨텍스트 스위칭은 JVM 내부에서 이루어지며, **Continuation 객체**의 상태를 힙 메모리에 저장하고 로드하는 방식으로 진행됩니다. 이 과정은 시스템 콜 없이 JVM 내에서 순수 자바 코드로 처리되므로 매우 빠르고 효율적입니다.
+
 
 
 

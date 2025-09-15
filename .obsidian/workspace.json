@@ -41,16 +41,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 9..md",
+                "file": "Areas/Study/seminar/2509/250915.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 9."
+              "title": "250915"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "@valid",
+                "query": "스와핑",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -199,10 +198,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "fa7d6b87eeb09126",
+  "active": "103ddf3a9cb5adab",
   "lastOpenFiles": [
-    "Areas/Spring-framework/spring-MVC-2/6.cookie&session(writing).md",
+    "LockSupport_park2.png",
+    "LockSupport_park.png",
+    "Areas/Study/seminar/2509/250915.md",
+    "Areas/issues/Spring Security Authentication Failure(writing).md",
+    "Pasted image 20250915141805.png",
+    "Areas/todo/TODO.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
+    "Resources/lecture-note/2509/250915.md",
+    "Areas/issues",
     "Areas/read-a-book/개발자를 위한 최소한의 실무 지식/Chapter 9..md",
+    "Areas/Spring-framework/spring-MVC-2/6.cookie&session(writing).md",
     "Areas/Spring-framework/99.spring-todo.md",
     "Areas/Spring-framework/spring-MVC-2/4.Validation(writing).md",
     "Areas/Spring-framework/spring-core-principles/4.oop&spring.md",
@@ -220,14 +229,7 @@
     "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
     "Areas/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
     "Areas/Spring-framework/spring-MVC-1/6.spring-mvc.md",
-    "Areas/Spring-framework/spring-MVC-2/3.message-globalization.md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Areas/JD/feedback.md",
     "Areas/JD/resume/resume-1.pdf",
-    "Areas/Study/topics&rough/java-virtual-thread/java-virtual-thread-2.md",
-    "Areas/Spring-framework/week4_Controller-vs-RestController.md",
-    "Areas/Java/Road-map.md",
-    "Areas/Spring-framework/week2_spring-with-triangle.md",
     "Areas/Study/topics&rough/java-virtual-thread/images/virtual_thread_blokingio.png",
     "Areas/Study/topics&rough/java-virtual-thread/images",
     "Areas/JD/resume/resume-2.pdf",
@@ -237,15 +239,12 @@
     "Areas/Study/seminar/2508",
     "Areas/Study/seminar/2507",
     "Projects/tennis-competition-system/daily/2508",
-    "Resources/lecture-note/2509",
     "Areas/Study/topics&rough/java-virtual-thread/images/virtual-thread-hierarchy.png",
     "Pasted image 20250910124453.png",
     "Areas/Study/topics&rough/java-virtual-thread/images/virtual-thread-test2.png",
     "Areas/Study/topics&rough/java-virtual-thread/images/virtual-thread-comment.png",
     "Pasted image 20250716134732.png",
     "Pasted image 20250725171115.png",
-    "Pasted image 20250908135954.png",
-    "Pasted image 20250908140053.png",
-    "Pasted image 20250908140104.png"
+    "Pasted image 20250908135954.png"
   ]
 }
