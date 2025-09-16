@@ -1,3 +1,12 @@
+# Done
+
+- PowerJAVA
+- 개발자를 위한 최소한의 실무 지식
+
+# UnDone
+
+
+
 # 미소지 서적 목록
 - 운영체제(짱룡책)
 https://product.kyobobook.co.kr/detail/S000001868743
