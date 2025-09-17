@@ -157,17 +157,17 @@ Hot Swapping은 바뀌는 범위가 매우 한정적이다.<br>
 
 
 1. `Run/Debug Configurations` - `edit`<br>
-![image1](./images/Pasted%20image%2020250724163535.png)
+![image1](Pasted%20image%2020250724163535.png)
 
 2. `옵션 수정` 클릭<br>
-![image2](./images/Pasted%20image%2020250724163954.png)
+![image2](Pasted%20image%2020250724163954.png)
 
 3. `클래스를 핫스왑하고 실패할 경우 트리거 파일을 업데이트합니다.` 클릭<br>
-![image3](./images/Pasted%20image%2020250724164034.png)
+![image3](Pasted%20image%2020250724164034.png)
 
 이제 디버깅 시 다음과 같이 핫 스왑을 적용할 수 있다.
 (저장 시 바로 적용은 되지 않고, 해당 버튼을 클릭해야 적용된다.)
-![image4](./images/Pasted%20image%2020250724170150.png)
+![image4](Pasted%20image%2020250724170150.png)
 
 > 주의: 설정 -  빌드, 실행, 배포 - 컴파일러에서 프로젝트 자동 빌드 옵션이 켜져있어야 한다.
 

@@ -32,7 +32,7 @@
     
 - 가상 스레드:
     - JVM 수준 스케줄링 + Continuation 활용
-    - 블로킹 호출을 중단(suspend) → 다른 스레드 실행 → 완료 시 재개(resume)
+    - 블로킹 호출을 중단 → 다른 스레드 실행 → 완료 시 재개
 
 
 ---
@@ -49,7 +49,7 @@
 
 ## 4. 정리
 
-- Virtual Thread는 **가볍고 빠르며, Non-blocking I/O를 자연스럽게 지원하는 경량 스레드**
+- Virtual Thread는 **가볍고 빠르며, Non-blocking I/O를 지원하는 경량 스레드**
     
 - 장점:
     - 저렴한 생성 비용 → 풀 필요 없음
@@ -70,7 +70,7 @@
 오늘 알아볼 내용
 
 JVM의 가상 스레드 스케줄링
-가상 스레드의 작업 단위 : Continuation
+가상 스레드의 작업 단위 Continuation
 
 
 # 동작 과정 살펴보기
@@ -108,7 +108,7 @@ public static void main(String[] args) {
 }
 ```
 
-start 메서드에 내부
+start 메서드 내부
 `start0()`라는 메서드를 통해 커널 스레드를 생성 요청함.
 
 ![[virtual-thread-start.png]]
@@ -130,8 +130,6 @@ start0 구현체 (2933 라인~)
 https://github.com/openjdk/jdk/blob/221e1a426070088b819ddc37b7ca77d9d8626eb4/src/hotspot/share/prims/jvm.cpp
 
 
-
-
 ## 가상 스레드
 
 동작 방식
@@ -149,7 +147,7 @@ https://github.com/openjdk/jdk/blob/221e1a426070088b819ddc37b7ca77d9d8626eb4/src
 
 Virtual Thread는 생성 시 유저 영역에 생성됨
 기존에는 시작 시 커널 영역에 직접 스레드 생성을 요청했었다.
-따라서 커널 스레드와 가상 스레드 사이에서 관리를 해주는 어떠한 스케줄러가 존재한다는 것을 예상 가능
+가상 스레드에서는 해당 과정이 없으므로 JVM 영역에서 커널 스레드와 가상 스레드 사이를 관리해주는 스케줄러가 존재함을 예상할 수 있다.
 
 ![[virtual-thread-architecture.png]]
 *[Image from](https://velog.io/@zenon8485/Java21-Virtual-Thread) 가상 스레드 구조*
@@ -157,11 +155,10 @@ Virtual Thread는 생성 시 유저 영역에 생성됨
 
 그림을 통해 가상 스레드와 매핑되는 캐리어 스레드(플랫폼 스레드)를 볼 수 있다.
 즉, 기존 스레드를 사용하면서 그 위에서 가상 스레드가 동작하는 형태이다.
-따라서 플랫폼 스레드는 스레드 풀로 관리된다. 기존 스레드와의 차이점은 스케줄러라는 것이다.
 
 이제 가상 스레드의 동작 과정과 스케줄링 방식을 알아보기 위해 코드를 탐색해보자.
 
-
+*VirtualThread class*
 ```java
 /**  
  * Schedules this {@code VirtualThread} to execute.  
@@ -235,12 +232,10 @@ Executor 타입의 scheduler가 있는 것을 볼 수 있음.
 
 
 **스케줄러 특징**
-static 변수로 선언
-createDefaultScheduler()를 통해 생성
-
-static 변수이기 때문에 모든 VirtualThread는 동일한 스케줄러를 공유
-
-ForkJoinPool 메커니즘으로 스케줄링
+- static 변수로 선언
+- createDefaultScheduler()를 통해 생성
+- static 변수이기 때문에 모든 VirtualThread는 동일한 스케줄러를 공유
+- ForkJoinPool 메커니즘으로 스케줄링
 
 **createDefaultScheduler 확인하기**
 ![[virtual-thread-create-default-scheduler.png]]
@@ -337,7 +332,7 @@ Fork/Join 프레임워크의 핵심
 
 
 > **주의사항**
-> Continuation과는 다른 개념
+> Continuation과 ForkJoinTask는 다른 개념
 > fork 작업의 경우, 문제의 크기를 기준으로 분리된다.
 > 작업 최소 크기(threshold)를 기준으로 분리된다.
 > Continuation은 실행 상태를 기준으로 중단/재개가 가능하도록 만들어진 작업 단위이다.
@@ -345,7 +340,7 @@ Fork/Join 프레임워크의 핵심
 
 > Work Stealing 과정에서 메모리는 어떻게 될까?
 > 각 캐리어 스레드는 워킹 큐가 존재하며, 힙 메모리에 저장됨.
-> lock-free 알고리즘 (및 CAS, 메모리 배리어)를 사용해 head/tail을 짧게 동기화한다. head/tail 포인터 갱신 순간에만 충돌 관리가 요구되기 때문.
+> lock-free 알고리즘 (및 CAS(compare and swap), 메모리 배리어)를 사용해 head/tail을 짧게 동기화한다. head/tail 포인터 갱신 순간에만 충돌 관리가 요구되기 때문.
 > 
 > 즉, 스레드 전용 큐이나, 다른 스레드가 steal 시 head 접근에서만 경쟁이 발생하고, 그 부분은 lock-free 알고리즘 및 CAS 연산으로 조정된다.
 
@@ -357,9 +352,6 @@ JVM 스케줄링의 이유
 - 버추얼 스레드는 커널 영역 접근 없이 단순 Java 객체 생성
 - 즉, Virtual Thread는 생성 시 시스템 콜 X
 
-JVM 스케줄링 시 메모리에선 어떤 일이 일어날까?
-Continuation 작업 단위에서 확인할 수 있다.
-
 
 ### Continuation 작업 단위
 
@@ -367,14 +359,14 @@ Continuation 개념 자체는 오래 전부터 사용되던 프로그래밍 패�
 https://en.wikipedia.org/wiki/Continuation
 
 > 컴퓨터 사이언스에서, Continuation은 컴퓨터 프로그램의 제어 상태에 대한 추상적 표현.
-> LISP이라는 함수형 프로그래밍 언어와 Java의 가상 스레드, C++ Fiber 등에서도도 지원한다.
+> LISP이라는 함수형 프로그래밍 언어와 Java의 가상 스레드, C++ Fiber 등에서도 지원한다.
 
 ![[virtual_thread_kotlin_coroutine.png]]
 [image from](https://techblog.woowahan.com/7349/)
 
 코틀린 코루틴도 Continuation을 사용하도록 동작
 
-코틀린 컴파일러가 suspend()를 코루틴을 사용하는 새로운 클래스로 실행하는 방식
+코틀린 컴파일러가 기존의 함수 코드를 suspend()를 통해 코루틴을 사용하는 상태 저장 가능한 클래스로 실행하는 방식
 일반적인 함수는 Caller가 호출하면 모든 라인 수행, 리턴 시 제어권 반환 및 종료
 
 suspend()는 중단이 가능해짐
@@ -412,24 +404,24 @@ public void continuation() {
 
 continuation은 중단 가능
 
-![[virtual_thread_continuation_scope.png]]
-> 주의 : 해당 메모리 스택은 JVM 내부이다.
 
-Continuation은 관리를 위한 Continuation Scope가 존재
+**동작 과정 살펴보기**
+![[virtual-thread-structure.png]][image from](https://techblog.woowahan.com/15398/)
 
 Countinuation의 주요 메서드들은 다음과 같다.
 
-- `run()`: 이 메서드는 Continuation의 본체(body)를 마운트하고 실행합니다. 만약 이전에 `yield()` 또는 `unmount()`로 인해 중단된 상태였다면, 마지막 중단 지점부터 실행을 재개합니다. 가상 스레드가 캐리어 스레드에 할당될 때 `run()`이 호출되어 작업을 시작하거나 이어갑니다.
+- `run()`: ==Continuation의 본체(body)를 마운트하고 실행합니다.== 만약 이전에 `yield()` 또는 `unmount()`로 인해 중단된 상태였다면, 마지막 중단 지점부터 실행을 재개합니다. 가상 스레드가 캐리어 스레드에 할당될 때 `run()`이 호출되어 작업을 시작하거나 이어갑니다.
     
-- `mount()`: Continuation의 실행 컨텍스트(스택 프레임)를 현재 스레드(캐리어 스레드)의 스택에 올리는(mount) 역할을 합니다. 이 작업은 `run()` 메서드 내부에서 자동으로 처리됩니다. `mount()`가 호출되면 Continuation은 실행을 위한 준비를 마치고 제어권을 넘겨받습니다.
+- `mount()`: ==Continuation의 실행 컨텍스트(스택 프레임)를 현재 스레드(캐리어 스레드)의 스택에 올리는(mount) 역할을 합니다.== 이 작업은 `run()` 메서드 내부에서 자동으로 처리됩니다. `mount()`가 호출되면 Continuation은 실행을 위한 준비를 마치고 제어권을 넘겨받습니다.
     
-- `unmount()`: `mount()`의 반대 개념으로, 현재 실행 중인 Continuation의 실행 컨텍스트를 스택에서 내리고(unmount) 그 상태를 힙 메모리에 저장합니다. `unmount()`는 `yield()` 또는 I/O 블로킹과 같은 특정 상황에서 자동으로 호출됩니다. 이 과정을 통해 캐리어 스레드는 해당 가상 스레드로부터 해방되어 다른 가상 스레드를 실행할 수 있게 됩니다.
+- `unmount()`: ==`mount()`의 반대 개념으로, 현재 실행 중인 Continuation의 실행 컨텍스트를 스택에서 내리고(unmount) 그 상태를 힙 메모리에 저장합니다.== `unmount()`는 `yield()` 또는 I/O 블로킹과 같은 특정 상황에서 자동으로 호출됩니다. 이 과정을 통해 캐리어 스레드는 해당 가상 스레드로부터 해방되어 다른 가상 스레드를 실행할 수 있게 됩니다.
     
-- `yield()`: 이 메서드는 현재 실행 중인 Continuation을 일시적으로 중단시키고, 캐리어 스레드를 다른 작업에 양보합니다. `yield()`가 호출되면 `unmount()`가 내부적으로 실행되어 Continuation의 상태가 힙에 저장되고, 캐리어 스레드는 다른 작업을 스케줄링할 수 있게 됩니다. 이는 명시적인 `Thread.yield()`와 유사하지만, OS 레벨의 컨텍스트 스위칭 없이 JVM 내에서만 이루어진다는 점에서 다릅니다.
+- `yield()`: ==현재 실행 중인 Continuation을 일시적으로 중단시키고, 캐리어 스레드를 다른 작업에 양보합니다.== `yield()`가 호출되면 `unmount()`가 내부적으로 실행되어 Continuation의 상태가 힙에 저장되고, 캐리어 스레드는 다른 작업을 스케줄링할 수 있게 됩니다. 이는 명시적인 `Thread.yield()`와 유사하지만, OS 레벨의 컨텍스트 스위칭 없이 JVM 내에서만 이루어진다는 점에서 다릅니다.
     
-- `enter()`: 이 메서드는 `yield()` 또는 `unmount()`를 통해 중단된 Continuation을 재개(resume)하는 데 사용됩니다. `enter()`가 호출되면 `mount()`가 내부적으로 실행되어 Continuation의 상태가 다시 스택에 로드되고, 중단되었던 지점부터 실행을 이어갑니다. 이 메서드는 주로 내부 JVM 스케줄러에 의해 자동으로 호출됩니다.
+- `enter()`: ==`yield()` 또는 `unmount()`를 통해 중단된 Continuation을 재개(resume)하는 데 사용됩니다.== `enter()`가 호출되면 `mount()`가 내부적으로 실행되어 Continuation의 상태가 다시 스택에 로드되고, 중단되었던 지점부터 실행을 이어갑니다. 이 메서드는 주로 내부 JVM 스케줄러에 의해 자동으로 호출됩니다.
 
 
+![[virtual_thread_continuation_scope.png]]
 현재 그림은 Continuation1이 실행되는 과정.
 
 1. Continuation1이 진행, Runnable1 실행
@@ -442,10 +434,27 @@ Countinuation의 주요 메서드들은 다음과 같다.
 5. cont2가 중단지점 (yield()) 도달 시 작업 중단
 	1. stack memory의 스택 포인터에 현재 작업 내용 기록(cont2)
 	2. cont2은 Heap 메모리로 내려감
-6. Continuation1을 다시 스택에 올리고 중단지점부터 다시 수행
+6. Continuation1을 다시 스택에 올리고 중단 지점부터 다시 수행
 
 
-예제
+그렇다면 재개를 위한 실행 상태 관리는 어떻게 되는가?
+
+Continuation은 관리를 위한 Continuation Scope가 존재
+
+**Continuation 내부**
+![](https://blog.kakaocdn.net/dna/mxrG3/btsI7IH2nzU/AAAAAAAAAAAAAAAAAAAAAP0MQlL_P7Dzsloo8oRn76Qcv4JsvgZ9UqsrHQhCrpzu/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=QMqwCNWeJN4iOe9SKe88uokSEU4%3D)
+cont.run() 실행
+Runnable 내부의 로직들이 Stack에 쌓이게 된다.
+![](https://blog.kakaocdn.net/dna/uVURM/btsI5u5RddY/AAAAAAAAAAAAAAAAAAAAAJh71p0ZihosXNjCQ7cMjzh7VKp1mYF47ho3lp8fKq7m/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=yoqGLWFE9P5TAx3lRWIgiO9J%2BC0%3D)
+Cont.yield() 호출
+cont.run() 이후의 Stack을 cont가 가지고 Heap 메모리 영역으로 이동한다.
+
+![](https://blog.kakaocdn.net/dna/bcddpG/btsI7s6mszI/AAAAAAAAAAAAAAAAAAAAAHxWVLDCYoo_fxUTshdz4Q13FWM-9fz3-rKIiXoAJuH4/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1759244399&allow_ip=&allow_referer=&signature=S45WUlSGl2PPoILcY7393VnqM68%3D)
+cont.run() 재호출
+cont 가 Heap 으로 가져갔던 Stack 부분을 다시 cont.run() 이후에 쌓고 실행을 이어나간다.
+
+
+*Continuation 예제*
 > --add-exports java.base/jdk.internal.misc=ALL-UNNAMED 를 통해 자바의 내부 패키지를 사용할 수 있다고 하나 사용 불가능. 아래 예제 코드는 실행할 수 없음.
 ```java
 public static void main(String[] args) {
@@ -471,6 +480,7 @@ public static void main(String[] args) {
 yield를 통해 제어권이 main으로 돌아오고 main에서 수동으로 다시 실행하는 모습
 
 
+
 virtualthread에서 continuation을 사용하는 방식
 
 ![[virtual-thread-field-chunk.png]]
@@ -485,14 +495,14 @@ runContinuation은 Continuation을 실행해주는 람다식으로 기억하면 
 > runContinuation도 이와 동일하다고 생각하면 된다.
 
 각 필드는 다음과 같이 설정된다.
-생성자에서, cont는 VthreadContinuation이라는 타입으로 받은 태스크를 Continuation으로 만들어 사용한다.
+Virtual Thread의 생성자에서, cont는 VthreadContinuation이라는 타입으로 받은 태스크를 Continuation으로 만들어 사용한다.
 runContinuation의 경우, 가상 스레드의 프라이빗 메서드로 runContinuation이 존재하여, 그것을 사용함.
 
 ![[virtual-thread-runContinuation.png]]
 runContinuation은 단순히 cont.run()을 통해 continuation을 실행한다.
 
 
-## JVM 스케줄링 동작 복습
+## JVM 스케줄링 동작 복습 - 제어권 반환 시점
 
 virtualThread 스타트 시 submitRunContinuation을 실행했었다.
 Continuation에 대한 개념을 숙지한 상태로 JVM에 의한 스케줄링 섹션을 다시 복습해보자.
@@ -514,26 +524,104 @@ Cont1.yield()
 Working Queue : Cont2
 ```
 
-
 yield는 현재 작업을 중단하고 제어권을 반환하는 메서드이다.
 yield를 어떤 시점에서 명시적으로 줘서 제어권을 반환해야 할까?
 즉, 제어권이 반환되는 시점은 어디일까?
 언제 yield가 되는지 살펴보자
 
+
+*virtual thread의 park와 yield*
+![[virtual-thread-Park.png]]
+
 void park()를 통해 작업을 중단 시킨다.
 이때 try문에서 yieldContinuation();이 실행된다.
 
-이때 Virtual Thread의 메서드는 패키지 프라이빗이기 때문에 외부 호출이 어려움.
+![[virtual-thread-yieldContinuation.png]]
+
+*Continuation의 yield 및 yield0*
+```java
+  
+/**  
+ * Suspends the current continuations up to the given scope * * @param scope The {@link ContinuationScope} to suspend  
+ * @return {@code true} for success; {@code false} for failure  
+ * @throws IllegalStateException if not currently in the given {@code scope},  
+ */@Hidden  
+public static boolean yield(ContinuationScope scope) {  
+    Continuation cont = JLA.getContinuation(currentCarrierThread());  
+    Continuation c;  
+    for (c = cont; c != null && c.scope != scope; c = c.parent)  
+        ;  
+    if (c == null)  
+        throw new IllegalStateException("Not in scope " + scope);  
+  
+    return cont.yield0(scope, null);  
+}  
+  
+@Hidden  
+private boolean yield0(ContinuationScope scope, Continuation child) {  
+    preempted = false;  
+  
+    if (scope != this.scope)  
+        this.yieldInfo = scope;  
+    int res = doYield();  
+    U.storeFence(); // needed to prevent certain transformations by the compiler  
+  
+    assert scope != this.scope || yieldInfo == null : "scope: " + scope + " this.scope: " + this.scope + " yieldInfo: " + yieldInfo + " res: " + res;  
+    assert yieldInfo == null || scope == this.scope || yieldInfo instanceof Integer : "scope: " + scope + " this.scope: " + this.scope + " yieldInfo: " + yieldInfo + " res: " + res;  
+  
+    if (child != null) { // TODO: ugly  
+        if (res != 0) {  
+            child.yieldInfo = res;  
+        } else if (yieldInfo != null) {  
+            assert yieldInfo instanceof Integer;  
+            child.yieldInfo = yieldInfo;  
+        } else {  
+            child.yieldInfo = res;  
+        }  
+        this.yieldInfo = null;  
+    } else {  
+        if (res == 0 && yieldInfo != null) {  
+            res = (Integer)yieldInfo;  
+        }  
+        this.yieldInfo = null;  
+  
+        if (res == 0)  
+            onContinue();  
+        else  
+            onPinned0(res);  
+    }  
+    assert yieldInfo == null;  
+  
+    return res == 0;  
+}
+```
+
+
+
+
+Continuation 사용 이유
+- Thread는 작업 중단을 위해 커널 스레드를 중단
+- Virtual Thread는 작업 중단을 위해 continuation yield
+- 작업이 block 되어도 실제 스레드는 중단되지 않고 다른 작업 처리 -> NIO처럼 동작
+- 커널 스레드 중단이 없으므로 시스템 콜 x -> 컨텍스트 스위칭 비용이 낮음
+
+**외부에서는 어떻게 명시해주나?**
+Virtual Thread의 메서드는 패키지 프라이빗이기 때문에 외부 호출이 어려움.
 
 자바 유틸 패키지의 LockSupport.park()가 이를 도와준다.
 현재 스레드가 VirtualThread일 때 park를 호출하는 역할을 한다.
 
+
 ![[LockSupport_park.png]]
 ![[LockSupport_park2.png]]
+*Lock Support의 Park*
 
-이때 else문에서 U.park을 호출한다. 일반 스레드에서 호출할 시 이걸 사용함. U는 unsafe의 park 메서드를 의미함
+
+else문에서 U.park을 호출하는 것을 볼 수 있다.
+일반 스레드에서 호출할 시 이걸 사용함. U는 unsafe의 park 메서드를 의미함
 기본적으로 일반 스레드에서 블로킹할 때 사용한다.
 
+park는 다음과 같이 native로 구현된다.
 ```java
 /**  
 * Blocks current thread, returning when a balancing
@@ -547,15 +635,8 @@ void park()를 통해 작업을 중단 시킨다.
 */@IntrinsicCandidate  
 public native void park(boolean isAbsolute, long time);
 ```
-다음과 같이 native로 구현됨.
 
 일반 스레드는 커널 스레드를 사용하기 때문에 일반 스레드를 block 시킬 시 커널 스레드도 같이 block시켜줘야 한다. 따라서 U.park()의 경우 native로 구현된다.
-
-Continuation 사용 이유
-- Thread는 작업 중단을 위해 커널 스레드를 중단
-- Virtual Thread는 작업 중단을 위해 continuation yield
-- 작업이 block 되어도 실제 스레드는 중단되지 않고 다른 작업 처리 -> NIO처럼 동작
-- 커널 스레드 중단이 없으므로 시스템 콜 x -> 컨텍스트 스위칭 비용이 낮음
 
 ---
 
@@ -567,48 +648,47 @@ Virtual Thread는 ForkJoin Pool이라는 스레드 풀을 이용하였으며, Wo
 
 ## 시나리오 예제
 
-Thread per Request 모델을 사용한다는 시나리오를 가정하여 기존 스레드 모델과 가상 스레드 모델의 트랜잭션이 어떻게 스케줄링되는지 확인한다.
+Thread per Request 모델을 사용한다는 시나리오를 가정하여 기존 스레드 
+모델과 가상 스레드 모델의 트랜잭션이 어떻게 스케줄링되는지 확인한다.
 
 
-![[Pasted image 20250908135954.png]]
+### 기존 스레드 방식
+
+![[virtual-thread-scenario1.png]]
 커널 스레드 및 톰캣 스레드 2개 밖에 없는 상황 가정
 
-그리고 다른 톰캣 및 DB, 혹은 api
+다른 톰캣 및 DB, 혹은 api 사용으로 인해 커널에 park를 사용한 상황
+
+2번째 리퀘스트가 I/O 블로킹을 만나게 되면 LockSupport park를 사용한다. 커널 스레드가 같이 블락됨.
 
 
-2번째 리퀘스트가 I/O 블로킹 만나게 되면 locksupport park를 사용한다.
-커널 스레드를 블락하게 될 것.
+![[virtual-thread-scenario2.png]]
 
-만약 세번째 리퀘스트가 들어오게 된다면 톰캣 스레드가 존재하지 않아 대기하게 될 것.
+만약 다음과 같이 세번째 리퀘스트가 들어오게 된다면 톰캣 스레드가 존재하지 않아 대기하게 될 것.
+![[virtual-thread-scenario3.png]]
 
-![[Pasted image 20250908140053.png]]
-![[Pasted image 20250908140104.png]]
 
 이후 두번째 리퀘스트 완료 후 3번째 리퀘스트가 할당받게 될 것
 
 이것이 일반적인 thread per request 방식이다.
 
-virtual thread로 변경하면 어떻게 될까?
-한 라인이면 된다.
-
-> 톰캣의 경우 프로토콜핸들러커스터마이저라는 빈을 수정해서 ExecutorService를 바꿔줘야 한다. 이를 충분히 인지시키기 바람.
-![[Pasted image 20250908140142.png]]
+### 가상 스레드 방식
 
 
 기존 스레드 모델과 비교해보자.
 Request2를 받게되면 Virtual2가 마찬가지로 lock support의 park를 호출할 것이다.
 
-![[Pasted image 20250908144436.png]]
+![[virtual-thread-scenario4.png]]
 continuation에 yield하고 재 스케줄링 해주면 된다.
 
 
-![[Pasted image 20250908144445.png]]
+![[virtual-thread-scenario5.png]]
 자연스럽게 virtual 스레드는 api와 연동이 된다.
 
-![[Pasted image 20250908144513.png]]
+![[virtual-thread-scenario6.png]]
 새로운 요청이 오게되면 생성되는 새로운 스레드는 캐리어 스레드에 등록되서 요청을 처리할 수 있게 된다.
 
-![[Pasted image 20250908144551.png]]
+![[virtual-thread-scenario7.png]]
 만약 첫번째 요청의 response가 완료되면 자연스럽게 두번째 가상스레드를 할당해준다.
 우리가 알고있는 non-blocking io와 비슷한 방식으로 동작한다!
 
@@ -616,6 +696,9 @@ Continuation + JDK 라이브러리 리팩토링 = Nonblocking
 
 서버 환경에서 보여주었다.
 
+
+> 톰캣의 경우 protocolHandlerVirtualThreadExecutorCustomizer라는 빈을 수정해서 ExecutorService를 바꿔줘야 한다.
+![[virtual-thread-for-tomcat.png]]
 
 # 주의사항
 
@@ -658,19 +741,14 @@ Synchronized Blocking을 가상 스레드에서 사용하려고 할 시 발생�
 
 가상 스레드는 어떻게 블락시킬까?
 
-기존 lockSupport는 호출 시 스레드를 블락시키는 함수였음.
-그런데 버추얼 스레드 추가 이후(JDK21)로는 버추얼 스레드인 경우 버추얼 스레드의 park 사용하도록 변경
+위의 LockSupport를 이용한다.
+기존 LockSupport는 호출 시 스레드를 블락시키는 함수였음.
+그런데 버추얼 스레드 추가 이후(JDK21)로는 버추얼 스레드인 경우 버추얼 스레드의 park를 사용하도록 변경
 블로킹 되던 것이 버추얼 스레드 분기가 생기면서 버추얼 스레드 사용되고 있으면 continuation의 yield 를 호출한다는 것을 알 수 있다.
 
-그래서 JDK17과 JDK21 살펴보면 다르다고 함.
+그래서 JDK17과 JDK21 살펴보면 코드가 다른 것을 확인할 수 있음.
 
-WorkQueue에서 Continuation1이 실행되고 있고, Cont1.yield() 상황 가정해보자.
-cont1이 중단되고 힙메모리로 넘어가서 워크큐에서 제거됨.
-continuation1 중단 시 continuation2가 이어서 작업을 실행함
-여기는 그림이 있었다.
-
-
-
+이런 LockSupport를 통해 캐리어 스레드를 블락시키지 않고 안전하게 워킹큐에서 제거시켜 블락락킹 작업을 처리할 수 있다.
 
 ## No Pooling
 
@@ -776,45 +854,34 @@ OS에서 기본적으로(natively) 지원하는 스케줄링이 아닌, 제공�
 
 
 
-
 # Reference
 
-주 참고자료
-4월 우아한테크세미나 ‘Java의 미래, Virtual Thread’
-https://www.youtube.com/watch?v=BZMZIM-n4C0
+**주 참고자료 -** 4월 우아한테크세미나 ‘Java의 미래, Virtual Thread’ [https://www.youtube.com/watch?v=BZMZIM-n4C0](https://www.youtube.com/watch?v=BZMZIM-n4C0)
 
-자바 스레드 딥다이브
-https://code-run.tistory.com/59
+자바 스레드 딥다이브 [https://code-run.tistory.com/59](https://code-run.tistory.com/59)
 
-고루틴
-https://ykarma1996.tistory.com/188
+고루틴 [https://ykarma1996.tistory.com/188](https://ykarma1996.tistory.com/188)
 
-Fork Join Pool
-https://jh-labs.tistory.com/401
+Fork Join Pool [https://jh-labs.tistory.com/401](https://jh-labs.tistory.com/401)
 
+우아한 기술블로그 - 가상 스레드 [https://techblog.woowahan.com/15398/](https://techblog.woowahan.com/15398/)
 
-워크 스틸링-위키피디아 https://en.wikipedia.org/wiki/Work_stealing
-워크 셰어링-논문 https://ieeexplore.ieee.org/document/7462221/
+워크 스틸링-위키피디아 [https://en.wikipedia.org/wiki/Work_stealing](https://en.wikipedia.org/wiki/Work_stealing)
 
-Virtual Thread
-https://velog.io/@zenon8485/Java21-Virtual-Thread
+워크 셰어링-논문 [https://ieeexplore.ieee.org/document/7462221/](https://ieeexplore.ieee.org/document/7462221/)
 
+Virtual Thread [https://velog.io/@zenon8485/Java21-Virtual-Thread](https://velog.io/@zenon8485/Java21-Virtual-Thread)
 
-스레드 코드 딥다이브
-https://code-run.tistory.com/59
+스레드 코드 딥다이브 [https://code-run.tistory.com/59](https://code-run.tistory.com/59)
+
+포크 조인 프레임워크 [https://burningfalls.github.io/java/what-is-fork-join-framework/](https://burningfalls.github.io/java/what-is-fork-join-framework/)
+
+가상 스레드 주의할 점 [https://0soo.tistory.com/260](https://0soo.tistory.com/260)
+
+Continuations: The magic behind virtual threads in Java by Balkrishna Rawool @ Spring I/O 2024 [https://www.youtube.com/watch?v=pwLtYvRK334](https://www.youtube.com/watch?v=pwLtYvRK334)
 
 추가로 공부해볼 것?
-CDS 아카이브
-https://blog.igooo.org/123
 
-포크 조인 프레임워크
-https://burningfalls.github.io/java/what-is-fork-join-framework/
+CDS 아카이브 [https://blog.igooo.org/123](https://blog.igooo.org/123)
 
-그린 스레드
-https://en.wikipedia.org/wiki/Green_thread
-
-가상 스레드 주의할 점
-https://0soo.tistory.com/260
-
-Continuations: The magic behind virtual threads in Java by Balkrishna Rawool @ Spring I/O 2024
-https://www.youtube.com/watch?v=pwLtYvRK334
+그린 스레드 [https://en.wikipedia.org/wiki/Green_thread](https://en.wikipedia.org/wiki/Green_thread)

@@ -471,7 +471,7 @@ Virtual Thread는 어떤 스케줄러를 사용하더라?
 Continuation 중단 메서드 호출시에는?
 yield(park)
 
-![[Pasted image 20250908135954.png]]
+![[virtual-thread-scenario1.png]]
 커널 스레드 및 톰캣 스레드 2개 밖에 없는 상황 가정
 
 그리고 다른 톰캣 및 DB, 혹은 api
@@ -482,8 +482,8 @@ yield(park)
 
 만약 세번째 리퀘스트가 들어오게 된다면 톰캣 스레드가 존재하지 않아 대기하게 될 것.
 
-![[Pasted image 20250908140053.png]]
-![[Pasted image 20250908140104.png]]
+![[virtual-thread-scenario2.png]]
+![[virtual-thread-scenario3.png]]
 
 이후 두번째 리퀘스트 완료 후 3번째 리퀘스트가 할당받게 될 것
 
@@ -492,23 +492,23 @@ yield(park)
 virtual thread로 변경하면 어떻게 될까?
 한 라인이면 된다.
 
-![[Pasted image 20250908140142.png]]
+![[virtual-thread-for-tomcat.png]]
 
 
 기존 스레드 모델과 비교해보자.
 Request2를 받게되면 Virtual2가 마찬가지로 lock support의 park를 호출할 것이다.
 
-![[Pasted image 20250908144436.png]]
+![[virtual-thread-scenario4.png]]
 continuation에 yield하고 재 스케줄링 해주면 된다.
 
 
-![[Pasted image 20250908144445.png]]
+![[virtual-thread-scenario5.png]]
 자연스럽게 virtual 스레드는 api와 연동이 된다.
 
-![[Pasted image 20250908144513.png]]
+![[virtual-thread-scenario6.png]]
 새로운 요청이 오게되면 생성되는 새로운 스레드는 캐리어 스레드에 등록되서 요청을 처리할 수 있게 된다.
 
-![[Pasted image 20250908144551.png]]
+![[virtual-thread-scenario7.png]]
 만약 첫번째 요청의 response가 완료되면 자연스럽게 두번째 가상스레드를 할당해준다.
 우리가 알고있는 non-blocking io와 비슷한 방식으로 동작한다!
 
