@@ -101,7 +101,8 @@ public class ScrapController {
 `@Contorller` 자체는 주로 View를 반환하기 위해 사용한다.
 메서드의 반환 타입이 String이라면, 프로젝트의 지정된 경로 내에서 일치하는 파일 이름을 찾아 렌더링하고, 사용자에게 반환하는 과정을 거친다.
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FwqQav%2FbtstffuvCYG%2FAAAAAAAAAAAAAAAAAAAAABs5fzNgHti-sw1XfqtMXKn8MH6qeZNsfHyq3_lcIDLN%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3DPJ5zkecQKa6myvBH4PfPLE0YqPA%253D)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FwqQav%2FbtstffuvCYG%2FAAAAAAAAAAAAAAAAAAAAABs5fzNgHti-sw1XfqtMXKn8MH6qeZNsfHyq3_lcIDLN%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DTeMeoiucct3xDZK9qar4d14t8Ow%253D)
+
 1. Client는 URI 형식으로 웹 서비스에 요청을 보낸다.
 2. DispatcherServlet이 요청을 처리할 대상을 찾는다.
 	1. HandlerMapping을 통해 요청을 처리할 Controller를 찾는다.
