@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/todo/TODO.md",
+                "file": "Resources/lecture-note/2509/250926.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "250926"
             }
           },
           {
@@ -27,26 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Java/Spring-framework/spring-MVC-2/11.file-upload(writing).md",
+                "file": "Areas/Java/Spring-framework/OAUTH2/memo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11.file-upload(writing)"
-            }
-          },
-          {
-            "id": "165511f8b9424318",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Java/Spring-framework/spring-MVC-2/10.spring-type-converter.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "10.spring-type-converter"
+              "title": "memo"
             }
           }
         ],
@@ -201,9 +187,23 @@
   },
   "active": "f3bbd77c59e7be24",
   "lastOpenFiles": [
-    "Areas/todo/TODO.md",
-    "Areas/Java/Spring-framework/spring-MVC-2/11.file-upload(writing).md",
+    "OAuth_intro4.png",
+    "OAuth_intro3.png",
+    "OAuth_intro2.png",
+    "OAuth_intro1.png",
+    "OAuth_intro0.png",
+    "Areas/Java/Spring-framework/99.spring-todo.md",
+    "Areas/Java/Spring-framework/OAUTH2/memo.md",
+    "Areas/Java/Spring-framework/OAUTH2",
+    "Areas/Java/Spring-framework/SpringBatch/snippets/practice-scenario.md",
     "Areas/Java/Spring-framework/spring-MVC-2/10.spring-type-converter.md",
+    "Areas/Java/Spring-framework/spring-MVC-2/2.thymeleaf-intergration (writing).md",
+    "Areas/Java/Spring-framework/spring-MVC-2/11.file-upload.md",
+    "Areas/Java/Spring-framework/spring-MVC-2/6.login-cookie&session.md",
+    "Resources/lecture-note/2509/250926.md",
+    "Areas/Java/Spring-framework/spring-MVC-2/5.Bean-Validation.md",
+    "Resources/lecture-note/2509/250925.md",
+    "Areas/todo/TODO.md",
     "Areas/Study/seminar/2508/250805.md",
     "Areas/Study/seminar/2508/250808.md",
     "Areas/Study/seminar/2508/250829.md",
@@ -218,26 +218,13 @@
     "Areas/Study/seminar/2508/250806.md",
     "Areas/Study/seminar/2509/250924.md",
     "Areas/Study/seminar/2509/250919.md",
-    "Areas/Study/seminar/2509/250918.md",
-    "Areas/Study/seminar/2509/250917.md",
-    "Areas/Study/seminar/2509/250916.md",
-    "Areas/Study/seminar/2509/250915.md",
-    "Areas/Study/seminar/2509/250912.md",
-    "Areas/Study/seminar/2509/250911.md",
-    "Areas/Study/seminar/2509/250910.md",
-    "Areas/Study/seminar/2509/250909.md",
-    "Areas/Study/seminar/2509/250908.md",
     "Areas/Java/Spring-framework/SpringBatch/images/spring-batch-stepcontribution.png",
     "spring-mvc2-Validation.png",
     "Areas/Java/Spring-framework/SpringBatch/images/spring-batch-basic.png",
     "Areas/Java/Spring-framework/images/Pasted image 20250724163535.png",
     "Areas/Java/Spring-framework/images/Pasted image 20250724163954.png",
     "Areas/Java/Spring-framework/images/Pasted image 20250724164034.png",
-    "Areas/Java/Spring-framework/images/Pasted image 20250724170150.png",
-    "Areas/Java/Spring-framework/images/spring-mvc2-BeanValidation.png",
     "Areas/Java/Spring-framework/SpringBatch/snippets",
-    "Areas/Java/Spring-framework/SpringBatch/images/spring-batch-job.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/spring-batch-jobLauncher.png",
     "Areas/Java/Spring-framework/SpringBatch/images",
     "Areas/Java/Spring-framework/etc",
     "Areas/Java/Spring-framework/SpringBatch",
@@ -245,7 +232,6 @@
     "Areas/tech/Untitled",
     "Areas/tech",
     "Areas/Study/tech",
-    "Archives/tech/zero-downtime-deploy/images",
-    "Archives/tech/zero-downtime-deploy"
+    "Archives/tech/zero-downtime-deploy/images"
   ]
 }
