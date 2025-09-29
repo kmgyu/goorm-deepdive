@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "4171c279cb375ed2",
+        "id": "b09063e728763390",
         "type": "tabs",
         "children": [
           {
-            "id": "6a9536c7a6c40123",
+            "id": "ce64134e2afeb277",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Java/Spring-framework/OAUTH2/1.abstract.md",
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.abstract"
+              "title": "batch-performance"
+            }
+          },
+          {
+            "id": "fbd308f5f5e6bba7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/purpose.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "purpose"
             }
           }
         ]
@@ -170,13 +184,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "6a9536c7a6c40123",
+  "active": "ce64134e2afeb277",
   "lastOpenFiles": [
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance-optimization.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/bulk-test-data-loader.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/purpose.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/refer doc.md",
+    "Resources/lecture-note/2509/250929.md",
+    "Areas/Study/seminar/2509/250929.md",
+    "Projects/tennis-competition-system/daily/250929.md",
+    "Areas/Java/Spring-framework/SpringBatch/snippets/causing-delay.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup",
+    "Areas/Java/Spring-framework/OAUTH2/1.abstract.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/1.user-implementation.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation",
-    "Areas/Java/Spring-framework/OAUTH2/1.abstract.md",
-    "Areas/Java/Spring-framework/SpringBatch/snippets/batch-performance.md",
-    "Areas/Java/Spring-framework/SpringBatch/snippets/batch-performance-optimization.md",
     "Areas/Java/Spring-framework/SpringBatch/snippets/multi-thread.md",
     "Areas/Java/Spring-framework/SpringBatch/snippets/practice-scenario.md",
     "Archives/books/PowerJAVA-review/Chapter 14..md",
@@ -192,13 +214,7 @@
     "Areas/Study/seminar/extract/network.md",
     "Areas/Study/seminar/extract/msa-microservices.md",
     "Areas/Study/seminar/extract/jpa-database.md",
-    "Areas/Study/seminar/extract/exception-handling.md",
     "Areas/Study/seminar/extract",
-    "Areas/Study/seminar/tools-technologies.md",
-    "Areas/Study/seminar/exception-handling.md",
-    "Areas/Study/seminar/network.md",
-    "Areas/Study/seminar/computer-architecture.md",
-    "Areas/Study/seminar/operating-system.md",
     "OAuth_intro4.png",
     "OAuth_intro3.png",
     "OAuth_intro2.png",
@@ -215,7 +231,6 @@
     "Areas/Java/Spring-framework/etc",
     "Areas/Java/Spring-framework/SpringBatch",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Areas/tech/Untitled",
-    "Areas/tech"
+    "Areas/tech/Untitled"
   ]
 }
