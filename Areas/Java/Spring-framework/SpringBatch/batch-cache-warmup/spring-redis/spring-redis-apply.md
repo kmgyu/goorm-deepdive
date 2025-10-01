@@ -40,9 +40,9 @@ public RedisSerializer<Object> springSessionDefaultRedisSerializer() {
 직렬화를 위해 캐시를 JSON으로 바꿔주는 걸 사용했다.
 이걸 이용할 때 어플리케이션 간의 호환성을 늘릴 수 있대서... 사용했는데..
 
-
+```
 Message Could not read JSON:Cannot construct instance of `org.springframework.security.authentication.UsernamePasswordAuthenticationToken` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
-
+```
 
 이런 문제가 생겼다.
 
@@ -110,9 +110,53 @@ private ObjectMapper objectMapper() {
 그 다음 클래스 복원 시 생성자와 setter를 안 만들어준다.
 
 
+```
+Message Could not read JSON:Problem deserializing 'setterless' property ("authorities"): no way to handle typed deser with setterless yet
+```
 
-해결 못했다.
+이제 이것에 대한 문제를 해결해야 한다.
 
 
 
-일단 
+
+
+일단 해결했다...
+
+SecurityContext 안의 authentication.principal이 유저 엔티티 클래스인데, Spring Security의 JSON 역직렬화 허용 목록(allowlist)에 없어서 막힌 것.
+
+해결법은 두가지
+- ObjectMapper에 네 엔티티를 명시적으로 허용시키기
+- principal을 엔티티 그대로 쓰지 말고, 허용된 타입(또는 DTO)로 바꿔 넣기
+
+
+
+```
+Could not read JSON:The class with batch.batchapplication.auth.domain.User and name of batch.batchapplication.auth.domain.User is not in the allowlist. If you believe this class is safe to deserialize, please provide an explicit mapping using Jackson annotations or by providing a Mixin. If the serialization is only done by a trusted source, you can also enable default typing. See https://github.com/spring-projects/spring-security/issues/4370 for details (through reference chain: org.springframework.security.core.context.SecurityContextImpl["authentication"])
+```
+
+
+
+
+캐시의 JSON 직렬화와 그에 따른 오류, 원인과 해결. 대처법에 대해 알아본 문서
+[[cache-json-serialize-issue]]
+
+
+캐시를 레디스에 넣은 모습. 댖지다
+![[Pasted image 20251001142700.png]]
+
+
+@Class를 넣어서 그런지 아주 댖지가 따로 없다.
+이걸 절약할 수 있는 방법이 없을까?
+
+1. @Class 제거하고 JSessionID만 넣어주기
+	- 이 경우, SecurityContext 관련 정보가 사라져서 보안도 취약할 뿐더러 불안정해진다.
+	- 권한은 어떻게 확인함? 사용자는 어떻게 확인함? 그 외에도 여러가지 정보가 있을 건데 나머지 context들은 어떻게 처리할 거임? 필터에서 어떻게 해줄 거임?
+2. 경량 DTO 이용해서 세션 적재 용량 줄이기
+	- 위의 것이 조금 개선된 것.
+	- 하는 법은 나도 모른다.
+	- 프로세스가 하나 더 추가되었다. DTO로 세션 저장소에 넣어주고 해당 DTO를 UserDetails로 변환하는 작업.
+	- 얼마나 정보를 저장하냐에 따라 저장소 효율이 달라지는 TradeOff 관계이다.
+		- 너무 간단하면 DB와 Network I/O 발생
+		- 너무 무거우면 Redis의 속도 감소
+
+
