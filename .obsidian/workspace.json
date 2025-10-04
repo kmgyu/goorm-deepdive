@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance-optimization.md",
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating/bulk-test-data-loader.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "batch-performance-optimization"
+              "title": "bulk-test-data-loader"
             }
           }
         ]
@@ -172,23 +172,29 @@
   },
   "active": "2b4378f5e495cc2f",
   "lastOpenFiles": [
-    "Areas/Study/seminar/2510/251002.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/user-loading-caching.md",
-    "Pasted image 20251002162335.png",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/cache-json-serialize-issue.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/spring-redis-apply.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/cache-json-serialize-issue.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating/bulk-test-data-loader.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating",
+    "Pasted image 20251003000747.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/purpose.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/refer doc.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/memo.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance-optimization.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance.md",
+    "Areas/Study/seminar/2510/251002.md",
+    "Pasted image 20251002162335.png",
     "Resources/lecture-note/251002.md",
     "Resources/lecture-note/251001.md",
     "Areas/Study/seminar/2510/251001.md",
     "Pasted image 20251001142700.png",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance-optimization.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis",
     "Areas/Study/seminar/2510",
     "Pasted image 20250930232603.png",
     "Pasted image 20250930232332.png",
     "Pasted image 20250930232304.png",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/250930.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance.md",
     "Areas/Study/seminar/2509/250930.md",
     "Areas/Study/seminar/2509/250929.md",
     "Areas/Study/seminar/2509/250924.md",
@@ -200,23 +206,16 @@
     "Projects/tennis-competition-system/daily/250930.md",
     "Pasted image 20250930141128.png",
     "batch-job-time.png",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/memo.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/refer doc.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/purpose.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/bulk-test-data-loader.md",
     "Areas/Java/Spring-framework/SpringBatch/snippets/practice-scenario.md",
     "Areas/Java/Spring-framework/SpringBatch/snippets/multi-thread.md",
-    "Areas/Java/Spring-framework/SpringBatch/snippets/CP-doesn't-matter.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup",
     "Areas/Java/Spring-framework/OAUTH2/implementation",
     "Areas/Study/seminar/extract",
     "OAuth_intro4.png",
     "OAuth_intro3.png",
-    "OAuth_intro2.png",
     "Areas/Java/Spring-framework/OAUTH2",
     "Areas/Java/Spring-framework/SpringBatch/snippets",
     "Areas/Java/Spring-framework/SpringBatch/images",
-    "Areas/Java/Spring-framework/etc",
-    "Areas/Java/Spring-framework/SpringBatch"
+    "Areas/Java/Spring-framework/etc"
   ]
 }

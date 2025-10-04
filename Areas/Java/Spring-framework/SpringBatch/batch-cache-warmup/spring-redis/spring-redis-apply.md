@@ -26,6 +26,19 @@ https://innovation123.tistory.com/273#Spring%20Redis%20%EC%BA%90%EC%8B%B1%20%EA%
 localhost에서 캐싱해주는 속도가 조금 빨라졌다.
 대량의 트래픽이 발생할 때 더 효과적일 것이다.
 
+
+> 사실 이건 틀렸다.
+> 로그아웃해서 세션이 만료(...)되었기 때문에 비교하는 것이 잘못된 것.
+
+한 개의 세션을 다른 곳에서 접속하는 식으로 시도해 보았다.
+(이거에 대한 대응을 안해주었기 때문)
+
+![[Pasted image 20251003000747.png]]
+
+
+
+
+
 # Cache Unavailable
 ---
 
@@ -159,4 +172,7 @@ Could not read JSON:The class with batch.batchapplication.auth.domain.User and n
 		- 너무 간단하면 DB와 Network I/O 발생
 		- 너무 무거우면 Redis의 속도 감소
 
+좌충우돌 세션 적용기인데, 알려진 정보가 하나도 없어서 어떻게 적용해야할 지 모르겠다.
+그냥 시간 효율을 포기해야 하나?
+UserDetails를 백엔드서버에서 만드는 방법은 분명 안전할 것이다... 어떻게 해야 할 지... 점점 수렁으로 굴러가는 기분이다...
 
