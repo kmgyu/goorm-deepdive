@@ -172,9 +172,10 @@
   },
   "active": "2b4378f5e495cc2f",
   "lastOpenFiles": [
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/user-loading-caching.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/spring-redis-apply.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/cache-json-serialize-issue.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/spring-redis-apply.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/user-loading-caching.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating/opened-eye.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating/bulk-test-data-loader.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating",
     "Pasted image 20251003000747.png",
