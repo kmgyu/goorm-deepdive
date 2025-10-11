@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check/using-prometheus.md",
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/stress-test/stress-test-tool.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "using-prometheus"
+              "title": "stress-test-tool"
             }
           }
         ]
@@ -172,9 +172,11 @@
   },
   "active": "2b4378f5e495cc2f",
   "lastOpenFiles": [
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check/using-prometheus.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/stress-test/stress-test-tool.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/stress-test",
     "Pasted image 20251010222157.png",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/251010.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check/using-prometheus.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/memo.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/250930.md",
@@ -214,9 +216,7 @@
     "Areas/Java/Spring-framework/OAUTH2/implementation",
     "Areas/Study/seminar/extract",
     "OAuth_intro4.png",
-    "OAuth_intro3.png",
     "Areas/Java/Spring-framework/OAUTH2",
-    "Areas/Java/Spring-framework/SpringBatch/snippets",
-    "Areas/Java/Spring-framework/SpringBatch/images"
+    "Areas/Java/Spring-framework/SpringBatch/snippets"
   ]
 }
