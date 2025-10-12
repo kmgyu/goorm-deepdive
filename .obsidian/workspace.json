@@ -13,6 +13,48 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/refer doc.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "refer doc"
+            }
+          },
+          {
+            "id": "6af985f3438f74dd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/doc/draft.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "draft"
+            }
+          },
+          {
+            "id": "9276274b9fedb6ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/cache-json-serialize-issue.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "cache-json-serialize-issue"
+            }
+          },
+          {
+            "id": "9d11a2eb537e26c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/stress-test/stress-test-tool.md",
                 "mode": "source",
                 "source": false
@@ -21,7 +63,8 @@
               "title": "stress-test-tool"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,53 +213,52 @@
       "bases:Create new base": false
     }
   },
-  "active": "2b4378f5e495cc2f",
+  "active": "6af985f3438f74dd",
   "lastOpenFiles": [
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check/using-prometheus.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/cache-json-serialize-issue.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/refer doc.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/stress-test/stress-test-tool.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/doc/draft.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/redis traffic.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/redis statistics.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/non-redis traffic.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/non-redis statistics.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/non-caching-architecture.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/redis-caching-architecture2.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/redis-caching-architecture2.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/redis-caching-architecture1.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images/redis-caching-architecture.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/images",
+    "Pasted image 20250930232332.png",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/purpose.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/spring-redis-apply.md",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/doc",
+    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check/using-prometheus.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/stress-test",
-    "Pasted image 20251010222157.png",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/251010.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/health-check",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/memo.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/250930.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/cache-json-serialize-issue.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/spring-redis-apply.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis/user-loading-caching.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating/bulk-test-data-loader.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating/opened-eye.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/pre-heating",
-    "Pasted image 20251003000747.png",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/purpose.md",
-    "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/refer doc.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance-optimization.md",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/batch-performance.md",
     "Areas/Study/seminar/2510/251002.md",
-    "Pasted image 20251002162335.png",
     "Resources/lecture-note/251002.md",
     "Resources/lecture-note/251001.md",
     "Areas/Study/seminar/2510/251001.md",
-    "Pasted image 20251001142700.png",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup/spring-redis",
     "Areas/Study/seminar/2510",
-    "Pasted image 20250930232603.png",
-    "Pasted image 20250930232332.png",
-    "Pasted image 20250930232304.png",
     "Areas/Study/seminar/2509/250930.md",
     "Areas/Study/seminar/2509/250929.md",
     "Areas/Study/seminar/2509/250924.md",
     "Areas/Study/seminar/2509/250919.md",
     "Areas/Study/seminar/2509/250918.md",
     "Areas/Study/seminar/2509/250915.md",
-    "Areas/Study/seminar/2509/250916.md",
-    "Areas/Study/seminar/2509/250917.md",
-    "Pasted image 20250930141128.png",
-    "batch-job-time.png",
     "Areas/Java/Spring-framework/SpringBatch/batch-cache-warmup",
     "Areas/Java/Spring-framework/OAUTH2/implementation",
-    "Areas/Study/seminar/extract",
-    "OAuth_intro4.png",
-    "Areas/Java/Spring-framework/OAUTH2",
-    "Areas/Java/Spring-framework/SpringBatch/snippets"
+    "Areas/Study/seminar/extract"
   ]
 }

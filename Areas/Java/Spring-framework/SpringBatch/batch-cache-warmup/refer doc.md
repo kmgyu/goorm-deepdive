@@ -24,6 +24,10 @@ https://adjh54.tistory.com/449
 ### 도커 + Redis Insight
 https://adjh54.tistory.com/672
 
+### Redis Session
+
+https://1-7171771.tistory.com/144
+
 ## api cache & session
 
 https://adjh54.tistory.com/293
