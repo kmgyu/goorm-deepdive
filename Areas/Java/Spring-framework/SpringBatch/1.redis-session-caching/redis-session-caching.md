@@ -1,7 +1,13 @@
 
+소스코드
+https://github.com/kmgyu/spring_batch_instruction
+
 # 주제
 
-Redis를 세션 저장소로 이용하여 기존 세션 저장소보다 얼마나 성능 개선을 이룰 수 있는지 확인한다.
+인증 방식은 크게 토큰 기반 인증, 세션 기반 인증으로 나뉜다.
+이때 세션 기반 인증은 기본적으로 서버 측에서 세션 저장소를 통해 관리하게 되는데, 이 때문에 추가적인 시스템 자원을 소모하게 된다.
+
+이런 상황을 개선하기 위해 Redis를 세션 저장소로 이용하여 기존 세션 저장소보다 얼마나 성능 개선을 이룰 수 있는지 확인한다.
 
 또한, 이 과정에서 생기는 이슈나 취약점에 대해 알아본다.
 
@@ -55,10 +61,12 @@ CPU : 8코어 (16 스레드)
 - Look-Aside
 	- 서버가 캐시를 먼저 조회, 캐시에 없을 경우 DB를 조회
 - Redis를 세션 저장소로 사용, 서버는 세션을 저장하지 않음.
+	- 레디스가 주 세션 저장소이기 때문에 캐싱 시의 쓰기 전략과 다르다.
 
 스프링에서 세션 저장소를 제공했던 것과 같이 크게 두 가지 시나리오가 존재한다. (세션 만료와 같은 엣지 케이스 또는 분산 저장소와 같은 복잡한 형태는 지금 상황에서 고려하지 않도록 한다.)
 
 1. 세션 저장소에 세션 정보가 존재하는 경우
+
 ![[redis-caching-architecture1.png]]
 사용자가 로그인했을 때 서버에서는 Redis에 해당 사용자의 세션 정보를 찾게 된다.
 
@@ -313,9 +321,89 @@ StringRedisSerializer : Redis 사용 시 문자열로 직렬화하는 Serializer
 
 ## In-memory 세션 저장소 간 성능 차이
 
-톰캣과 레디스에서 성능 차이가 발생하였음.
+서블릿 컨테이너(톰캣)와 레디스에서 성능 차이가 발생하였음.
 
 네트워크 I/O가 성능에 굉장히 많은 관여를 한다.
 기본 세션 저장소 사용 시 바로 생성되던 것이 청크 단위(5~10개 단위로 묶이는 것으로 보임)로 생성되는 것을 로그로 확인할 수 있음.
 
-레디스가 싱글 스레드로 관리되기에 분산 세션 저장소를 이용한다면 이런 단점을 효과적으로 개선할 수 있을 듯?
+레디스가 싱글 스레드로 관리되기에 분산 세션 저장소를 이용한다면 이런 단점을 효과적으로 개선할 수 있을 것이다.
+
+그렇다면 이를 위한 솔루션은 클러스터링일 것이다.
+
+### Redis Clustering
+
+레디스는 Redis Clustering을 제공한다.
+이는 논리적인 클러스터링을 제공하기 때문에 하나의 컴퓨터에서 논리적인 분산 서버 그룹을 만들어줄 수 있다.
+
+특징은 다음과 같다.
+- 여러 노드에 자동적인 데이터 분산(샤딩)
+- 일부 노드의 실패나 통신 단절에도 계속 작동하는 가용성 제공
+	- auto failover : master-replica 구조에서 기존 master가 죽게 되면 replica가 master로 승격된다.
+	- replica migration : replica가 다른 master로 migrate해서 특정 master의 replica가 부족한 현상을 줄인다.
+- 고성능을 보장하면서 선형 확장성을 제공
+    - 분산과 확장성이 좋고 성능에 대한 보장을 해준다
+
+[클러스터링에 대한 자세한 자료](https://velog.io/@ekxk1234/Redis-Cluster)
+
+그런데 이런 레디스 클러스터링으로도 부족한 상황이 생길 수 있다.
+
+물리적으로 새로운 클러스터링 그룹을 만들어낸다고 가정하자.
+
+이때는 이런 요구사항이 생긴다.
+
+- 세션 저장 작업을 N개의 레디스 클러스터에 할당할 수 있는가?
+- N개의 레디스 클러스터가 같은 작업에 대해 할당받지 않을 수 있는가?
+- 진행 중인 작업을 모두 완료한 후 레디스 클러스터가 정상적으로 종료될 수 있는가? (Graceful Shutdown)
+
+여기서는 자바 레디스 클라이언트 중 하나인 Lettuce를 기준으로 설명한다.
+
+
+
+Lettuce의 Redis Cluster 모드(샤딩)에서는 논리적인 클리스터 내에서의 분산을 지원하지만 서로 다른 N개의 Redis Cluster 그룹에 대해서는 동시 세션 저장이 불가능하다.
+
+
+다음으로, 동시성 제어 및 키 충돌 방지의 경우 Lettuce는 키 충돌 회피를 담당하지 않는다.
+Redis Cluster의 key hash slot 알고리즘과 Spring Session의 namespace(key prefix) 정책 덕분에 어느 정도는 방지됨.
+
+**기본 원리**
+- Lettuce는 각 세션 키를 `hash(slot)` 계산해서 클러스터 내 특정 노드에만 쓰게 됨.
+- 두 Redis 클러스터가 “완전히 독립”이라면, 같은 세션 ID라도 서로 다른 저장소에 각각 저장되어 중복 가능성 존재.
+- Spring Session에서는 일반적으로 `spring:session:sessions:<sessionId>` 형태의 prefix를 쓰기 때문에  
+    같은 클러스터 내에서는 충돌 안 남.
+
+따라서 동시성 제어에서도 문제점이 존재한다.
+
+
+graceful shutdown 시점에 connection draining
+lettuce가 해줄 수 있다.
+
+### Lettuce의 shutdown 처리 특징
+
+- 비동기 이벤트 루프 기반(Netty)으로 동작함.
+- `LettuceConnectionFactory.destroy()` 시 내부의 `ClientResources` (EventLoopGroup, Timer 등)를 정리함.
+- **모든 비동기 작업이 완료된 후 커넥션이 닫히도록 보장함**.
+- Spring Boot에서 `@PreDestroy` 또는 `DisposableBean.destroy()` 훅을 통해 자동 호출됨.
+> 그러나, Redis Cluster 전체 노드의 graceful shutdown은 레디스 서버 수준에서 별도의 설정이 필요해진다.
+
+
+이런 단점들을 해결해주려면 이런 자원들을 관리해주는 무언가가 필요하며, 대부분의 클러스터링에서 이런 문제점이 나타날 것이다.
+이때 분산 환경에서의 조정을 위한 솔루션으로 Zookeeper이 제시된다.
+
+
+### 간단하게 Zookeeper 알아보기
+
+Zookeeper는 분산 처리 환경에서 사용 가능한 데이터 저장소로, 분산 서버 간의 정보 공유, 서버 투입/제거 시 이벤트 처리, 서버 모니터링, 시스템 관리, 분산 락 처리, 장애 상황 판단 등 다양한 분야에서 활용할 수 있다.
+
+핵심 기능
+- 데이터 상태 관리
+데이터를 디렉터리 구조의 트리 노드로 저장하고, 데이터가 변경되면 클라이언트에게 어떤 노드(데이터)가 변경됐는지 콜백을 통해서 알려준다.
+- 세션 생명주기 및 생성 순서 관리
+데이터를 저장할 때 해당 세션이 유효한 동안 데이터가 저장되는 Ephemeral Node(임시 노드)로 클라이언트의 동작 여부를 판단한다.
+데이터를 저장하는 순서에 따라 자동으로 일련번호(sequence number)가 붙는 Sequence Node(순차 노드)로 분산 락 등을 구현할 수 있다.
+
+**추천 포스트**
+[medium - 분산 시스템](https://medium.com/@arneg0shua/100%EB%8C%80-%EC%9D%B4%EC%83%81%EC%9D%98-%EC%84%9C%EB%B2%84%EB%A5%BC-%ED%95%9C-%EB%AA%B8%EC%B2%98%EB%9F%BC-%EB%B6%84%EC%82%B0%EC%8B%9C%EC%8A%A4%ED%85%9C-0a9046f8cacc)
+[naver d2 - redis cluster를 위한 zookeeper](https://d2.naver.com/helloworld/294797)
+[medium - 파일 업로드 진행 중인 어플리케이션을 배포하기 : graceful shutdown](https://medium.com/@arneg0shua/%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-%EB%8F%84%EC%A4%91-%EB%B0%B0%ED%8F%AC%EB%A5%BC-%EC%A7%84%ED%96%89%ED%95%B4%EB%8F%84-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C-graceful-shutdown-%EC%A0%81%EC%9A%A9%ED%8E%B8-453ae9f29dd1)
+
+
