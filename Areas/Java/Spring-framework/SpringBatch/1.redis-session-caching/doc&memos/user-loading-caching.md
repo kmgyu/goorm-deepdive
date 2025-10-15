@@ -3,7 +3,7 @@ https://s7won.tistory.com/8
 
 먼저 배치작업을 위해 대량의 계정을 만들어준다.
 
-![[Pasted image 20251002162335.png]]
+![[spring-batch-usercreate.png]]
 
 password encoder로 인해 엄청난 수준의 부하가 걸렸다.
 기존에는 14초 내로 끝났는데 오버헤드가 굉장히 커진 것을 볼 수 있음.

@@ -10,7 +10,7 @@ https://innovation123.tistory.com/273#Spring%20Redis%20%EC%BA%90%EC%8B%B1%20%EA%
 그런데 레디스는 메서드에 @Cacheable 같은 것이 있어야만 적용할 수 있다.
 그래서 추가로 찾아보니, Security를 위한 종속성이 따로 존재한다.
 
-![[Pasted image 20250930232603.png]]
+![[spring-redis-apply1.png]]
 추가해주고, SessionConfig라는 것을 통해 세션 저장소를 설정해줄 수 있다.
 나머지는 깃헙에서...
 
@@ -18,10 +18,10 @@ https://innovation123.tistory.com/273#Spring%20Redis%20%EC%BA%90%EC%8B%B1%20%EA%
 캐싱 / 캐싱 X 비교해보자.
 
 캐싱X
-![[Pasted image 20250930232332.png]]
+![[spring-redis-apply2.png]]
 
 캐싱
-![[Pasted image 20250930232304.png]]
+![[spring-redis-apply3.png]]
 
 localhost에서 캐싱해주는 속도가 조금 빨라졌다.
 대량의 트래픽이 발생할 때 더 효과적일 것이다.
@@ -33,7 +33,7 @@ localhost에서 캐싱해주는 속도가 조금 빨라졌다.
 한 개의 세션을 다른 곳에서 접속하는 식으로 시도해 보았다.
 (이거에 대한 대응을 안해주었기 때문)
 
-![[Pasted image 20251003000747.png]]
+![[spring-redis-apply4.png]]
 
 
 
@@ -155,7 +155,7 @@ Could not read JSON:The class with batch.batchapplication.auth.domain.User and n
 
 
 캐시를 레디스에 넣은 모습. 댖지다
-![[Pasted image 20251001142700.png]]
+![[spring-redis-apply5.png]]
 
 
 @Class를 넣어서 그런지 아주 댖지가 따로 없다.
