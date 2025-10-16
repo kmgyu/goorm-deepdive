@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Study/seminar/2510/251015.md",
+                "file": "Areas/distributed-system/AWS-distributed-system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "251015"
+              "title": "AWS-distributed-system"
             }
           }
         ]
@@ -172,8 +172,12 @@
   },
   "active": "f326874c0164d845",
   "lastOpenFiles": [
-    "Resources/lecture-note/2510/251015.md",
+    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
+    "Areas/distributed-system/AWS-distributed-system.md",
+    "Resources/lecture-note/2510/251016.md",
+    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/refer doc.md",
     "Areas/Study/seminar/2510/251015.md",
+    "Resources/lecture-note/2510/251015.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/redis-session-caching.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/spring-redis/cache-json-serialize-issue.md",
     "Areas/distributed-system/redis-session-monolithic-performance.md",
@@ -184,7 +188,6 @@
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/batch-performance-optimization.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/memo.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/purpose.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/refer doc.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/images/spring-redis-apply1.png",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/spring-redis/spring-redis-apply.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/pre-heating/session-pre-heating-is-not-valid.md",
@@ -200,12 +203,9 @@
     "OAuth_intro2.png",
     "OAuth_intro1.png",
     "OAuth_intro0.png",
-    "Areas/Java/Spring-framework/OAUTH2/1.abstract.md",
     "Areas/distributed-system",
-    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/Untitled",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup",
-    "Areas/Java/Spring-framework/SpringBatch/0.Introduction.md",
     "Areas/Java/Spring-framework/Untitled",
     "Areas/Java/Spring-framework/SpringBatch/images/spring-batch-basic.png",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/images/redis traffic.png",
