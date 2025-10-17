@@ -15,6 +15,11 @@ CI/CD 파이프라인을 구축해볼 것이다.
 Github Actions를 이용하면 이런 식으로 된다.
 근데 분산환경이면 ec2 다해줘야 하지 않나?
 
-[참고자료](https://kdh0518.tistory.com/25)
+---
+
+분산 시스템 구축 자체가 처음이기에 구글링 해가면서 조사했다.
 
 
+참고자료모음
+https://ksh-coding.tistory.com/134 - aws ECS
+https://kdh0518.tistory.com/25 - docker hub ci/cd

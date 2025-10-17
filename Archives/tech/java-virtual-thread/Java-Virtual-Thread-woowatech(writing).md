@@ -215,9 +215,6 @@ Thread
 이를 위해 Java Native Interface (JNI)를 사용해야 한다.
 각 스레드는 1대1로 매핑된다.
 
-![[virtual_thread_thread_jni.png]]
-
-![[virtual_thread_thread_jni_temp.png]]
 *그림 원래 3단계로 나뉨. 직접 그리거나 가져올 것...*
 
 플랫폼 스레드 생성 시
