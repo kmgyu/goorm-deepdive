@@ -11,14 +11,12 @@
             "id": "f326874c0164d845",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
-                "mode": "source",
-                "source": false
+                "file": "Fractal-Tree.png"
               },
-              "icon": "lucide-file",
-              "title": "memo"
+              "icon": "lucide-image",
+              "title": "Fractal-Tree"
             }
           }
         ]
@@ -172,8 +170,12 @@
   },
   "active": "f326874c0164d845",
   "lastOpenFiles": [
-    "Areas/distributed-system/AWS-distributed-system.md",
     "Areas/distributed-system/redis-session-monolithic-performance.md",
+    "Areas/JD/feedback.md",
+    "Areas/JD/business-domain.md",
+    "Areas/Java/Spring-framework/OAUTH2/implementation/google-client-secret.md",
+    "Areas/distributed-system/AWS-distributed-system.md",
+    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
     "Resources/lecture-note/2510/251017.md",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps-refresh.png",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps statistic.png",
@@ -201,7 +203,6 @@
     "Pasted image 20250910124453.png",
     "readme.md",
     "Areas/blog-post/draft",
-    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
     "Resources/lecture-note/2510/251016.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/refer doc.md",
     "Areas/Study/seminar/2510/251015.md",
@@ -209,8 +210,6 @@
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/redis-session-caching.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/spring-redis/cache-json-serialize-issue.md",
     "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/health-check/using-prometheus.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/stress-test/stress-test-tool.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/user-loading-caching.md",
     "Resources/lecture-note/2510",
     "Areas/distributed-system",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/Untitled",
