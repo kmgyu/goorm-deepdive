@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ca6a4225d7312a34",
+        "id": "1e075444d6ad07cf",
         "type": "tabs",
         "children": [
           {
-            "id": "f326874c0164d845",
+            "id": "16c95eef88208f9e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Fractal-Tree.png"
+                "file": "Areas/distributed-system/AWS-distributed-system.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Fractal-Tree"
+              "icon": "lucide-file",
+              "title": "AWS-distributed-system"
             }
           }
         ]
@@ -92,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Areas/Java/Spring-framework/spring-MVC-2/5.Bean-Validation(writing).md",
+                "file": "Areas/Study/seminar/2510/251020.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 5.Bean-Validation(writing)"
+              "title": "Backlinks for 251020"
             }
           },
           {
@@ -168,15 +170,37 @@
       "bases:Create new base": false
     }
   },
-  "active": "f326874c0164d845",
+  "active": "16c95eef88208f9e",
   "lastOpenFiles": [
-    "Areas/distributed-system/redis-session-monolithic-performance.md",
-    "Areas/JD/feedback.md",
-    "Areas/JD/business-domain.md",
-    "Areas/Java/Spring-framework/OAUTH2/implementation/google-client-secret.md",
+    "Areas/distributed-system/aws-ecs-fargate-start (writing).md",
+    "Areas/distributed-system/aws-summit-2017-aws-ecs.md",
+    "Areas/Study/seminar/2510/251021.md",
+    "Resources/lecture-note/2510/251021-클라우드 배포.md",
+    "batch-job-time.png",
+    "Areas/Study/seminar/2508/250821.md",
+    "Areas/Study/seminar/2508/250819.md",
+    "Areas/Study/seminar/2508/250814.md",
+    "Areas/Study/seminar/2508/250813.md",
+    "Areas/Study/seminar/2508/250812.md",
+    "Areas/Study/seminar/2508/250808.md",
+    "Areas/Study/seminar/2508/250806.md",
+    "Areas/Study/seminar/2508/250805.md",
+    "Areas/Study/seminar/2507/250725.md",
+    "Areas/Study/seminar/2507/250724.md",
+    "Areas/Study/seminar/2507/250723.md",
     "Areas/distributed-system/AWS-distributed-system.md",
-    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
-    "Resources/lecture-note/2510/251017.md",
+    "Areas/distributed-system/redis-session-monolithic-performance.md",
+    "Areas/distributed-system/aws-fargate-start.md",
+    "Areas/todo/TODO.md",
+    "Resources/lecture-note/2509/250929.md",
+    "Resources/lecture-note/2509/250903.md",
+    "Resources/lecture-note/2509/250904.md",
+    "Resources/lecture-note/2509/250902.md",
+    "Resources/lecture-note/2509/250901.md",
+    "Resources/lecture-note/2510/251001-auth.md",
+    "Resources/lecture-note/2510/251002-auth.md",
+    "Areas/JD/resume/resume-1.pdf",
+    "Fractal-Tree.png",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps-refresh.png",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps statistic.png",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps-login.png",
@@ -188,33 +212,11 @@
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non/non-redis login.png",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500",
-    "Areas/Study/seminar/2510/251001.md",
-    "Areas/Study/topics&rough/stresstest-nGrinder(writing).md",
-    "Areas/Study/seminar/2510/251002.md",
-    "Areas/Study/topics&rough/Garbage Collector(writing).md",
-    "Areas/Study/topics&rough/JSON-Serialization(writing).md",
-    "Areas/Study/topics&rough/spring-validation++(writing).md",
-    "Resources/lecture-note/2507/250709.md",
-    "Areas/Java/Spring-framework/spring-MVC-2/1.thymeleaf-basic feature.md",
-    "Archives/tech/java-virtual-thread/Java-Virtual-Thread-woowatech(writing).md",
-    "virtual_thread_thread_jni_temp.png.md",
-    "${user.username}.md",
-    "Pasted image 20250915141805.png",
-    "Pasted image 20250910124453.png",
-    "readme.md",
     "Areas/blog-post/draft",
-    "Resources/lecture-note/2510/251016.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/refer doc.md",
-    "Areas/Study/seminar/2510/251015.md",
-    "Resources/lecture-note/2510/251015.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/redis-session-caching.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/spring-redis/cache-json-serialize-issue.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/health-check/using-prometheus.md",
     "Resources/lecture-note/2510",
     "Areas/distributed-system",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/Untitled",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup",
-    "Areas/Java/Spring-framework/Untitled",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/images"
+    "Areas/Java/Spring-framework/Untitled"
   ]
 }
