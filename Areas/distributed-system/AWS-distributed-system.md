@@ -56,6 +56,12 @@ Jenkins를 사용해야하나 github actions를 사용해야하나 고민중
 나머지는 private ip 사용하기 때문에 아웃바운드 뚫어주지 않는다.
 (정확히는 동일한 VPC를 사용하기 때문에 가능하다.)
 
+251022
+ssh 연결이 안된다
+우리 학교 WiFi는 ssh 연결을 막고 있다.
+접속할 수 없다. 젠장.
+
+
 
 추가 참고 자료 모음
 https://ksh-coding.tistory.com/134 - aws ECS
