@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5dd30972da8c5f60",
+            "id": "9ee9a96a921d281b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/lecture-note/2510/251023-server.md",
+                "file": "Areas/distributed-system/aws-implement(writing)/0. AWS-distributed-system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "251023-server"
+              "title": "0. AWS-distributed-system"
             }
           },
           {
-            "id": "1c5cf16dd1a53d72",
+            "id": "4c970b74d26e762b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/distributed-system/aws-implement/2. EC2-DB.md",
+                "file": "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2. EC2-DB"
+              "title": "3. EC2-Redis-Cluster"
             }
           }
         ],
@@ -185,36 +185,36 @@
       "bases:Create new base": false
     }
   },
-  "active": "1c5cf16dd1a53d72",
+  "active": "4c970b74d26e762b",
   "lastOpenFiles": [
-    "Areas/distributed-system/aws-implement/2. (3) EC2-backend-api-build.md",
-    "Areas/distributed-system/aws-implement/2. EC2-DB.md",
-    "Resources/lecture-note/2510/251023-server.md",
-    "Areas/Study/seminar/2510/251023-query tunning.md",
-    "Areas/Study/seminar/2510/251022-내발표.md",
-    "Areas/distributed-system/aws-summit-2017-aws-ecs.md",
-    "Areas/distributed-system/aws-ecs-fargate-start (writing).md",
-    "Areas/distributed-system/aws-implement/0. AWS-distributed-system.md",
-    "Areas/distributed-system/aws-implement/1. EC2-LB-build.md",
-    "Areas/distributed-system/aws-implement",
-    "Resources/lecture-note/2510/251022-jpa.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/redis-session-caching.md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Areas/JD/feedback.md",
-    "Areas/JD/todo.md",
+    "Areas/distributed-system/aws-implement(writing)/2. EC2-RDS.md",
+    "Areas/distributed-system/aws-implement(writing)/1. EC2-LB-build.md",
+    "Areas/distributed-system/aws-implement(writing)/0. AWS-distributed-system.md",
+    "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
+    "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build.md",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
-    "Areas/Study/seminar/2510/251021.md",
-    "Resources/lecture-note/2510/251021-클라우드 배포.md",
-    "batch-job-time.png",
+    "Areas/distributed-system/aws-implement(writing)/ISSUE01-application-dependency.md",
+    "Areas/distributed-system/aws-ecs-fargate-start (writing).md",
+    "Archives/tech/java-virtual-thread/Java-Virtual-Thread-woowatech(writing).md",
+    "Resources/lecture-note/2510/251024.md",
+    "Resources/lecture-note/2510/251023-server.md",
+    "Areas/Study/seminar/2508/250829.md",
     "Areas/Study/seminar/2508/250821.md",
-    "Areas/Study/seminar/2508/250819.md",
     "Areas/Study/seminar/2508/250814.md",
-    "Areas/Study/seminar/2508/250813.md",
     "Areas/Study/seminar/2508/250812.md",
     "Areas/Study/seminar/2508/250808.md",
     "Areas/Study/seminar/2508/250806.md",
     "Areas/Study/seminar/2508/250805.md",
-    "Areas/Study/seminar/2507/250725.md",
+    "Areas/Study/seminar/2509/250930-spring-batch&process.md",
+    "Areas/Study/seminar/2509/250929-spring-security-5.md",
+    "Areas/Study/seminar/2509/250924-Computer-Architecture.md",
+    "Areas/Study/seminar/2509/250919-Swagger.md",
+    "Areas/Study/seminar/2509/250918-spring-security-4.md",
+    "Areas/Study/seminar/2509/250910-me-virtual-thread-1.md",
+    "Areas/Study/seminar/2509/250917-me-virtual-thread-2.md",
+    "Areas/Study/seminar/2509/250916-Computer-Network.md",
+    "Areas/distributed-system/aws-implement(writing)",
+    "batch-job-time.png",
     "Areas/JD/resume/resume-1.pdf",
     "Fractal-Tree.png",
     "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps-refresh.png",
