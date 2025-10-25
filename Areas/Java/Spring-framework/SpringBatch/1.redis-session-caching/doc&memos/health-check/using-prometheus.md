@@ -20,6 +20,18 @@ runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 
 prometheus.yml이라는 세팅 파일이 필요한데, 도커 실행시에는 로컬 파일을 도커 컨테이너에 마운트 시켜주면 적용된다.
 
+*prometheus.yml*
+```yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'spring-boot-app'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+```
+
 ```
 /etc/prometheus/prometheus.yml
 ```

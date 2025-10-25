@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/distributed-system/aws-implement(writing)/0. AWS-distributed-system.md",
+                "file": "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0. AWS-distributed-system"
+              "title": "3. EC2-Redis-Cluster"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
+                "file": "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/health-check/using-prometheus.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3. EC2-Redis-Cluster"
+              "title": "using-prometheus"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,12 +184,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "4c970b74d26e762b",
+  "active": "9ee9a96a921d281b",
   "lastOpenFiles": [
+    "Areas/distributed-system/aws-implement(writing)/0. AWS-distributed-system.md",
+    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/health-check/using-prometheus.md",
+    "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
     "Areas/distributed-system/aws-implement(writing)/2. EC2-RDS.md",
     "Areas/distributed-system/aws-implement(writing)/1. EC2-LB-build.md",
-    "Areas/distributed-system/aws-implement(writing)/0. AWS-distributed-system.md",
-    "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
     "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build.md",
     "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
     "Areas/distributed-system/aws-implement(writing)/ISSUE01-application-dependency.md",
@@ -212,7 +212,6 @@
     "Areas/Study/seminar/2509/250918-spring-security-4.md",
     "Areas/Study/seminar/2509/250910-me-virtual-thread-1.md",
     "Areas/Study/seminar/2509/250917-me-virtual-thread-2.md",
-    "Areas/Study/seminar/2509/250916-Computer-Network.md",
     "Areas/distributed-system/aws-implement(writing)",
     "batch-job-time.png",
     "Areas/JD/resume/resume-1.pdf",
