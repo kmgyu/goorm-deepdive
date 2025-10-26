@@ -41,3 +41,27 @@ auth_provider_x509_cert_url?
 백엔드에서 모두 처리할 경우 백엔드의 url을 넣어줘야 함.
 요청을 보내는 쪽으로 인가코드를 보내주게 된다. 따라서 배포까지 진행 시 도메인 url도 추가해줘야 함.
 
+---
+
+# oauth 흐름
+
+토큰 가져오기, 프로필 가져오기 다 각각의 요청임.
+
+api 형식
+header
+- https://oauth2.googleapis.com/token
+body
+- form-data 형식
+- code=THE_CODE&client_id=xxx&client_secret&....&redirect_uri=
+
+사용자 프로필 가져오기
+특징
+- openid와 picture는 별도 scope, 콘솔 설정 없이도 기본적으로 제공
+- email, profile은 scope에서 요청 시 console 설정 없이도 제공
+api 형식
+header
+- https://openidconnect.googleapis.com/v1/userinf
+이게 가장 최신버전이며 개발자들이 많이 사용하는 링크임. 다른 2개의 링크도 존재한다.
+- https://www.googleapis.com/userinfo/v2/me
+- https://www.googleapis.com/oauth2/v3/userinfo
+

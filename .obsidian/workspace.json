@@ -13,29 +13,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
+                "file": "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build (writing).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3. EC2-Redis-Cluster"
+              "title": "4. EC2-backend-api-build (writing)"
             }
           },
           {
-            "id": "4c970b74d26e762b",
+            "id": "b24794d50ba4054e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/health-check/using-prometheus.md",
+                "file": "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "using-prometheus"
+              "title": "1.2.5.caching-implements"
+            }
+          },
+          {
+            "id": "33a6dc73837d59f7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Resources/github-skills.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "github-skills"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,53 +199,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "9ee9a96a921d281b",
+  "active": "b24794d50ba4054e",
   "lastOpenFiles": [
-    "Areas/distributed-system/aws-implement(writing)/0. AWS-distributed-system.md",
-    "Areas/Java/Spring-framework/SpringBatch/1.redis-session-caching/doc&memos/health-check/using-prometheus.md",
-    "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.advancing-backend.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/memo.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements.md",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/redis-session-caching.md",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction/Spring-batch-Introduction.md",
+    "Areas/Java/Spring-framework/Spring-Practice/spring-batch-practice-plan.md",
+    "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/0.redis-clustering.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caching (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects",
+    "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster (writing).md",
     "Areas/distributed-system/aws-implement(writing)/2. EC2-RDS.md",
-    "Areas/distributed-system/aws-implement(writing)/1. EC2-LB-build.md",
-    "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build.md",
-    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/memo.md",
-    "Areas/distributed-system/aws-implement(writing)/ISSUE01-application-dependency.md",
-    "Areas/distributed-system/aws-ecs-fargate-start (writing).md",
-    "Archives/tech/java-virtual-thread/Java-Virtual-Thread-woowatech(writing).md",
-    "Resources/lecture-note/2510/251024.md",
-    "Resources/lecture-note/2510/251023-server.md",
-    "Areas/Study/seminar/2508/250829.md",
-    "Areas/Study/seminar/2508/250821.md",
-    "Areas/Study/seminar/2508/250814.md",
-    "Areas/Study/seminar/2508/250812.md",
-    "Areas/Study/seminar/2508/250808.md",
-    "Areas/Study/seminar/2508/250806.md",
-    "Areas/Study/seminar/2508/250805.md",
-    "Areas/Study/seminar/2509/250930-spring-batch&process.md",
-    "Areas/Study/seminar/2509/250929-spring-security-5.md",
-    "Areas/Study/seminar/2509/250924-Computer-Architecture.md",
-    "Areas/Study/seminar/2509/250919-Swagger.md",
-    "Areas/Study/seminar/2509/250918-spring-security-4.md",
-    "Areas/Study/seminar/2509/250910-me-virtual-thread-1.md",
-    "Areas/Study/seminar/2509/250917-me-virtual-thread-2.md",
+    "Areas/distributed-system/aws-implement(writing)/1. Ec2-LB-build.md",
+    "Areas/distributed-system/aws-implement(writing)/0-2. application-image-advance.md",
+    "Resources/github-skills.md",
+    "Archives/report-list-old/report-list/week1_report_list.md",
+    "Archives/report-list-old/report-list/week3_report_list.md",
+    "Archives/report-list-old/report-list/week2_report_list.md",
+    "Archives/report-list-old/week1_report_markdown.md",
+    "Archives/report-list-old/report-list",
+    "Archives/report-list-old/week1_report_Software-development-process.md",
+    "Archives/report-list-old/week4_SOLID.md",
+    "Archives/report-list-old/week4_intellij-live-template.md",
+    "Archives/report-list-old/week4_Context-APIvsRedux.md",
+    "Archives/report-list-old/week1_report_vscode-tips.md",
+    "Archives/report-list-old/week1_report_vscode-hotkeys.md",
+    "Archives/Index-structure-introduction.md",
+    "Archives/report-list-old/report-list/week4_report_list.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/images",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/redis-caching-architecture2.png",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/spring-redis-apply1.png",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/spring-redis-apply2.png",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/spring-redis-apply4.png",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/spring-redis-apply5.png",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction/images/spring-batch-job.png",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction/images/spring-batch-stepcontribution.png",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction/images/spring-batch-jobRepository.png",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction/images/spring-batch-jobLauncher.png",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction/images/spring-batch-executionContext.png",
+    "Areas/Java/Spring-framework/Spring-Practice/0.introduction",
     "Areas/distributed-system/aws-implement(writing)",
-    "batch-job-time.png",
     "Areas/JD/resume/resume-1.pdf",
-    "Fractal-Tree.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps-refresh.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps statistic.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis rps-login.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis/redis refresh-stable.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/redis",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non/non-redis statistic.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non/non-redis stable.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non/non-redis refresh-stable.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non/non-redis login.png",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500/non",
-    "Areas/Java/Spring-framework/SpringBatch/images/vuser_500",
-    "Areas/blog-post/draft",
-    "Resources/lecture-note/2510",
-    "Areas/distributed-system",
-    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup/Untitled",
-    "Areas/Java/Spring-framework/SpringBatch/2.redis-cache-warmup"
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/vuser_500/redis",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/vuser_500/non",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/images/vuser_500",
+    "Areas/blog-post/draft"
   ]
 }

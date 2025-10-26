@@ -58,7 +58,7 @@ GitHub Pull Requests and Issues 확장프로그램을 이용해 GitHub에 로그
 로그인 버튼을 클릭하면 로그인할 수 있다.
 
 
-![how-to-login.png](../Resources/Images/week1_report_Software-development-process/how-to-login.png)
+![how-to-login.png](how-to-login.png)
 
 
 referenced by
