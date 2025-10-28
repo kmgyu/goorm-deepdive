@@ -3,7 +3,7 @@
 [참고자료1](https://medium.com/@starikovs/run-multiple-redis-instances-on-a-linux-server-systemd-approach-a7d1c75482bd)
 
 
-레디스를 사용하여 캐싱을 사용하게 될 경우, 각 데이터를 기능별로 분리하여 관리하기 위한 방법을 강구할 수 있다.
+레디스를 사용하여 캐싱을 사용하게 될 경우, 캐시를 여러 개 사용하게 될 수 있다. 이때 각 데이터를 기능별로 분리하여 관리하기 위한 방법을 강구할 수 있다.
 
 이 경우, 주된 방법으로 세 가지 방법이 제안된다
 

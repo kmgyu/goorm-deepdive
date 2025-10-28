@@ -65,3 +65,20 @@ header
 - https://www.googleapis.com/userinfo/v2/me
 - https://www.googleapis.com/oauth2/v3/userinfo
 
+
+---
+
+사용자 프로필을 통해 사용자를 인식하게 된다.
+
+구글을 예시.
+1. 구글에 인가코드 받기
+2. OAuth 2.0 access 토큰 가져오기
+3. 사용자 profile 가져오기
+id 값이 가장 중요.
+항상 동일하며, 전세계적으로 유일무이.
+추후 로그인 시 프로필을 가져올 때도 이미 존재한다는 것을 확인할 수 있다.
+
+구글은 레퍼런스가 여기저기 얽혀있고 중구난방인 점이 조금 존재하나, 카카오는 공식 문서가 깔끔하게 잘 정리되어있다.
+
+oauth2-client를 활용한 oauth 서버단 구현은 나중에
+
