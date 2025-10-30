@@ -4,81 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "8e1e0c23ffc5da11",
+        "id": "f6c4dcc14ade0c26",
         "type": "tabs",
         "children": [
           {
-            "id": "269e8b342f50bcac",
+            "id": "052b498e285d711e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
+                "file": "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.0.advancing-backend (writing)"
-            }
-          },
-          {
-            "id": "cc7bd968c69f55f1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1.2.5.caching-implements (writing)"
-            }
-          },
-          {
-            "id": "33052177b5407253",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Resources/lecture-note/2510/251029-특강.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "251029-특강"
-            }
-          },
-          {
-            "id": "94a1362d461a79b1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Java/Spring-framework/OAUTH2/implementation/3.oauth2-client-google-login.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3.oauth2-client-google-login"
-            }
-          },
-          {
-            "id": "31e3cb344f7a7b6f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1.2.5.caching-implements (writing)"
+              "title": "redis-issues"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -227,26 +170,29 @@
       "bases:Create new base": false
     }
   },
-  "active": "31e3cb344f7a7b6f",
+  "active": "052b498e285d711e",
   "lastOpenFiles": [
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caches (writing).md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/0.redis-clustering.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/using-cherry-pick.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caches (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/advancing-monitoring.md",
+    "Projects/1-Project/1030.md",
+    "Projects/1-Project/1029.md",
+    "Projects/1-Project/1028.md",
+    "Resources/lecture-note/2510/251029-특강.md",
+    "Areas/Java/Spring-framework/OAUTH2/implementation/3.oauth2-client-google-login.md",
     "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build (writing).md",
     "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster (writing).md",
     "Areas/distributed-system/aws-implement(writing)/0-2. application-image-advance.md",
-    "Projects/1-Project/1029.md",
-    "Areas/Java/Spring-framework/OAUTH2/implementation/3.oauth2-client-google-login.md",
     "Areas/Java/Spring-framework/OAUTH2/1.abstract.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/1.JWT-implementation.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/2.pros&cons.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/kakao-oauth.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/google-oauth.md",
-    "Projects/1-Project/1028.md",
     "Resources/lecture-note/2510/251029.md",
-    "Resources/lecture-note/2510/251029-특강.md",
     "Resources/lecture-note/2510/251028-특강1.md",
     "Pasted image 20251029092539.png",
     "Pasted image 20251029091818.png",
@@ -262,9 +208,6 @@
     "Areas/Study/seminar/2509/250903-OAUTH2.md",
     "251028-RestfulAPI.png",
     "Resources/lecture-note/2510/질문모음.md",
-    "Resources/lecture-note/2510/251027.md",
-    "Areas/Study/seminar/2510/251027-spring-security-6.md",
-    "Areas/Study/seminar/2509/250918-spring-security-4.md",
     "OAuth_intro0.png",
     "Areas/JD/resume/resume-1.pdf",
     "Archives/backend",
