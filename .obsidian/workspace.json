@@ -8,35 +8,34 @@
         "type": "tabs",
         "children": [
           {
-            "id": "32ce44020fe8cc2c",
+            "id": "fc3a262a786af5ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/1104.md",
+                "file": "Projects/goorm-shopping/1107.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1104"
+              "title": "1107"
             }
           },
           {
-            "id": "052b498e285d711e",
+            "id": "62458efef3849295",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/1031.md",
+                "file": "Projects/goorm-shopping/mydo/1106.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1031"
+              "title": "1106"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,36 +184,38 @@
       "bases:Create new base": false
     }
   },
-  "active": "052b498e285d711e",
+  "active": "fc3a262a786af5ad",
   "lastOpenFiles": [
+    "Projects/goorm-shopping/mydo/1106.md",
+    "Projects/goorm-shopping/1107.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/0.redis-clustering.md",
+    "Projects/goorm-shopping/1106.md",
+    "Projects/goorm-shopping/mydo/1105.md",
+    "Projects/goorm-shopping/1105.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caches (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/redis-session-caching.md",
+    "Areas/Java/Spring-framework/Spring-Practice/spring-batch-practice-plan.md",
+    "Areas/Java/Spring-framework/OAUTH2/implementation/2.pros&cons.md",
+    "Areas/Java/Spring-framework/OAUTH2/implementation/3.oauth2-client-google-login.md",
+    "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build (writing).md",
+    "Areas/distributed-system/aws-implement(writing)/ISSUE01-application-dependency.md",
+    "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/using-cherry-pick.md",
+    "Areas/distributed-system/aws-implement(writing)/0-2. application-image-advance.md",
+    "Projects/goorm-shopping/TODO.md",
+    "Projects/goorm-shopping/mydo/1104.md",
+    "Resources/lecture-note/2511/251105.md",
+    "Projects/goorm-shopping/1104.md",
+    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
+    "Projects/goorm-shopping/1031.md",
+    "Resources/lecture-note/2511",
     "Projects/goorm-shopping/1030.md",
     "Projects/goorm-shopping/1029.md",
-    "Projects/goorm-shopping/1028.md",
-    "Projects/goorm-shopping/mydo/1104.md",
-    "Projects/goorm-shopping/1104.md",
-    "Projects/goorm-shopping/TODO.md",
-    "Projects/goorm-shopping/1103.md",
-    "Projects/goorm-shopping/mydo/1103.md",
-    "Areas/distributed-system/aws-implement(writing)/2. EC2-RDS.md",
     "Projects/goorm-shopping/mydo",
-    "Projects/goorm-shopping/1101~2-for-agenda.md",
-    "Resources/lecture-note/2510/251031-특강.md",
     "251031-capture1.png",
-    "Resources/lecture-note/2510/251028-특강1.md",
-    "Resources/lecture-note/2510/251028-특강2.md",
-    "Resources/lecture-note/2510/251029-특강.md",
-    "Resources/lecture-note/2510/251029.md",
-    "Resources/lecture-note/2510/251015-jpa.md",
-    "Resources/lecture-note/2510/251016-jpa.md",
-    "Resources/lecture-note/2510/251017-jpa.md",
-    "Resources/lecture-note/2510/251020-jpa.md",
-    "Resources/lecture-note/2510/251022-jpa.md",
-    "Resources/lecture-note/2510/251024.md",
-    "Resources/lecture-note/2510/251027.md",
-    "Resources/lecture-note/2510/251028.md",
-    "Projects/goorm-shopping/1031.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/0.redis-clustering.md",
     "Pasted image 20251029092539.png",
     "Pasted image 20251029091818.png",
     "Pasted image 20251028172527.png",
@@ -230,8 +231,6 @@
     "Archives/database",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects",
     "Archives/report-list-old/report-list",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/images",
-    "Areas/Java/Spring-framework/Spring-Practice/0.introduction",
-    "Areas/distributed-system/aws-implement(writing)"
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/images"
   ]
 }
