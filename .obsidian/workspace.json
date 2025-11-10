@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/1107.md",
+                "file": "Projects/goorm-shopping/1110.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1107"
+              "title": "1110"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/mydo/1106.md",
+                "file": "Projects/goorm-shopping/mydo/1110-advance-todo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1106"
+              "title": "1110-advance-todo"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,12 +185,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "fc3a262a786af5ad",
+  "active": "62458efef3849295",
   "lastOpenFiles": [
+    "Projects/goorm-shopping/1110.md",
+    "Projects/goorm-shopping/mydo/1110-advance-todo.md",
+    "Projects/goorm-shopping/1110-pt.md",
+    "Projects/goorm-shopping/TODO.md",
     "Projects/goorm-shopping/mydo/1106.md",
-    "Projects/goorm-shopping/1107.md",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
+    "Areas/Java/Spring-framework/Spring-Practice/spring-batch-practice-plan.md",
+    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/using-cherry-pick.md",
+    "Projects/goorm-shopping/1107.md",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/0.redis-clustering.md",
     "Projects/goorm-shopping/1106.md",
     "Projects/goorm-shopping/mydo/1105.md",
@@ -197,23 +204,17 @@
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
     "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caches (writing).md",
     "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/redis-session-caching.md",
-    "Areas/Java/Spring-framework/Spring-Practice/spring-batch-practice-plan.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/2.pros&cons.md",
     "Areas/Java/Spring-framework/OAUTH2/implementation/3.oauth2-client-google-login.md",
     "Areas/distributed-system/aws-implement(writing)/4. EC2-backend-api-build (writing).md",
     "Areas/distributed-system/aws-implement(writing)/ISSUE01-application-dependency.md",
     "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster (writing).md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/using-cherry-pick.md",
     "Areas/distributed-system/aws-implement(writing)/0-2. application-image-advance.md",
-    "Projects/goorm-shopping/TODO.md",
     "Projects/goorm-shopping/mydo/1104.md",
     "Resources/lecture-note/2511/251105.md",
     "Projects/goorm-shopping/1104.md",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Projects/goorm-shopping/1031.md",
     "Resources/lecture-note/2511",
-    "Projects/goorm-shopping/1030.md",
-    "Projects/goorm-shopping/1029.md",
     "Projects/goorm-shopping/mydo",
     "251031-capture1.png",
     "Pasted image 20251029092539.png",
