@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/1110.md",
+                "file": "Projects/goorm-shopping/1111.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1110"
+              "title": "1111"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/mydo/1110-advance-todo.md",
+                "file": "Projects/goorm-shopping/1112.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1110-advance-todo"
+              "title": "1112"
             }
           }
         ],
@@ -187,6 +187,9 @@
   },
   "active": "62458efef3849295",
   "lastOpenFiles": [
+    "Projects/goorm-shopping/mydo/1112-kafka-event-switch.md",
+    "Projects/goorm-shopping/1112.md",
+    "Projects/goorm-shopping/1111.md",
     "Projects/goorm-shopping/1110.md",
     "Projects/goorm-shopping/mydo/1110-advance-todo.md",
     "Projects/goorm-shopping/1110-pt.md",
@@ -210,9 +213,6 @@
     "Areas/distributed-system/aws-implement(writing)/ISSUE01-application-dependency.md",
     "Areas/distributed-system/aws-implement(writing)/3. EC2-Redis-Cluster (writing).md",
     "Areas/distributed-system/aws-implement(writing)/0-2. application-image-advance.md",
-    "Projects/goorm-shopping/mydo/1104.md",
-    "Resources/lecture-note/2511/251105.md",
-    "Projects/goorm-shopping/1104.md",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/lecture-note/2511",
     "Projects/goorm-shopping/mydo",
