@@ -4,35 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "f6c4dcc14ade0c26",
+        "id": "823f8c074f44c9f5",
         "type": "tabs",
         "children": [
           {
-            "id": "fc3a262a786af5ad",
+            "id": "4220c0950e37f818",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/1114.md",
+                "file": "Projects/goorm-third/1205.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1114"
+              "title": "1205"
             }
           },
           {
-            "id": "dcf0d738eed9be9d",
+            "id": "ce77477cf5fb3d5b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-shopping/1114.md",
+                "file": "Areas/JD/ssafy/prepare-interview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1114"
+              "title": "prepare-interview"
             }
           }
         ],
@@ -185,34 +185,42 @@
       "bases:Create new base": false
     }
   },
-  "active": "dcf0d738eed9be9d",
+  "active": "ce77477cf5fb3d5b",
   "lastOpenFiles": [
-    "Projects/goorm-shopping/1113.md",
+    "Areas/JD/ssafy/ssafy-essay.md",
+    "Projects/goorm-third/1208.md",
+    "Projects/goorm-third/1205.md",
+    "Areas/JD/ssafy/prepare-interview.md",
+    "Areas/JD/ssafy",
+    "Projects/goorm-third/1204.md",
+    "Areas/JD/memo.md",
+    "BA89593D-333C-49D7-9482-D1E5A3C36022.jpg",
+    "92384352-A248-47EE-A8C0-F74936F6D349.jpg",
+    "D4203A13-A3DB-435F-9C0E-8485A5BE0841.jpg",
+    "Projects/goorm-third/1203.md",
+    "Projects/goorm-third/1202.md",
+    "Projects/goorm-third/1126.md",
+    "Projects/goorm-third/1124.md",
+    "Projects/goorm-third/1125.md",
+    "Projects/goorm-third/1201.md",
+    "Areas/blog-post/draft/issues/must be manually assigned before calling 'persist()'.md",
+    "Areas/JD/feedback.md",
+    "Areas/JD/todo.md",
+    "Areas/JD/business-domain.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Projects/goorm-third/1127.md",
+    "Projects/goorm-third/1122.md",
+    "Projects/goorm-third/kakao-test.html",
+    "kakao-test.html",
+    "temp.html",
+    "Projects/goorm-third/1120.md",
+    "Projects/goorm-third/1121.md",
+    "Projects/goorm-shopping/1119-pt.md",
+    "Projects/goorm-third",
+    "Areas/JD/resume/concept.md",
+    "Resources/lecture-note/2511/251122-취업콘.md",
     "Projects/goorm-shopping/1114.md",
-    "Projects/goorm-shopping/mydo/1112-kafka-event-switch.md",
-    "Projects/goorm-shopping/1112.md",
-    "Projects/goorm-shopping/TODO.md",
-    "Resources/lecture-note/2510/251031-특강.md",
-    "Resources/lecture-note/2510/251029-특강.md",
-    "Resources/lecture-note/2510/251028-특강2.md",
-    "Resources/lecture-note/2510/251028-특강1.md",
-    "Projects/goorm-shopping/1111.md",
-    "Projects/goorm-shopping/1110.md",
-    "Projects/goorm-shopping/mydo/1110-advance-todo.md",
-    "Projects/goorm-shopping/1110-pt.md",
-    "Projects/goorm-shopping/mydo/1106.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
-    "Areas/Java/Spring-framework/Spring-Practice/spring-batch-practice-plan.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/using-cherry-pick.md",
-    "Projects/goorm-shopping/1107.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/0.redis-clustering.md",
-    "Projects/goorm-shopping/1106.md",
-    "Projects/goorm-shopping/mydo/1105.md",
-    "Projects/goorm-shopping/1105.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caches (writing).md",
-    "Areas/Java/Spring-framework/Spring-Practice/1.redis-session-caching/redis-session-caching.md",
+    "Projects/goorm-shopping/1118.md",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/lecture-note/2511",
     "Projects/goorm-shopping/mydo",
@@ -223,15 +231,7 @@
     "Pasted image 20251028174735.png",
     "Pasted image 20251028173053.png",
     "Pasted image 20251028172750.png",
-    "Pasted image 20251028172118.png",
-    "k8s temp.png",
     "Projects/goorm-shopping",
-    "251028-RestfulAPI.png",
-    "Areas/JD/resume/resume-1.pdf",
-    "Archives/backend",
-    "Archives/database",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/additional-subjects",
-    "Archives/report-list-old/report-list",
-    "Areas/Java/Spring-framework/Spring-Practice/2.redis-cache-warmup/images"
+    "Areas/JD/resume/resume-1.pdf"
   ]
 }
