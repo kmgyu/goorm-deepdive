@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "823f8c074f44c9f5",
+        "id": "3a295b0ad8a3deb1",
         "type": "tabs",
         "children": [
           {
-            "id": "4220c0950e37f818",
+            "id": "07e829ce3bdf4a22",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-third/1205.md",
+                "file": "Projects/goorm-third/1217.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1205"
-            }
-          },
-          {
-            "id": "ce77477cf5fb3d5b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Areas/JD/ssafy/prepare-interview.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "prepare-interview"
+              "title": "1217"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "인덱스",
+                "query": "@primary",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -185,42 +170,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "ce77477cf5fb3d5b",
+  "active": "07e829ce3bdf4a22",
   "lastOpenFiles": [
+    "Projects/goorm-third/1217-pt.md",
+    "Projects/goorm-third/1216-expected-question.md",
+    "Projects/goorm-third/1217.md",
+    "Projects/goorm-third/1216.md",
+    "Projects/intergrated-4th-project/1215-pre-meeting.md",
+    "Projects/goorm-third/1215.md",
+    "Projects/intergrated-4th-project/mydo/topics-rough-123.md",
+    "Projects/intergrated-4th-project/mydo/topics-rough.md",
+    "Projects/intergrated-4th-project/1211-pre-meeting.md",
+    "Projects/goorm-third/1212.md",
+    "Projects/goorm-third/1211.md",
+    "Areas/Java/Spring-framework/spring-core-principles/9.auto-di.md",
+    "Areas/JD/activities-for-JD(writing).md",
+    "Areas/Java/Spring-framework/spring-MVC-1/6.spring-mvc.md",
+    "Areas/Java/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
+    "Areas/Java/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
+    "Areas/JD/business-domain.md",
+    "Areas/JD/resume/concept.md",
+    "Areas/JD/ssafy/after-interview.md",
     "Areas/JD/ssafy/ssafy-essay.md",
-    "Projects/goorm-third/1208.md",
-    "Projects/goorm-third/1205.md",
     "Areas/JD/ssafy/prepare-interview.md",
-    "Areas/JD/ssafy",
-    "Projects/goorm-third/1204.md",
+    "Projects/goorm-third/1210.md",
+    "Projects/goorm-third/1208.md",
+    "Areas/JD/feedback.md",
+    "Areas/JD/todo.md",
     "Areas/JD/memo.md",
+    "Projects/intergrated-4th-project/mydo",
+    "Projects/intergrated-4th-project",
+    "Areas/JD/ssafy",
     "BA89593D-333C-49D7-9482-D1E5A3C36022.jpg",
     "92384352-A248-47EE-A8C0-F74936F6D349.jpg",
     "D4203A13-A3DB-435F-9C0E-8485A5BE0841.jpg",
-    "Projects/goorm-third/1203.md",
-    "Projects/goorm-third/1202.md",
-    "Projects/goorm-third/1126.md",
-    "Projects/goorm-third/1124.md",
-    "Projects/goorm-third/1125.md",
-    "Projects/goorm-third/1201.md",
-    "Areas/blog-post/draft/issues/must be manually assigned before calling 'persist()'.md",
-    "Areas/JD/feedback.md",
-    "Areas/JD/todo.md",
-    "Areas/JD/business-domain.md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Projects/goorm-third/1127.md",
-    "Projects/goorm-third/1122.md",
     "Projects/goorm-third/kakao-test.html",
     "kakao-test.html",
     "temp.html",
-    "Projects/goorm-third/1120.md",
-    "Projects/goorm-third/1121.md",
-    "Projects/goorm-shopping/1119-pt.md",
     "Projects/goorm-third",
-    "Areas/JD/resume/concept.md",
-    "Resources/lecture-note/2511/251122-취업콘.md",
-    "Projects/goorm-shopping/1114.md",
-    "Projects/goorm-shopping/1118.md",
     "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
     "Resources/lecture-note/2511",
     "Projects/goorm-shopping/mydo",
@@ -230,8 +217,6 @@
     "Pasted image 20251028172527.png",
     "Pasted image 20251028174735.png",
     "Pasted image 20251028173053.png",
-    "Pasted image 20251028172750.png",
-    "Projects/goorm-shopping",
-    "Areas/JD/resume/resume-1.pdf"
+    "Pasted image 20251028172750.png"
   ]
 }
