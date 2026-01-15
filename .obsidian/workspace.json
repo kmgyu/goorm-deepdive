@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "3a295b0ad8a3deb1",
+        "id": "c536cee348202be1",
         "type": "tabs",
         "children": [
           {
-            "id": "07e829ce3bdf4a22",
+            "id": "2b467f28ce3faef4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/goorm-third/1217.md",
+                "file": "Projects/intergrated-4th-project/260115.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1217"
+              "title": "260115"
+            }
+          },
+          {
+            "id": "b39573b06c0cc5b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Projects/intergrated-4th-project/schedule/260115-mentoring.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "260115-mentoring"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "@primary",
+                "query": "spring_hot-reload_classloader",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -170,53 +185,53 @@
       "bases:Create new base": false
     }
   },
-  "active": "07e829ce3bdf4a22",
+  "active": "b39573b06c0cc5b2",
   "lastOpenFiles": [
-    "Projects/goorm-third/1217-pt.md",
-    "Projects/goorm-third/1216-expected-question.md",
-    "Projects/goorm-third/1217.md",
-    "Projects/goorm-third/1216.md",
-    "Projects/intergrated-4th-project/1215-pre-meeting.md",
-    "Projects/goorm-third/1215.md",
-    "Projects/intergrated-4th-project/mydo/topics-rough-123.md",
-    "Projects/intergrated-4th-project/mydo/topics-rough.md",
-    "Projects/intergrated-4th-project/1211-pre-meeting.md",
-    "Projects/goorm-third/1212.md",
-    "Projects/goorm-third/1211.md",
-    "Areas/Java/Spring-framework/spring-core-principles/9.auto-di.md",
-    "Areas/JD/activities-for-JD(writing).md",
-    "Areas/Java/Spring-framework/spring-MVC-1/6.spring-mvc.md",
-    "Areas/Java/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-2.md",
-    "Areas/Java/Spring-framework/spring-MVC-1/7.spring-mvc-basic-feature-1.md",
-    "Areas/JD/business-domain.md",
-    "Areas/JD/resume/concept.md",
-    "Areas/JD/ssafy/after-interview.md",
-    "Areas/JD/ssafy/ssafy-essay.md",
-    "Areas/JD/ssafy/prepare-interview.md",
-    "Projects/goorm-third/1210.md",
-    "Projects/goorm-third/1208.md",
-    "Areas/JD/feedback.md",
-    "Areas/JD/todo.md",
-    "Areas/JD/memo.md",
+    "Projects/intergrated-4th-project/260115.md",
+    "Projects/intergrated-4th-project/schedule/260115-mentoring.md",
+    "Projects/intergrated-4th-project/260113.md",
+    "Projects/intergrated-4th-project/260112-presentation.md",
+    "Projects/intergrated-4th-project/260112.md",
+    "Projects/intergrated-4th-project/260109.md",
+    "Projects/intergrated-4th-project/mydo/communication.md",
+    "Projects/intergrated-4th-project/260108.md",
+    "Projects/intergrated-4th-project/260114.md",
+    "Projects/intergrated-4th-project/schedule/260108 - mentoring.md",
+    "Projects/intergrated-4th-project/251229-presentation.md",
+    "Projects/intergrated-4th-project/260107.md",
+    "Projects/intergrated-4th-project/mydo/question.md",
+    "Projects/intergrated-4th-project/260106.md",
+    "Projects/intergrated-4th-project/schedule/260105-mentoring.md",
+    "Projects/intergrated-4th-project/260105.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/0.redis-clustering.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/1.2.5.caching-implements (writing).md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/1.0.advancing-backend (writing).md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/additional-subjects/advancing-monitoring.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/additional-subjects/redis-issues.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/additional-subjects/using-cherry-pick.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/2.redis-cache-warmup/additional-subjects/redis-seperating-caches (writing).md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/0.introduction/Spring-batch-Introduction.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/spring-batch-practice-plan.md",
+    "Areas/Java/Spring-framework/Spring-batch-Practice/1.redis-session-caching/redis-session-caching.md",
+    "Areas/JD/refer/deliverylab",
+    "Areas/debugging",
+    "Areas/JD/refer/NAVER/2025-08",
+    "Areas/JD/refer/NAVER/2025-12",
+    "Areas/JD/refer/NAVER",
+    "spring_hot-reload_classloader.png",
+    "jvm_how-to-work-classloader.png",
+    "Areas/Java/Spring-framework/OAUTH2/images/OAuth_intro0.png",
+    "Areas/Java/Spring-framework/OAUTH2/images",
+    "Pasted image 20251028172118.png",
+    "Pasted image 20251027110033.png",
+    "Pasted image 20251027105851.png",
+    "Pasted image 20250930141128.png",
+    "Pasted image 20250915141805.png",
+    "Pasted image 20250910124453.png",
+    "Pasted image 20250725171115.png",
+    "Areas/JD/refer/woowahan",
+    "Projects/intergrated-4th-project/schedule",
     "Projects/intergrated-4th-project/mydo",
-    "Projects/intergrated-4th-project",
-    "Areas/JD/ssafy",
-    "BA89593D-333C-49D7-9482-D1E5A3C36022.jpg",
-    "92384352-A248-47EE-A8C0-F74936F6D349.jpg",
-    "D4203A13-A3DB-435F-9C0E-8485A5BE0841.jpg",
-    "Projects/goorm-third/kakao-test.html",
-    "kakao-test.html",
-    "temp.html",
-    "Projects/goorm-third",
-    "Resources/[O`Reilly. Head First] - Head First Design Patterns - [Freeman].pdf",
-    "Resources/lecture-note/2511",
-    "Projects/goorm-shopping/mydo",
-    "251031-capture1.png",
-    "Pasted image 20251029092539.png",
-    "Pasted image 20251029091818.png",
-    "Pasted image 20251028172527.png",
-    "Pasted image 20251028174735.png",
-    "Pasted image 20251028173053.png",
-    "Pasted image 20251028172750.png"
+    "Projects/intergrated-4th-project"
   ]
 }
